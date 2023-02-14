@@ -395,14 +395,19 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 1
+      m_LocalVariables: []
     _actor: {fileID: 11400000, guid: 027d026cf519df04eb8b7bf251472e13, type: 2}
     _pauseWhenClipEnds: 1
+    LineEndedEvent: {fileID: 0}
     PlayDialogueEvent: {fileID: 11400000, guid: d987db4881d794f2da0013a89588d890,
       type: 2}
     PauseTimelineEvent: {fileID: 11400000, guid: 9b0fb5f181adc6b4ca020743fed6c020,
       type: 2}
   PlayDialogueEvent: {fileID: 11400000, guid: d987db4881d794f2da0013a89588d890, type: 2}
   PauseTimelineEvent: {fileID: 11400000, guid: 9b0fb5f181adc6b4ca020743fed6c020, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &5472072730035891554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -447,11 +452,16 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 1
+      m_LocalVariables: []
     _actor: {fileID: 11400000, guid: 027d026cf519df04eb8b7bf251472e13, type: 2}
     _pauseWhenClipEnds: 1
+    LineEndedEvent: {fileID: 0}
     PlayDialogueEvent: {fileID: 11400000, guid: d987db4881d794f2da0013a89588d890,
       type: 2}
     PauseTimelineEvent: {fileID: 11400000, guid: 9b0fb5f181adc6b4ca020743fed6c020,
       type: 2}
   PlayDialogueEvent: {fileID: 11400000, guid: d987db4881d794f2da0013a89588d890, type: 2}
   PauseTimelineEvent: {fileID: 11400000, guid: 9b0fb5f181adc6b4ca020743fed6c020, type: 2}
+  references:
+    version: 2
+    RefIds: []

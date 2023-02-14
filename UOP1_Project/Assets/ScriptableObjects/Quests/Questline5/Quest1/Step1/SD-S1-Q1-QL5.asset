@@ -21,7 +21,16 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D1-SD-S1-Q1-QL5
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: Questline Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: L2-D1-SD-S1-Q1-QL5
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   - _actorID: 1
     _textList:
@@ -31,14 +40,8 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D2-SD-S1-Q1-QL5
       m_FallbackState: 0
-      m_WaitForCompletion: 1
-    - m_TableReference:
-        m_TableCollectionName: Questline Dialogue
-      m_TableEntryReference:
-        m_KeyId: 0
-        m_Key: L2-D2-SD-S1-Q1-QL5
-      m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   - _actorID: 0
     _textList:
@@ -48,7 +51,8 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D3-SD-S1-Q1-QL5
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   - _actorID: 1
     _textList:
@@ -58,8 +62,12 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D4-SD-S1-Q1-QL5
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 11400000, guid: fb76ddbd39bb6c645a2927d483102f18,
     type: 2}
+  references:
+    version: 2
+    RefIds: []

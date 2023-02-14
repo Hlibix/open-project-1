@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: OnInteractionEnded
   m_EditorClassIdentifier: 
+  _guid: c499d87f35465124f8fb2751b150430d
   description: 

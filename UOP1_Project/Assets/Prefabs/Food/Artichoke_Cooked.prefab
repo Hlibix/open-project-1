@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dbdd788b8d67ccf488bbd0d396a8cae3,
         type: 3}
       propertyPath: m_Name
-      value: artichokeCooked
+      value: Artichoke_Cooked
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbdd788b8d67ccf488bbd0d396a8cae3, type: 3}

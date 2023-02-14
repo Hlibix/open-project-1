@@ -21,21 +21,27 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D1-CD-S2-Q1-QL2
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
         m_Key: L2-D1-CD-S2-Q1-QL2
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
         m_Key: L3-D1-CD-S2-Q1-QL2
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   _dialogueType: 1
   _endOfDialogueEvent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

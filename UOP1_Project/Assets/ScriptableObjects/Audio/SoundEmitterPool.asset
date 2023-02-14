@@ -13,4 +13,3 @@ MonoBehaviour:
   m_Name: SoundEmitterPool
   m_EditorClassIdentifier: 
   _factory: {fileID: 11400000, guid: 0f82d558a11c88d458625502b6708251, type: 2}
-  _initialPoolSize: 10

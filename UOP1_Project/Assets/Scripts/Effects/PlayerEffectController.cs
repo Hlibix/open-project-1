@@ -6,80 +6,89 @@ using UnityEngine;
 /// </summary>
 public class PlayerEffectController : MonoBehaviour
 {
-	[SerializeField] ParticleSystem _walkingParticles = default;
-	[SerializeField] ParticleSystem _landParticles = default;
-	[SerializeField] ParticleSystem _jumpParticles = default;
+    [SerializeField]
+    private ParticleSystem _walkingParticles;
 
-	[SerializeField] ParticleSystem _slashEffect = default;
-	[SerializeField] ParticleSystem _reverseSlashEffect = default;
+    [SerializeField]
+    private ParticleSystem _landParticles;
 
-	private void Start()
-	{
-		_slashEffect.Stop();
-		_reverseSlashEffect.Stop();
-	}
+    [SerializeField]
+    private ParticleSystem _jumpParticles;
 
-	public void EnableWalkParticles()
-	{
-		_walkingParticles.Play();
-	}
+    [SerializeField]
+    private ParticleSystem _slashEffect;
 
-	public void DisableWalkParticles()
-	{
-		_walkingParticles.Stop();
-	}
+    [SerializeField]
+    private ParticleSystem _reverseSlashEffect;
 
-	public void PlayJumpParticles()
-	{
-		_jumpParticles.Play();
-	}
-	public void PlayLandParticles()
-	{
-		_landParticles.Play();
-	}
+    private void Start()
+    {
+        _slashEffect.Stop();
+        _reverseSlashEffect.Stop();
+    }
 
-	public void PlaySlashEffect()
-	{
-		_slashEffect.Play();
-	}
+    public void EnableWalkParticles()
+    {
+        _walkingParticles.Play();
+    }
 
-	public void PlayReverseSlashEffect()
-	{
-		_reverseSlashEffect.Play();
-	}
+    public void DisableWalkParticles()
+    {
+        _walkingParticles.Stop();
+    }
 
-	public void PlayLandParticles(float intensity)
-	{
-		// make sure intensity is always between 0 and 1
-		intensity = Mathf.Clamp01(intensity);
+    public void PlayJumpParticles()
+    {
+        _jumpParticles.Play();
+    }
 
-		ParticleSystem.MainModule main = _landParticles.main;
-		ParticleSystem.MinMaxCurve origCurve = main.startSize; //save original curve to be assigned back to particle system
-		ParticleSystem.MinMaxCurve newCurve = main.startSize; //Make a new minMax curve and make our changes to the new copy
+    public void PlayLandParticles()
+    {
+        _landParticles.Play();
+    }
 
-		float minSize = newCurve.constantMin;
-		float maxSize = newCurve.constantMax;
+    public void PlaySlashEffect()
+    {
+        _slashEffect.Play();
+    }
 
-		// use the intensity to change the maximum size of the particle curve
-		newCurve.constantMax = Mathf.Lerp(minSize, maxSize, intensity);
-		main.startSize = newCurve;
+    public void PlayReverseSlashEffect()
+    {
+        _reverseSlashEffect.Play();
+    }
 
-		_landParticles.Play();
+    public void PlayLandParticles(float intensity)
+    {
+        // make sure intensity is always between 0 and 1
+        intensity = Mathf.Clamp01(intensity);
 
-		// Put the original startSize back where you found it
-		StartCoroutine(ResetMinMaxCurve(_landParticles, origCurve));
+        var main      = _landParticles.main;
+        var origCurve = main.startSize; //save original curve to be assigned back to particle system
+        var newCurve  = main.startSize; //Make a new minMax curve and make our changes to the new copy
 
-		// Note: We don't necessarily need to reset the curve, as it will be overridden
-	}
+        var minSize = newCurve.constantMin;
+        var maxSize = newCurve.constantMax;
 
-	private IEnumerator ResetMinMaxCurve(ParticleSystem ps, ParticleSystem.MinMaxCurve curve)
-	{
-		while (ps.isEmitting)
-		{
-			yield return null;
-		}
+        // use the intensity to change the maximum size of the particle curve
+        newCurve.constantMax = Mathf.Lerp(minSize, maxSize, intensity);
+        main.startSize       = newCurve;
 
-		ParticleSystem.MainModule main = ps.main;
-		main.startSize = curve;
-	}
+        _landParticles.Play();
+
+        // Put the original startSize back where you found it
+        StartCoroutine(ResetMinMaxCurve(_landParticles, origCurve));
+
+        // Note: We don't necessarily need to reset the curve, as it will be overridden
+    }
+
+    private IEnumerator ResetMinMaxCurve(ParticleSystem ps, ParticleSystem.MinMaxCurve curve)
+    {
+        while (ps.isEmitting)
+        {
+            yield return null;
+        }
+
+        var main = ps.main;
+        main.startSize = curve;
+    }
 }

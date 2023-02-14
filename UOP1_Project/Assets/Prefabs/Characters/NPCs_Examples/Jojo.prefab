@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 1132113797398714843, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0060868
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1304365263896594703, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
@@ -123,13 +123,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5385405162533204186, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385405162533204186, guid: 661c491ac76af4b429f8a8c0e6e8c762,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -6.3353922e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385405162533204186, guid: 661c491ac76af4b429f8a8c0e6e8c762,
+        type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029802322
+      value: -0.00000008508101
       objectReference: {fileID: 0}
     - target: {fileID: 5385405162533204186, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000018626451
+      value: -0.0000000053175633
       objectReference: {fileID: 0}
     - target: {fileID: 5579597578339563075, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
@@ -193,15 +203,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661c491ac76af4b429f8a8c0e6e8c762, type: 3}
---- !u!4 &7968907681957608140 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6591786344275767751, guid: 661c491ac76af4b429f8a8c0e6e8c762,
-    type: 3}
-  m_PrefabInstance: {fileID: 3885908913776036619}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2736322245324866718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1158791814580506517, guid: 661c491ac76af4b429f8a8c0e6e8c762,
+    type: 3}
+  m_PrefabInstance: {fileID: 3885908913776036619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7968907681957608140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6591786344275767751, guid: 661c491ac76af4b429f8a8c0e6e8c762,
     type: 3}
   m_PrefabInstance: {fileID: 3885908913776036619}
   m_PrefabAsset: {fileID: 0}

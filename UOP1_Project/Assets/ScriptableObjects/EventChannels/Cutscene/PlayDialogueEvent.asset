@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490ff092768904d48a87607706dc6570, type: 3}
   m_Name: PlayDialogueEvent
   m_EditorClassIdentifier: 
+  _guid: f235c0e2f24681044aa448291b13aaac
+  description: 

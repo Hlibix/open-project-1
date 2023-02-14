@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 8357250151446615845, guid: 94ca6d0c15c4b4a2cbbe4758a17b8dfb,
         type: 3}
       propertyPath: m_Name
-      value: Credits_Panel
+      value: Credits_Panel_FinalScreen
       objectReference: {fileID: 0}
     - target: {fileID: 8357250151446615846, guid: 94ca6d0c15c4b4a2cbbe4758a17b8dfb,
         type: 3}

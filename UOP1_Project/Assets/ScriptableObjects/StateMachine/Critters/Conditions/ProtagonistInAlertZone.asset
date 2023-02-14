@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e6588ded1ea1f44b197643d201de8e, type: 3}
   m_Name: ProtagonistInAlertZone
   m_EditorClassIdentifier: 
-  cacheResult: 1
   zone: 0

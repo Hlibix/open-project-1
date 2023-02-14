@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 using Moment = UOP1.StateMachine.StateAction.SpecificMoment;
@@ -10,35 +9,38 @@ using Moment = UOP1.StateMachine.StateAction.SpecificMoment;
 [CreateAssetMenu(fileName = "AnimatorMoveSpeedAction", menuName = "State Machines/Actions/Set Animator Move Speed")]
 public class AnimatorMoveSpeedActionSO : StateActionSO
 {
-	public string parameterName = default;
+    public string parameterName;
 
-	protected override StateAction CreateAction() => new AnimatorMoveSpeedAction(Animator.StringToHash(parameterName));
+    protected override StateAction CreateAction()
+    {
+        return new AnimatorMoveSpeedAction(Animator.StringToHash(parameterName));
+    }
 }
 
 public class AnimatorMoveSpeedAction : StateAction
 {
-	//Component references
-	private Animator _animator;
-	private Protagonist _protagonist;
+    //Component references
+    private Animator    _animator;
+    private Protagonist _protagonist;
 
-	private AnimatorParameterActionSO _originSO => (AnimatorParameterActionSO)base.OriginSO; // The SO this StateAction spawned from
-	private int _parameterHash;
+    private AnimatorParameterActionSO _originSO => (AnimatorParameterActionSO)OriginSO; // The SO this StateAction spawned from
+    private int                       _parameterHash;
 
-	public AnimatorMoveSpeedAction(int parameterHash)
-	{
-		_parameterHash = parameterHash;
-	}
+    public AnimatorMoveSpeedAction(int parameterHash)
+    {
+        _parameterHash = parameterHash;
+    }
 
-	public override void Awake(StateMachine stateMachine)
-	{
-		_animator = stateMachine.GetComponent<Animator>();
-		_protagonist = stateMachine.GetComponent<Protagonist>();
-	}
+    public override void Awake(StateMachine stateMachine)
+    {
+        _animator    = stateMachine.GetComponent<Animator>();
+        _protagonist = stateMachine.GetComponent<Protagonist>();
+    }
 
-	public override void OnUpdate()
-	{
-		//TODO: do we like that we're using the magnitude here, per frame? Can this be done in a smarter way?
-		float normalisedSpeed = _protagonist.movementInput.magnitude;
-		_animator.SetFloat(_parameterHash, normalisedSpeed);
-	}
+    public override void OnUpdate()
+    {
+        //TODO: do we like that we're using the magnitude here, per frame? Can this be done in a smarter way?
+        var normalisedSpeed = _protagonist.movementInput.magnitude;
+        _animator.SetFloat(_parameterHash, normalisedSpeed);
+    }
 }

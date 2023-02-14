@@ -5,49 +5,58 @@ using UnityEngine.Localization.Components;
 
 public class UIGenericButton : MonoBehaviour
 {
-	[SerializeField] private LocalizeStringEvent _buttonText = default;
-	[SerializeField] private MultiInputButton _button = default;
+    [SerializeField]
+    private LocalizeStringEvent _buttonText;
 
-	public UnityAction Clicked = default;
+    [SerializeField]
+    private MultiInputButton _button;
 
-	private bool _isDefaultSelection = false;
+    public UnityAction Clicked = default;
 
-	private void OnDisable()
-	{
-		_button.IsSelected = false;
-		_isDefaultSelection = false;
-	}
+    private bool _isDefaultSelection;
 
-	public void SetButton(bool isSelect)
-	{
-		_isDefaultSelection = isSelect;
-		if (isSelect)
-			_button.UpdateSelected();
-	}
+    private void OnDisable()
+    {
+        _button.IsSelected  = false;
+        _isDefaultSelection = false;
+    }
 
-	public void SetButton(LocalizedString localizedString, bool isSelected)
-	{
-		_buttonText.StringReference = localizedString;
+    public void SetButton(bool isSelect)
+    {
+        _isDefaultSelection = isSelect;
+        if (isSelect)
+        {
+            _button.UpdateSelected();
+        }
+    }
 
-		if (isSelected)
-			SelectButton();
-	}
+    public void SetButton(LocalizedString localizedString, bool isSelected)
+    {
+        _buttonText.StringReference = localizedString;
 
-	public void SetButton(string tableEntryReference, bool isSelected)
-	{
-		_buttonText.StringReference.TableEntryReference = tableEntryReference;
+        if (isSelected)
+        {
+            SelectButton();
+        }
+    }
 
-		if (isSelected)
-			SelectButton();
-	}
+    public void SetButton(string tableEntryReference, bool isSelected)
+    {
+        _buttonText.StringReference.TableEntryReference = tableEntryReference;
 
-	void SelectButton()
-	{
-		_button.Select();
-	}
+        if (isSelected)
+        {
+            SelectButton();
+        }
+    }
 
-	public void Click()
-	{
-		Clicked.Invoke();
-	}
+    private void SelectButton()
+    {
+        _button.Select();
+    }
+
+    public void Click()
+    {
+        Clicked.Invoke();
+    }
 }

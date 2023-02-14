@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -164,7 +166,10 @@ MonoBehaviour:
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
+    ModeOverride: 0
     LensShift: {x: 0, y: 0}
+    GateFit: 2
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -183,6 +188,7 @@ Transform:
   m_LocalRotation: {x: -0.06415292, y: -0.24966581, z: 0.016580118, w: -0.9660624}
   m_LocalPosition: {x: -64.65072, y: 17.80041, z: -116.72642}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2052058203}
   m_Father: {fileID: 1365033509}
@@ -231,7 +237,10 @@ MonoBehaviour:
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
+    ModeOverride: 0
     LensShift: {x: 0, y: 0}
+    GateFit: 2
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -250,6 +259,7 @@ Transform:
   m_LocalRotation: {x: -0.06415292, y: -0.24966581, z: 0.016580118, w: -0.9660624}
   m_LocalPosition: {x: -64.65072, y: 17.80041, z: -116.72642}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 366909184}
   m_Father: {fileID: 1365033509}
@@ -336,6 +346,7 @@ Transform:
   m_LocalRotation: {x: -0.06415292, y: -0.24966581, z: 0.016580118, w: -0.9660624}
   m_LocalPosition: {x: -5.956562, y: 2.6662464, z: -14.940163}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -396,12 +407,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
+  m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -434,6 +447,7 @@ Transform:
   m_LocalRotation: {x: 0.06415292, y: 0.24966581, z: -0.016580118, w: -0.9660624}
   m_LocalPosition: {x: -2.0279908, y: -0.533041, z: 16.167902}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 203698225}
   m_RootOrder: 0
@@ -525,6 +539,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 58.694157, y: -15.134163, z: 101.786255}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -558,8 +573,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51755885c3e549b6b9c0a42acba7a0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputReader: {fileID: 11400000, guid: 945ec0365077176418488737deed54be, type: 2}
   _dialogueManager: {fileID: 1555581720}
+  _inputReader: {fileID: 11400000, guid: 945ec0365077176418488737deed54be, type: 2}
+  _gameState: {fileID: 0}
+  _playCutsceneEvent: {fileID: 0}
+  _playDialogueEvent: {fileID: 0}
+  _pauseTimelineEvent: {fileID: 0}
+  _onLineEndedEvent: {fileID: 0}
 --- !u!4 &531141013
 Transform:
   m_ObjectHideFlags: 0
@@ -570,6 +590,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 58.694157, y: -15.134163, z: 101.786255}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -650,6 +671,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &707856915
@@ -662,6 +684,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -692,6 +715,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 58.694157, y: -15.134163, z: 101.786255}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -726,10 +750,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b57f138bf282148942d40c320dc9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cutsceneManager: {fileID: 531141012}
-  _playableDirector: {fileID: 1365033510}
   _playOnStart: 1
   _playOnce: 0
+  _questManager: {fileID: 0}
+  _playSpeceficCutscene: {fileID: 0}
+  _playCutsceneEvent: {fileID: 0}
 --- !u!4 &1365033509
 Transform:
   m_ObjectHideFlags: 0
@@ -740,6 +765,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 58.694157, y: -15.134163, z: 101.786255}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 116814471}
   - {fileID: 203698225}
@@ -799,8 +825,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1faa963712171c468c0ea8746754bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _actorsList: []
   _inputReader: {fileID: 11400000, guid: 945ec0365077176418488737deed54be, type: 2}
-  dialogueLineEvent: {fileID: 11400000, guid: d987db4881d794f2da0013a89588d890, type: 2}
+  _gameState: {fileID: 0}
+  _startDialogue: {fileID: 0}
+  _makeDialogueChoiceEvent: {fileID: 0}
+  _openUIDialogueEvent: {fileID: 0}
+  _showChoicesUIEvent: {fileID: 0}
+  _endDialogueWithTypeEvent: {fileID: 0}
+  _continueWithStep: {fileID: 0}
+  _playIncompleteDialogue: {fileID: 0}
+  _makeWinningChoice: {fileID: 0}
+  _makeLosingChoice: {fileID: 0}
 --- !u!4 &1555581721
 Transform:
   m_ObjectHideFlags: 0
@@ -811,6 +847,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 58.694157, y: -15.134163, z: 101.786255}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -844,6 +881,7 @@ Transform:
   m_LocalRotation: {x: 0.06415292, y: 0.24966581, z: -0.016580118, w: -0.9660624}
   m_LocalPosition: {x: -2.0279908, y: -0.533041, z: 16.167902}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 116814471}
   m_RootOrder: 0

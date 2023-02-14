@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ee1f4193e7cac488aad6442034451d, type: 3}
   m_Name: CookRecipe
   m_EditorClassIdentifier: 
+  _guid: 1a56201d2b4714889a387c20fbd8f3e8
+  description: 

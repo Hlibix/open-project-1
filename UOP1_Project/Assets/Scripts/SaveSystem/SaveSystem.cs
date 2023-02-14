@@ -1,115 +1,123 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class SaveSystem : ScriptableObject
 {
-	[SerializeField] private VoidEventChannelSO _saveSettingsEvent = default;
-	[SerializeField] private LoadEventChannelSO _loadLocation = default;
-	[SerializeField] private InventorySO _playerInventory = default;
-	[SerializeField] private SettingsSO _currentSettings = default;
-	[SerializeField] private QuestManagerSO _questManagerSO = default;
+    [SerializeField]
+    private VoidEventChannelSO _saveSettingsEvent;
 
-	public string saveFilename = "save.chop";
-	public string backupSaveFilename = "save.chop.bak";
-	public Save saveData = new Save();
+    [SerializeField]
+    private LoadEventChannelSO _loadLocation;
 
-	void OnEnable()
-	{
-		_saveSettingsEvent.OnEventRaised += SaveSettings;
-		_loadLocation.OnLoadingRequested += CacheLoadLocations;
-	}
+    [SerializeField]
+    private InventorySO _playerInventory;
 
-	void OnDisable()
-	{
-		_saveSettingsEvent.OnEventRaised -= SaveSettings;
-		_loadLocation.OnLoadingRequested -= CacheLoadLocations;
-	}
+    [SerializeField]
+    private SettingsSO _currentSettings;
 
-	private void CacheLoadLocations(GameSceneSO locationToLoad, bool showLoadingScreen, bool fadeScreen)
-	{
-		LocationSO locationSO = locationToLoad as LocationSO;
-		if (locationSO)
-		{
-			saveData._locationId = locationSO.Guid;
-		}
+    [SerializeField]
+    private QuestManagerSO _questManagerSO;
 
-		SaveDataToDisk();
-	}
+    public string saveFilename       = "save.chop";
+    public string backupSaveFilename = "save.chop.bak";
+    public Save   saveData           = new();
 
-	public bool LoadSaveDataFromDisk()
-	{
-		if (FileManager.LoadFromFile(saveFilename, out var json))
-		{
-			saveData.LoadFromJson(json);
-			return true;
-		}
+    private void OnEnable()
+    {
+        _saveSettingsEvent.OnEventRaised += SaveSettings;
+        _loadLocation.OnLoadingRequested += CacheLoadLocations;
+    }
 
-		return false;
-	}
+    private void OnDisable()
+    {
+        _saveSettingsEvent.OnEventRaised -= SaveSettings;
+        _loadLocation.OnLoadingRequested -= CacheLoadLocations;
+    }
 
-	public IEnumerator LoadSavedInventory()
-	{
-		_playerInventory.Items.Clear();
-		foreach (var serializedItemStack in saveData._itemStacks)
-		{
-			var loadItemOperationHandle = Addressables.LoadAssetAsync<ItemSO>(serializedItemStack.itemGuid);
-			yield return loadItemOperationHandle;
-			if (loadItemOperationHandle.Status == AsyncOperationStatus.Succeeded)
-			{
-				var itemSO = loadItemOperationHandle.Result;
-				_playerInventory.Add(itemSO, serializedItemStack.amount);
-			}
-		}
-	}
-	public void LoadSavedQuestlineStatus()
-	{
-		_questManagerSO.SetFinishedQuestlineItemsFromSave(saveData._finishedQuestlineItemsGUIds);
+    private void CacheLoadLocations(GameSceneSO locationToLoad, bool showLoadingScreen, bool fadeScreen)
+    {
+        var locationSO = locationToLoad as LocationSO;
+        if (locationSO)
+        {
+            saveData._locationId = locationSO.Guid;
+        }
 
-	}
+        SaveDataToDisk();
+    }
 
-	public void SaveDataToDisk()
-	{
-		saveData._itemStacks.Clear();
-		foreach (var itemStack in _playerInventory.Items)
-		{
-			saveData._itemStacks.Add(new SerializedItemStack(itemStack.Item.Guid, itemStack.Amount));
-		}
-		saveData._finishedQuestlineItemsGUIds.Clear();
+    public bool LoadSaveDataFromDisk()
+    {
+        if (FileManager.LoadFromFile(saveFilename, out var json))
+        {
+            saveData.LoadFromJson(json);
+            return true;
+        }
 
-		foreach (var item in _questManagerSO.GetFinishedQuestlineItemsGUIds())
-		{
-			saveData._finishedQuestlineItemsGUIds.Add(item);
+        return false;
+    }
 
-		}
-		if (FileManager.MoveFile(saveFilename, backupSaveFilename))
-		{
-			if (FileManager.WriteToFile(saveFilename, saveData.ToJson()))
-			{
-				//Debug.Log("Save successful " + saveFilename);
-			}
-		}
-	}
+    public IEnumerator LoadSavedInventory()
+    {
+        _playerInventory.Items.Clear();
+        foreach (var serializedItemStack in saveData._itemStacks)
+        {
+            var loadItemOperationHandle = Addressables.LoadAssetAsync<ItemSO>(serializedItemStack.itemGuid);
+            yield return loadItemOperationHandle;
+            if (loadItemOperationHandle.Status == AsyncOperationStatus.Succeeded)
+            {
+                var itemSO = loadItemOperationHandle.Result;
+                _playerInventory.Add(itemSO, serializedItemStack.amount);
+            }
+        }
+    }
 
-	public void WriteEmptySaveFile()
-	{
-		FileManager.WriteToFile(saveFilename, "");
+    public void LoadSavedQuestlineStatus()
+    {
+        _questManagerSO.SetFinishedQuestlineItemsFromSave(saveData._finishedQuestlineItemsGUIds);
+    }
 
-	}
-	public void SetNewGameData()
-	{
-		FileManager.WriteToFile(saveFilename, "");
-		_playerInventory.Init();
-		_questManagerSO.ResetQuestlines();
+    public void SaveDataToDisk()
+    {
+        saveData._itemStacks.Clear();
+        foreach (var itemStack in _playerInventory.Items)
+        {
+            saveData._itemStacks.Add(new SerializedItemStack(itemStack.Item.Guid, itemStack.Amount));
+        }
 
-		SaveDataToDisk();
+        saveData._finishedQuestlineItemsGUIds.Clear();
 
-	}
-	void SaveSettings()
-	{
-		saveData.SaveSettings(_currentSettings);
+        foreach (var item in _questManagerSO.GetFinishedQuestlineItemsGUIds())
+        {
+            saveData._finishedQuestlineItemsGUIds.Add(item);
+        }
 
-	}
+        if (FileManager.MoveFile(saveFilename, backupSaveFilename))
+        {
+            if (FileManager.WriteToFile(saveFilename, saveData.ToJson()))
+            {
+                //Debug.Log("Save successful " + saveFilename);
+            }
+        }
+    }
+
+    public void WriteEmptySaveFile()
+    {
+        FileManager.WriteToFile(saveFilename, "");
+    }
+
+    public void SetNewGameData()
+    {
+        FileManager.WriteToFile(saveFilename, "");
+        _playerInventory.Init();
+        _questManagerSO.ResetQuestlines();
+
+        SaveDataToDisk();
+    }
+
+    private void SaveSettings()
+    {
+        saveData.SaveSettings(_currentSettings);
+    }
 }

@@ -3,11 +3,12 @@ using UnityEngine.UI;
 
 public class UIInspectorPreview : MonoBehaviour
 {
-	[SerializeField] private Image _previewImage = default;
+    [SerializeField]
+    private Image _previewImage;
 
-	public void FillPreview(ItemSO ItemToInspect)
-	{
-		_previewImage.gameObject.SetActive(true);
-		_previewImage.sprite = ItemToInspect.PreviewImage;
-	}
+    public void FillPreview(ItemSO ItemToInspect)
+    {
+        _previewImage.gameObject.SetActive(true);
+        _previewImage.sprite = ItemToInspect.PreviewImage;
+    }
 }

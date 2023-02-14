@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b84f4bc4b345044ab04e6870e694ec, type: 3}
   m_Name: ToggleInteractUI
   m_EditorClassIdentifier: 
+  _guid: 818cc55cb05226248bdb15ace58eab84
+  description: 

@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b25fe696a2965f48a69cd134220132a,
         type: 3}
       propertyPath: m_Name
-      value: truffle1
+      value: Truffle1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b25fe696a2965f48a69cd134220132a, type: 3}

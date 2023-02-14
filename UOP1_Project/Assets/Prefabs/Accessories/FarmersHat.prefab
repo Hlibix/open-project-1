@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e5189daa3f02e546afb47a013311dfd,
         type: 3}
       propertyPath: m_Name
-      value: FarmersHat_Mesh
+      value: FarmersHat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e5189daa3f02e546afb47a013311dfd, type: 3}

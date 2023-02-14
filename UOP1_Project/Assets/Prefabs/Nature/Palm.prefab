@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2, y: 1.14, z: 0.12}
   m_LocalScale: {x: 0.8775017, y: 0.87750185, z: 0.8775017}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5988725094156418893}
   m_RootOrder: 0
@@ -49,20 +50,6 @@ LightProbeGroup:
   - {x: -1, y: -1, z: 1}
   - {x: -1, y: -1, z: -1}
   m_Dering: 1
---- !u!136 &6327167168166534666
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6365812865254385143}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.63165426
-  m_Height: 5.257102
-  m_Direction: 1
-  m_Center: {x: 0.049474474, y: 1.6177518, z: 0.21668543}
 --- !u!1001 &6095200721371945126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,15 +154,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 366a9c3464228e442829ef004ef20406, type: 3}
---- !u!1 &6365812865254385143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 366a9c3464228e442829ef004ef20406,
-    type: 3}
-  m_PrefabInstance: {fileID: 6095200721371945126}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5988725094156418893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 366a9c3464228e442829ef004ef20406,
     type: 3}
   m_PrefabInstance: {fileID: 6095200721371945126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6365812865254385143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 366a9c3464228e442829ef004ef20406,
+    type: 3}
+  m_PrefabInstance: {fileID: 6095200721371945126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &6327167168166534666
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365812865254385143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.63165426
+  m_Height: 5.257102
+  m_Direction: 1
+  m_Center: {x: 0.049474474, y: 1.6177518, z: 0.21668543}

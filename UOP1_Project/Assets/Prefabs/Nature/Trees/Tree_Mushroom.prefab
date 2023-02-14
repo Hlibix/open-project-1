@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 2.458, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8271441551491845698}
   m_RootOrder: 1
@@ -47,20 +48,6 @@ LightProbeGroup:
   - {x: -1.2663637, y: 1.0000002, z: -0.6625904}
   - {x: -0.955163, y: -0.99999976, z: 0.29237896}
   m_Dering: 1
---- !u!136 &40470853242200050
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8755491257471702264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.31
-  m_Height: 3.46
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.55, z: 0}
 --- !u!1 &9201311995933557795
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +75,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 5.19, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8271441551491845698}
   m_RootOrder: 0
@@ -204,15 +192,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23d0d9d63e18d7b49b634970d337728e, type: 3}
---- !u!1 &8755491257471702264 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23d0d9d63e18d7b49b634970d337728e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8448938963756820905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8271441551491845698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23d0d9d63e18d7b49b634970d337728e,
     type: 3}
   m_PrefabInstance: {fileID: 8448938963756820905}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8755491257471702264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23d0d9d63e18d7b49b634970d337728e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8448938963756820905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &40470853242200050
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755491257471702264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.31
+  m_Height: 3.46
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.55, z: 0}

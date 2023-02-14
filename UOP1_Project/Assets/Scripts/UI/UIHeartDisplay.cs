@@ -3,38 +3,44 @@ using UnityEngine.UI;
 
 public class UIHeartDisplay : MonoBehaviour
 {
-	[SerializeField] Image _slidingImage = default;
-	[SerializeField] Image _combatBackgroundImage = default;
-	[SerializeField] Image _backgroundImage = default;
+    [SerializeField]
+    private Image _slidingImage;
 
-	[Header("Listening on")]
-	[SerializeField] BoolEventChannelSO _combatStateEvent = default;
+    [SerializeField]
+    private Image _combatBackgroundImage;
 
-	private void OnEnable()
-	{
-		_combatStateEvent.OnEventRaised += OnCombatState;
-	}
+    [SerializeField]
+    private Image _backgroundImage;
 
-	private void OnDisable()
-	{
-		_combatStateEvent.OnEventRaised -= OnCombatState;
-	}
+    [Header("Listening on")]
+    [SerializeField]
+    private BoolEventChannelSO _combatStateEvent;
 
-	public void SetImage(float percent)
-	{
-		_slidingImage.fillAmount = percent;
-		if (percent == 0f)
-		{
-			_backgroundImage.color = new Color(_backgroundImage.color.r, _backgroundImage.color.g, _backgroundImage.color.b, 0.5f);
-		}
-		else
-		{
-			_backgroundImage.color = new Color(_backgroundImage.color.r, _backgroundImage.color.g, _backgroundImage.color.b, 1f);
-		}
-	}
+    private void OnEnable()
+    {
+        _combatStateEvent.OnEventRaised += OnCombatState;
+    }
 
-	private void OnCombatState(bool isCombat)
-	{
-		_combatBackgroundImage.gameObject.SetActive(isCombat);
-	}
+    private void OnDisable()
+    {
+        _combatStateEvent.OnEventRaised -= OnCombatState;
+    }
+
+    public void SetImage(float percent)
+    {
+        _slidingImage.fillAmount = percent;
+        if (percent == 0f)
+        {
+            _backgroundImage.color = new Color(_backgroundImage.color.r, _backgroundImage.color.g, _backgroundImage.color.b, 0.5f);
+        }
+        else
+        {
+            _backgroundImage.color = new Color(_backgroundImage.color.r, _backgroundImage.color.g, _backgroundImage.color.b, 1f);
+        }
+    }
+
+    private void OnCombatState(bool isCombat)
+    {
+        _combatBackgroundImage.gameObject.SetActive(isCombat);
+    }
 }

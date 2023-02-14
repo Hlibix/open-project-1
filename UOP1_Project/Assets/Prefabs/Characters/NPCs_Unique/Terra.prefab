@@ -126,15 +126,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc, type: 3}
---- !u!4 &5170614906581443776 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4791752713856532138, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 413785156488190570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &73788684756820526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 340066863227697220, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 413785156488190570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5170614906581443776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4791752713856532138, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
     type: 3}
   m_PrefabInstance: {fileID: 413785156488190570}
   m_PrefabAsset: {fileID: 0}

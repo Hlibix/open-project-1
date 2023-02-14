@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4585732659330003882}
   - {fileID: 5481587251379296565}
@@ -117,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 1314178189447185328, guid: 7f3c311f1ca46334ab26b1adfc5be02f,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7781904
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2723178623857253410, guid: 7f3c311f1ca46334ab26b1adfc5be02f,
         type: 3}

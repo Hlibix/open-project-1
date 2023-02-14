@@ -13,43 +13,64 @@ MonoBehaviour:
   m_Name: CUT-WIN
   m_EditorClassIdentifier: 
   _lines:
-  - _actorID: 0
+  - _actorID: 5
     _textList:
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L1-D1-CUT-TOWN
+        m_Key: L1-D1-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L2-D1-CUT-TOWN
+        m_Key: L2-D1-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L3-D1-CUT-TOWN
+        m_Key: L3-D1-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L4-D1-CUT-TOWN
+        m_Key: L4-D1-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L5-D1-CUT-TOWN
+        m_Key: L5-D1-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: Questline Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: L6-D1-CUT-WIN
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: Questline Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: L7-D1-CUT-WIN
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   - _actorID: 1
     _textList:
@@ -57,46 +78,56 @@ MonoBehaviour:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L1-D2-CUT-TOWN
+        m_Key: L1-D2-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
-  - _actorID: 0
+  - _actorID: 5
     _textList:
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L1-D3-CUT-TOWN
+        m_Key: L1-D3-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L2-D3-CUT-TOWN
+        m_Key: L2-D3-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
-    _choices: []
-  - _actorID: 1
-    _textList:
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L1-D4-CUT-TOWN
+        m_Key: L3-D3-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
-    _choices: []
-  - _actorID: 0
-    _textList:
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L1-D5-CUT-TOWN
+        m_Key: L4-D3-CUT-WIN
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: Questline Dialogue
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: L5-D3-CUT-WIN
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

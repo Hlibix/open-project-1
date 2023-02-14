@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: OnSceneFadeInFinished
   m_EditorClassIdentifier: 
+  _guid: 6e8dd814d5b45bc43bf37a03e1ac9fa8
   description: Raised when a new scene has been loaded, and the fade in animation
     is complete

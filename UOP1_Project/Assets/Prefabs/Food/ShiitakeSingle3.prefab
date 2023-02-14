@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 24cac3d7e33c1994d9d0e07ebace19be,
         type: 3}
       propertyPath: m_Name
-      value: shiitakeSingle3
+      value: ShiitakeSingle3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24cac3d7e33c1994d9d0e07ebace19be, type: 3}

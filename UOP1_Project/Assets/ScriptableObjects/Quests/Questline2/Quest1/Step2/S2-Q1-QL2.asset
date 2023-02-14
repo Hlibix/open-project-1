@@ -23,5 +23,6 @@ MonoBehaviour:
   _item: {fileID: 11400000, guid: 3e353820f321eb9469633db094e0c048, type: 2}
   _hasReward: 0
   _rewardItem: {fileID: 0}
+  _rewardItemCount: 1
   _isDone: 0
   _endStepEvent: {fileID: 0}

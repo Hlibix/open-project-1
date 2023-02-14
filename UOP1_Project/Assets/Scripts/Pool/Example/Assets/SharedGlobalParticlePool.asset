@@ -13,4 +13,3 @@ MonoBehaviour:
   m_Name: SharedGlobalParticlePool
   m_EditorClassIdentifier: 
   _factory: {fileID: 11400000, guid: ca185e564147672458eeabb1f9080925, type: 2}
-  _initialPoolSize: 5

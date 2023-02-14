@@ -1,100 +1,116 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Localization;
 using UnityEngine.Playables;
 
 public class CutsceneManager : MonoBehaviour
 {
-	[SerializeField] private DialogueManager _dialogueManager = default;
-	[SerializeField] private InputReader _inputReader = default;
-	[SerializeField] private GameStateSO _gameState = default;
+    [SerializeField]
+    private DialogueManager _dialogueManager;
 
-	[Header("Listening on")]
-	[SerializeField] private PlayableDirectorChannelSO _playCutsceneEvent = default;
-	[SerializeField] public DialogueLineChannelSO _playDialogueEvent = default;
-	[SerializeField] public VoidEventChannelSO _pauseTimelineEvent = default;
-	[SerializeField] public VoidEventChannelSO _onLineEndedEvent = default;
+    [SerializeField]
+    private InputReader _inputReader;
 
-	private PlayableDirector _activePlayableDirector;
-	private bool _isPaused;
+    [SerializeField]
+    private GameStateSO _gameState;
 
-	bool IsCutscenePlaying => _activePlayableDirector.playableGraph.GetRootPlayable(0).GetSpeed() != 0d;
+    [Header("Listening on")]
+    [SerializeField]
+    private PlayableDirectorChannelSO _playCutsceneEvent;
 
-	private void OnEnable()
-	{
-		_inputReader.AdvanceDialogueEvent += OnAdvance;
-	}
+    [SerializeField]
+    public DialogueLineChannelSO _playDialogueEvent;
 
-	private void OnDisable()
-	{
-		_inputReader.AdvanceDialogueEvent -= OnAdvance;
-	}
+    [SerializeField]
+    public VoidEventChannelSO _pauseTimelineEvent;
 
-	private void Start()
-	{
-		_playCutsceneEvent.OnEventRaised += PlayCutscene;
-		_playDialogueEvent.OnEventRaised += PlayDialogueFromClip;
-		_pauseTimelineEvent.OnEventRaised += PauseTimeline;
-		_onLineEndedEvent.OnEventRaised += LineEnded ;
-	}
+    [SerializeField]
+    public VoidEventChannelSO _onLineEndedEvent;
 
-	void PlayCutscene(PlayableDirector activePlayableDirector)
-	{
-		_inputReader.EnableDialogueInput();
-		_gameState.UpdateGameState(GameState.Cutscene);
-		_activePlayableDirector = activePlayableDirector;
+    private PlayableDirector _activePlayableDirector;
+    private bool             _isPaused;
 
-		_isPaused = false;
-		_activePlayableDirector.Play();
-		_activePlayableDirector.stopped += HandleDirectorStopped;
-	}
+    private bool IsCutscenePlaying => _activePlayableDirector.playableGraph.GetRootPlayable(0).GetSpeed() != 0d;
 
-	void CutsceneEnded()
-	{
-		if (_activePlayableDirector != null)
-			_activePlayableDirector.stopped -= HandleDirectorStopped;
+    private void OnEnable()
+    {
+        _inputReader.AdvanceDialogueEvent += OnAdvance;
+    }
 
-		_gameState.UpdateGameState(GameState.Gameplay);
-		_inputReader.EnableGameplayInput();
-		_dialogueManager.CutsceneDialogueEnded();
-	}
+    private void OnDisable()
+    {
+        _inputReader.AdvanceDialogueEvent -= OnAdvance;
+    }
 
-	public void LineEnded()
-	{
-		_dialogueManager.CutsceneDialogueEnded();
-	}
+    private void Start()
+    {
+        _playCutsceneEvent.OnEventRaised  += PlayCutscene;
+        _playDialogueEvent.OnEventRaised  += PlayDialogueFromClip;
+        _pauseTimelineEvent.OnEventRaised += PauseTimeline;
+        _onLineEndedEvent.OnEventRaised   += LineEnded;
+    }
 
-	private void HandleDirectorStopped(PlayableDirector director) => CutsceneEnded();
+    private void PlayCutscene(PlayableDirector activePlayableDirector)
+    {
+        _inputReader.EnableDialogueInput();
+        _gameState.UpdateGameState(GameState.Cutscene);
+        _activePlayableDirector = activePlayableDirector;
 
-	void PlayDialogueFromClip(LocalizedString dialogueLine, ActorSO actor)
-	{
-		_dialogueManager.DisplayDialogueLine(dialogueLine, actor);
-	}
+        _isPaused = false;
+        _activePlayableDirector.Play();
+        _activePlayableDirector.stopped += HandleDirectorStopped;
+    }
 
-	/// <summary>
-	/// This callback is executed when the player presses the button to advance dialogues. If the Timeline is currently paused due to a <c>DialogueControlClip</c>, it will resume its playback.
-	/// </summary>
-	private void OnAdvance()
-	{
-		if (_isPaused)
-		{
-			ResumeTimeline();
-			LineEnded();
-		}
-	}
+    private void CutsceneEnded()
+    {
+        if (_activePlayableDirector != null)
+        {
+            _activePlayableDirector.stopped -= HandleDirectorStopped;
+        }
 
-	/// <summary>
-	/// Called by <c>DialogueControlClip</c> on the Timeline.
-	/// </summary>
-	void PauseTimeline()
-	{
-		_isPaused = true;
-		_activePlayableDirector.playableGraph.GetRootPlayable(0).SetSpeed(0);
-	}
+        _gameState.UpdateGameState(GameState.Gameplay);
+        _inputReader.EnableGameplayInput();
+        _dialogueManager.CutsceneDialogueEnded();
+    }
 
-	void ResumeTimeline()
-	{
-		_isPaused = false;
-		_activePlayableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
-	}
+    public void LineEnded()
+    {
+        _dialogueManager.CutsceneDialogueEnded();
+    }
+
+    private void HandleDirectorStopped(PlayableDirector director)
+    {
+        CutsceneEnded();
+    }
+
+    private void PlayDialogueFromClip(LocalizedString dialogueLine, ActorSO actor)
+    {
+        _dialogueManager.DisplayDialogueLine(dialogueLine, actor);
+    }
+
+    /// <summary>
+    /// This callback is executed when the player presses the button to advance dialogues. If the Timeline is currently paused due to a <c>DialogueControlClip</c>, it will resume its playback.
+    /// </summary>
+    private void OnAdvance()
+    {
+        if (_isPaused)
+        {
+            ResumeTimeline();
+            LineEnded();
+        }
+    }
+
+    /// <summary>
+    /// Called by <c>DialogueControlClip</c> on the Timeline.
+    /// </summary>
+    private void PauseTimeline()
+    {
+        _isPaused = true;
+        _activePlayableDirector.playableGraph.GetRootPlayable(0).SetSpeed(0);
+    }
+
+    private void ResumeTimeline()
+    {
+        _isPaused = false;
+        _activePlayableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
+    }
 }

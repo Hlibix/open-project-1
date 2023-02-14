@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b8faf3c652eb74786b6fd69e28e7f3, type: 3}
   m_Name: StartTalking
   m_EditorClassIdentifier: 
+  _guid: bff3df361fa61684386f84b5b062875a
+  description: 

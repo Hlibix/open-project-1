@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696142ab7e0adf0478f66a5c9e06a168, type: 3}
   m_Name: EndDialogueEventWithType
   m_EditorClassIdentifier: 
+  _guid: 42c4c250df06bf84b97d11a23c36d47c
   description: "When a dialogue is over. Also passes the Dialogue type as int. \nDialogue
     type is needed in the QuestManager"

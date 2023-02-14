@@ -2,55 +2,62 @@ using UnityEngine;
 
 public class UIHealthBarManager : MonoBehaviour
 {
-	[SerializeField] private HealthSO _protagonistHealth = default; //the HealthBar is watching this object, which is the health of the player
-	[SerializeField] private HealthConfigSO _healthConfig = default;
-	[SerializeField] private UIHeartDisplay[] _heartImages = default;
+    [SerializeField]
+    private HealthSO _protagonistHealth; //the HealthBar is watching this object, which is the health of the player
 
-	[Header("Listening to")]
-	[SerializeField] private VoidEventChannelSO _UIUpdateNeeded = default; //The player's Damageable issues this
+    [SerializeField]
+    private HealthConfigSO _healthConfig;
 
-	private void OnEnable()
-	{
-		_UIUpdateNeeded.OnEventRaised += UpdateHeartImages;
-		
-		InitializeHealthBar();
-	}
+    [SerializeField]
+    private UIHeartDisplay[] _heartImages;
 
-	private void OnDestroy()
-	{
-		_UIUpdateNeeded.OnEventRaised -= UpdateHeartImages;
-	}
+    [Header("Listening to")]
+    [SerializeField]
+    private VoidEventChannelSO _UIUpdateNeeded; //The player's Damageable issues this
 
-	private void InitializeHealthBar()
-	{
-		_protagonistHealth.SetMaxHealth(_healthConfig.InitialHealth);
-		_protagonistHealth.SetCurrentHealth(_healthConfig.InitialHealth);
+    private void OnEnable()
+    {
+        _UIUpdateNeeded.OnEventRaised += UpdateHeartImages;
 
-		UpdateHeartImages();
-	}
+        InitializeHealthBar();
+    }
 
-	private void UpdateHeartImages()
-	{
-		int heartValue = _protagonistHealth.MaxHealth / _heartImages.Length;
-		int filledHeartCount = Mathf.FloorToInt((float)_protagonistHealth.CurrentHealth / heartValue);
+    private void OnDestroy()
+    {
+        _UIUpdateNeeded.OnEventRaised -= UpdateHeartImages;
+    }
 
-		for (int i = 0; i < _heartImages.Length; i++)
-		{
-			float heartPercent = 0;
+    private void InitializeHealthBar()
+    {
+        _protagonistHealth.SetMaxHealth(_healthConfig.InitialHealth);
+        _protagonistHealth.SetCurrentHealth(_healthConfig.InitialHealth);
 
-			if (i < filledHeartCount)
-			{
-				heartPercent = 1;
-			}
-			else if (i == filledHeartCount)
-			{
-				heartPercent = ((float)_protagonistHealth.CurrentHealth - (float)filledHeartCount * (float)heartValue) / (float)heartValue;
-			}
-			else
-			{
-				heartPercent = 0;
-			}
-			_heartImages[i].SetImage(heartPercent);
-		}
-	}
+        UpdateHeartImages();
+    }
+
+    private void UpdateHeartImages()
+    {
+        var heartValue       = _protagonistHealth.MaxHealth / _heartImages.Length;
+        var filledHeartCount = Mathf.FloorToInt((float)_protagonistHealth.CurrentHealth / heartValue);
+
+        for (var i = 0; i < _heartImages.Length; i++)
+        {
+            float heartPercent = 0;
+
+            if (i < filledHeartCount)
+            {
+                heartPercent = 1;
+            }
+            else if (i == filledHeartCount)
+            {
+                heartPercent = (_protagonistHealth.CurrentHealth - filledHeartCount * (float)heartValue) / heartValue;
+            }
+            else
+            {
+                heartPercent = 0;
+            }
+
+            _heartImages[i].SetImage(heartPercent);
+        }
+    }
 }

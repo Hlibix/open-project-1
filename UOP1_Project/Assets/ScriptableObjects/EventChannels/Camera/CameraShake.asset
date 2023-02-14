@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: CameraShake
   m_EditorClassIdentifier: 
+  _guid: 3d8e5223e1e74274cbb375151106b21e
   description: Event used to request a camera shake to the CameraManager. Usually
     fired during combat.

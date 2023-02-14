@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328f86ed7da1df347bc31dc7579a4276, type: 3}
   m_Name: RewardItemEvent
   m_EditorClassIdentifier: 
+  _guid: adbab396c0719094cb093a5c0f710083
+  description: 

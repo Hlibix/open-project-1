@@ -28,3 +28,8 @@ MonoBehaviour:
       m_KeyId: 10467926016
       m_Key: 
     m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

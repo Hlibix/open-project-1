@@ -5,5 +5,6 @@
 /// </summary>
 public class DescriptionBaseSO : SerializableScriptableObject
 {
-	[TextArea] public string description;
+    [TextArea]
+    public string description;
 }

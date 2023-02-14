@@ -20,5 +20,9 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
+    m_LocalVariables: []
   _interactionIcon: {fileID: 21300000, guid: 886b98961950b934892be8fd5c7daeb1, type: 3}
   _interactionType: 3
+  references:
+    version: 2
+    RefIds: []

@@ -1,52 +1,62 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Localization.Components;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 
 public class UIDialogueManager : MonoBehaviour
 {
-	[SerializeField] private LocalizeStringEvent _lineText = default;
-	[SerializeField] private LocalizeStringEvent _actorNameText = default;
-	[SerializeField] private GameObject _actorNamePanel = default;
-	[SerializeField] private GameObject _mainProtagonistNamePanel = default;
-	[SerializeField] private UIDialogueChoicesManager _choicesManager = default;
+    [SerializeField]
+    private LocalizeStringEvent _lineText;
 
-	[Header("Listening to")]
-	[SerializeField] private DialogueChoicesChannelSO _showChoicesEvent = default;
+    [SerializeField]
+    private LocalizeStringEvent _actorNameText;
 
-	private void OnEnable()
-	{
-		_showChoicesEvent.OnEventRaised += ShowChoices;
-	}
+    [SerializeField]
+    private GameObject _actorNamePanel;
 
-	private void OnDisable()
-	{
-		_showChoicesEvent.OnEventRaised -= ShowChoices;
-	}
+    [SerializeField]
+    private GameObject _mainProtagonistNamePanel;
 
-	public void SetDialogue(LocalizedString dialogueLine, ActorSO actor, bool isMainProtagonist)
-	{
-		_choicesManager.gameObject.SetActive(false);
-		_lineText.StringReference = dialogueLine;
+    [SerializeField]
+    private UIDialogueChoicesManager _choicesManager;
 
-		_actorNamePanel.SetActive(!isMainProtagonist);
-		_mainProtagonistNamePanel.SetActive(isMainProtagonist);
+    [Header("Listening to")]
+    [SerializeField]
+    private DialogueChoicesChannelSO _showChoicesEvent;
 
-		if (!isMainProtagonist)
-		{
-			_actorNameText.StringReference = actor.ActorName;
-		}
-		//Protagonist's LocalisedString is provided on the GameObject already
-	}
+    private void OnEnable()
+    {
+        _showChoicesEvent.OnEventRaised += ShowChoices;
+    }
 
-	private void ShowChoices(List<Choice> choices)
-	{
-		_choicesManager.FillChoices(choices);
-		_choicesManager.gameObject.SetActive(true);
-	}
+    private void OnDisable()
+    {
+        _showChoicesEvent.OnEventRaised -= ShowChoices;
+    }
 
-	private void HideChoices()
-	{
-		_choicesManager.gameObject.SetActive(false);
-	}
+    public void SetDialogue(LocalizedString dialogueLine, ActorSO actor, bool isMainProtagonist)
+    {
+        _choicesManager.gameObject.SetActive(false);
+        _lineText.StringReference = dialogueLine;
+
+        _actorNamePanel.SetActive(!isMainProtagonist);
+        _mainProtagonistNamePanel.SetActive(isMainProtagonist);
+
+        if (!isMainProtagonist)
+        {
+            _actorNameText.StringReference = actor.ActorName;
+        }
+        //Protagonist's LocalisedString is provided on the GameObject already
+    }
+
+    private void ShowChoices(List<Choice> choices)
+    {
+        _choicesManager.FillChoices(choices);
+        _choicesManager.gameObject.SetActive(true);
+    }
+
+    private void HideChoices()
+    {
+        _choicesManager.gameObject.SetActive(false);
+    }
 }

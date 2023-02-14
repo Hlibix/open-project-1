@@ -19,6 +19,8 @@ MonoBehaviour:
     m_AssetGUID: 1e57caa7d7ed5e24a88cb3b5c309cc65
     m_SubObjectName: 
     m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  musicTrack: {fileID: 11400000, guid: cdd30f7c64c86384dae627b738e83219, type: 2}
   locationName:
     m_TableReference:
       m_TableCollectionName: 
@@ -26,4 +28,8 @@ MonoBehaviour:
       m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
-  musicTrack: {fileID: 11400000, guid: cdd30f7c64c86384dae627b738e83219, type: 2}
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

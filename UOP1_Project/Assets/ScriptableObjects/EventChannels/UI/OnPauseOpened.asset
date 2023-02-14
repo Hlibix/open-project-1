@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3177d113f09ae42448cde1e1a5067d4f, type: 3}
   m_Name: OnPauseOpened
   m_EditorClassIdentifier: 
+  _guid: 995da9391d4589044a8819eeb09bab8f
+  description: 

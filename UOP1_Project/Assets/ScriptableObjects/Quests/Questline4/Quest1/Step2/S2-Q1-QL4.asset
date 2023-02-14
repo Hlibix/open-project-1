@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4c03cb18bdd224b898e0687da8d1ac, type: 3}
   m_Name: S2-Q1-QL4
   m_EditorClassIdentifier: 
+  _guid: a1a09a15ed704b84b95d9b2adf8b88d2
   _actor: {fileID: 11400000, guid: f69d689cc127a104ba12b6a06cad8bf8, type: 2}
   _dialogueBeforeStep: {fileID: 11400000, guid: 342b24589d582414b84a3e46979e7590,
     type: 2}
   _completeDialogue: {fileID: 0}
   _incompleteDialogue: {fileID: 0}
-  _item: {fileID: 0}
   _type: 0
+  _item: {fileID: 0}
+  _hasReward: 0
+  _rewardItem: {fileID: 0}
+  _rewardItemCount: 1
   _isDone: 0
   _endStepEvent: {fileID: 0}

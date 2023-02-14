@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!136 &5763093036326101138
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423563900143973161}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.06
-  m_Height: 2.989922
-  m_Direction: 1
-  m_Center: {x: -0.0000036451975, y: 1.2912047, z: 0.000003537164}
 --- !u!1 &2449851371743741885
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6346734023774400751}
   m_RootOrder: 1
@@ -89,6 +76,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1768317611803077011}
   - {fileID: 1533308612136559237}
@@ -205,6 +193,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2234042712761011832}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &5763093036326101138
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423563900143973161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.06
+  m_Height: 2.989922
+  m_Direction: 1
+  m_Center: {x: -0.0000036451975, y: 1.2912047, z: 0.000003537164}
 --- !u!4 &1768317611803077011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f15ce5b4526f5e74e9108f5cb04351dd,

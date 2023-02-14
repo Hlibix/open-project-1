@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eabf0d1b44567046bb98dff8a1cd7ac, type: 3}
   m_Name: Initialization
   m_EditorClassIdentifier: 
+  _guid: abfc6b5ef9fe68048bae8ffe84afa7a0
   description: The scene from where the game starts and it is responsible for loading
     PersistentManagers scene and raises the event to load the main menu.
   sceneType: 2
@@ -19,3 +20,5 @@ MonoBehaviour:
     m_AssetGUID: e8df4c5a458acc5489b2865e6b789224
     m_SubObjectName: 
     m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  musicTrack: {fileID: 0}

@@ -3,56 +3,64 @@ using UnityEngine.Events;
 
 public class UIPause : MonoBehaviour
 {
-	[SerializeField] private InputReader _inputReader = default;
-	[SerializeField] private UIGenericButton _resumeButton = default;
-	[SerializeField] private UIGenericButton _settingsButton = default;
-	[SerializeField] private UIGenericButton _backToMenuButton = default;
+    [SerializeField]
+    private InputReader _inputReader;
 
-	[Header("Listening to")]
-	[SerializeField] private BoolEventChannelSO _onPauseOpened = default;
+    [SerializeField]
+    private UIGenericButton _resumeButton;
 
-	public event UnityAction Resumed = default;
-	public event UnityAction SettingsScreenOpened = default;
-	public event UnityAction BackToMainRequested = default;
+    [SerializeField]
+    private UIGenericButton _settingsButton;
 
-	private void OnEnable()
-	{
-		_onPauseOpened.RaiseEvent(true);
+    [SerializeField]
+    private UIGenericButton _backToMenuButton;
 
-		_resumeButton.SetButton(true);
-		_inputReader.MenuCloseEvent += Resume;
-		_resumeButton.Clicked += Resume;
-		_settingsButton.Clicked += OpenSettingsScreen;
-		_backToMenuButton.Clicked += BackToMainMenuConfirmation;
-	}
+    [Header("Listening to")]
+    [SerializeField]
+    private BoolEventChannelSO _onPauseOpened;
 
-	private void OnDisable()
-	{
-		_onPauseOpened.RaiseEvent(false);
-		
-		_inputReader.MenuCloseEvent -= Resume;
-		_resumeButton.Clicked -= Resume;
-		_settingsButton.Clicked -= OpenSettingsScreen;
-		_backToMenuButton.Clicked -= BackToMainMenuConfirmation;
-	}
+    public event UnityAction Resumed;
+    public event UnityAction SettingsScreenOpened;
+    public event UnityAction BackToMainRequested;
 
-	void Resume()
-	{
-		Resumed.Invoke();
-	}
+    private void OnEnable()
+    {
+        _onPauseOpened.RaiseEvent(true);
 
-	void OpenSettingsScreen()
-	{
-		SettingsScreenOpened.Invoke();
-	}
+        _resumeButton.SetButton(true);
+        _inputReader.MenuCloseEvent += Resume;
+        _resumeButton.Clicked       += Resume;
+        _settingsButton.Clicked     += OpenSettingsScreen;
+        _backToMenuButton.Clicked   += BackToMainMenuConfirmation;
+    }
 
-	void BackToMainMenuConfirmation()
-	{
-		BackToMainRequested.Invoke();
-	}
+    private void OnDisable()
+    {
+        _onPauseOpened.RaiseEvent(false);
 
-	public void CloseScreen()
-	{
-		Resumed.Invoke();
-	}
+        _inputReader.MenuCloseEvent -= Resume;
+        _resumeButton.Clicked       -= Resume;
+        _settingsButton.Clicked     -= OpenSettingsScreen;
+        _backToMenuButton.Clicked   -= BackToMainMenuConfirmation;
+    }
+
+    private void Resume()
+    {
+        Resumed.Invoke();
+    }
+
+    private void OpenSettingsScreen()
+    {
+        SettingsScreenOpened.Invoke();
+    }
+
+    private void BackToMainMenuConfirmation()
+    {
+        BackToMainRequested.Invoke();
+    }
+
+    public void CloseScreen()
+    {
+        Resumed.Invoke();
+    }
 }

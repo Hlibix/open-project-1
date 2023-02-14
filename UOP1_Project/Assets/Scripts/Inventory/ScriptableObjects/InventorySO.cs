@@ -7,118 +7,127 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Inventory", menuName = "Inventory/Inventory")]
 public class InventorySO : ScriptableObject
 {
-	[Tooltip("The collection of items and their quantities.")]
-	[SerializeField] private List<ItemStack> _items = new List<ItemStack>();
-	[SerializeField] private List<ItemStack> _defaultItems = new List<ItemStack>();
-	
-	public List<ItemStack> Items => _items;
+    [Tooltip("The collection of items and their quantities.")]
+    [SerializeField]
+    private List<ItemStack> _items = new();
 
-	public void Init()
-	{
-		if (_items == null)
-		{
-			_items = new List<ItemStack>();
-		}
-		_items.Clear();
-		foreach (ItemStack item in _defaultItems)
-		{
-			_items.Add(new ItemStack(item));
-		}
-	}
+    [SerializeField]
+    private List<ItemStack> _defaultItems = new();
 
-	public void Add(ItemSO item, int count = 1)
-	{
-		if (count <= 0)
-			return;
+    public List<ItemStack> Items => _items;
 
-		for (int i = 0; i < _items.Count; i++)
-		{
-			ItemStack currentItemStack = _items[i];
-			if (item == currentItemStack.Item)
-			{
-				//only add to the amount if the item is usable 
-				if (currentItemStack.Item.ItemType.ActionType == ItemInventoryActionType.Use)
-				{
-					currentItemStack.Amount += count;
-				}
+    public void Init()
+    {
+        if (_items == null)
+        {
+            _items = new List<ItemStack>();
+        }
 
-				return;
-			}
-		}
+        _items.Clear();
+        foreach (var item in _defaultItems)
+        {
+            _items.Add(new ItemStack(item));
+        }
+    }
 
-		_items.Add(new ItemStack(item, count));
-	}
+    public void Add(ItemSO item, int count = 1)
+    {
+        if (count <= 0)
+        {
+            return;
+        }
 
-	public void Remove(ItemSO item, int count = 1)
-	{
-		if (count <= 0)
-			return;
+        for (var i = 0; i < _items.Count; i++)
+        {
+            var currentItemStack = _items[i];
+            if (item == currentItemStack.Item)
+            {
+                //only add to the amount if the item is usable
+                if (currentItemStack.Item.ItemType.ActionType == ItemInventoryActionType.Use)
+                {
+                    currentItemStack.Amount += count;
+                }
 
-		for (int i = 0; i < _items.Count; i++)
-		{
-			ItemStack currentItemStack = _items[i];
+                return;
+            }
+        }
 
-			if (currentItemStack.Item == item)
-			{
-				currentItemStack.Amount -= count;
+        _items.Add(new ItemStack(item, count));
+    }
 
-				if (currentItemStack.Amount <= 0)
-					_items.Remove(currentItemStack);
+    public void Remove(ItemSO item, int count = 1)
+    {
+        if (count <= 0)
+        {
+            return;
+        }
 
-				return;
-			}
-		}
-	}
+        for (var i = 0; i < _items.Count; i++)
+        {
+            var currentItemStack = _items[i];
 
-	public bool Contains(ItemSO item)
-	{
-		for (int i = 0; i < _items.Count; i++)
-		{
-			if (item == _items[i].Item)
-			{
-				return true;
-			}
-		}
+            if (currentItemStack.Item == item)
+            {
+                currentItemStack.Amount -= count;
 
-		return false;
-	}
+                if (currentItemStack.Amount <= 0)
+                {
+                    _items.Remove(currentItemStack);
+                }
 
-	public int Count(ItemSO item)
-	{
-		for (int i = 0; i < _items.Count; i++)
-		{
-			ItemStack currentItemStack = _items[i];
-			if (item == currentItemStack.Item)
-			{
-				return currentItemStack.Amount;
-			}
-		}
+                return;
+            }
+        }
+    }
 
-		return 0;
-	}
+    public bool Contains(ItemSO item)
+    {
+        for (var i = 0; i < _items.Count; i++)
+        {
+            if (item == _items[i].Item)
+            {
+                return true;
+            }
+        }
 
-	public bool[] IngredientsAvailability(List<ItemStack> ingredients)
-	{
-		if (ingredients == null)
-			return null;
-		bool[] availabilityArray = new bool[ingredients.Count];
+        return false;
+    }
 
-		for (int i = 0; i < ingredients.Count; i++)
-		{
-			availabilityArray[i] = _items.Exists(o => o.Item == ingredients[i].Item && o.Amount >= ingredients[i].Amount);
+    public int Count(ItemSO item)
+    {
+        for (var i = 0; i < _items.Count; i++)
+        {
+            var currentItemStack = _items[i];
+            if (item == currentItemStack.Item)
+            {
+                return currentItemStack.Amount;
+            }
+        }
 
-		}
-		return availabilityArray;
+        return 0;
+    }
 
+    public bool[] IngredientsAvailability(List<ItemStack> ingredients)
+    {
+        if (ingredients == null)
+        {
+            return null;
+        }
 
-	}
-	public bool hasIngredients(List<ItemStack> ingredients)
-	{
+        var availabilityArray = new bool[ingredients.Count];
 
-		bool hasIngredients = !ingredients.Exists(j => !_items.Exists(o => o.Item == j.Item && o.Amount >= j.Amount));
+        for (var i = 0; i < ingredients.Count; i++)
+        {
+            availabilityArray[i] = _items.Exists(o => o.Item == ingredients[i].Item && o.Amount >= ingredients[i].Amount);
+        }
 
-		return hasIngredients;
+        return availabilityArray;
+    }
 
+    public bool hasIngredients(List<ItemStack> ingredients)
+    {
+        var hasIngredients = !ingredients.Exists(j => !_items.Exists(o => o.Item == j.Item && o.Amount >= j.Amount));
 
-	}
+        return hasIngredients;
+    }
 }

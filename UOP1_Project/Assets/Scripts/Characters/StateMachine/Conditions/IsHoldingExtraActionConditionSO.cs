@@ -9,28 +9,30 @@ public class IsHoldingExtraActionConditionSO : StateConditionSO<IsHoldingExtraAc
 
 public class IsHoldingExtraActionCondition : Condition
 {
-	//Component references
-	private Protagonist _protagonistScript;
+   //Component references
+ private Protagonist _protagonistScript;
 
-	public override void Awake(StateMachine stateMachine)
-	{
-		_protagonistScript = stateMachine.GetComponent<Protagonist>();
-	}
+   public override void Awake(StateMachine stateMachine)
+  {
+      _protagonistScript = stateMachine.GetComponent<Protagonist>();
+ }
 
-	protected override bool Statement()
-	{
-		if (_protagonistScript.extraActionInput)
-		{
-			// Consume the input
-			_protagonistScript.extraActionInput = false;
+ protected override bool Statement()
+    {
+      if (_protagonistScript.extraActionInput)
+       {
+          // Consume the input
+           _protagonistScript.extraActionInput = false;
 
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
+          return true;
+       }
+      else
+       {
+          return false;
+      }
+  }
 }
 
 */
+
+

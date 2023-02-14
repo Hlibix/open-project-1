@@ -6,85 +6,98 @@ using UnityEngine.Events;
 [System.Serializable]
 public class CreditsList
 {
-	public List<ContributerProfile> Contributors = new List<ContributerProfile>();
+    public List<ContributerProfile> Contributors = new();
 }
 
 [System.Serializable]
 public class ContributerProfile
 {
-	public string Name;
-	public string Contribution;
-	public override string ToString()
-	{
-		return Name + " - " + Contribution;
-	}
+    public string Name;
+    public string Contribution;
+
+    public override string ToString()
+    {
+        return Name + " - " + Contribution;
+    }
 }
 
 public class UICredits : MonoBehaviour
 {
-	public UnityAction OnCloseCredits;
+    public UnityAction OnCloseCredits;
 
-	[SerializeField] private InputReader _inputReader = default;
-	[SerializeField] private TextAsset _creditsAsset;
-	[SerializeField] private TextMeshProUGUI _creditsText = default;
-	[SerializeField] private UICreditsRoller _creditsRoller = default;
+    [SerializeField]
+    private InputReader _inputReader;
 
-	[Header("Listening on")]
-	[SerializeField] private VoidEventChannelSO _creditsRollEndEvent = default;
+    [SerializeField]
+    private TextAsset _creditsAsset;
 
-	private CreditsList _creditsList;
+    [SerializeField]
+    private TextMeshProUGUI _creditsText;
 
-	private void OnEnable()
-	{
-		_inputReader.MenuCloseEvent += CloseCreditsScreen;
-		SetCreditsScreen();
-	}
+    [SerializeField]
+    private UICreditsRoller _creditsRoller;
 
-	private void OnDisable()
-	{
-		_inputReader.MenuCloseEvent -= CloseCreditsScreen;
-	}
+    [Header("Listening on")]
+    [SerializeField]
+    private VoidEventChannelSO _creditsRollEndEvent;
 
-	private void SetCreditsScreen()
-	{
-		_creditsRoller.OnRollingEnded += EndRolling;
-		FillCreditsRoller();
-		_creditsRoller.StartRolling();
-	}
+    private CreditsList _creditsList;
 
-	private void CloseCreditsScreen()
-	{
-		_creditsRoller.OnRollingEnded -= EndRolling;
-		OnCloseCredits.Invoke();
-	}
+    private void OnEnable()
+    {
+        _inputReader.MenuCloseEvent += CloseCreditsScreen;
+        SetCreditsScreen();
+    }
 
-	private void FillCreditsRoller()
-	{
-		_creditsList = new CreditsList();
-		string json = _creditsAsset.text;
-		_creditsList = JsonUtility.FromJson<CreditsList>(json);
-		SetCreditsText();
-	}
+    private void OnDisable()
+    {
+        _inputReader.MenuCloseEvent -= CloseCreditsScreen;
+    }
 
-	private void SetCreditsText()
-	{
-		string creditsText = "";
-		for (int i = 0; i < _creditsList.Contributors.Count; i++)
-		{
-			if (i == 0)
-				creditsText = creditsText + _creditsList.Contributors[i].ToString();
-			else
-			{
-				creditsText = creditsText + "\n" + _creditsList.Contributors[i].ToString();
+    private void SetCreditsScreen()
+    {
+        _creditsRoller.OnRollingEnded += EndRolling;
+        FillCreditsRoller();
+        _creditsRoller.StartRolling();
+    }
 
-			}
-		}
-		_creditsText.text = creditsText;
-	}
+    private void CloseCreditsScreen()
+    {
+        _creditsRoller.OnRollingEnded -= EndRolling;
+        OnCloseCredits.Invoke();
+    }
 
-	private void EndRolling()
-	{
-		if (_creditsRollEndEvent != null)
-			_creditsRollEndEvent.RaiseEvent();
-	}
+    private void FillCreditsRoller()
+    {
+        _creditsList = new CreditsList();
+        var json = _creditsAsset.text;
+        _creditsList = JsonUtility.FromJson<CreditsList>(json);
+        SetCreditsText();
+    }
+
+    private void SetCreditsText()
+    {
+        var creditsText = "";
+        for (var i = 0; i < _creditsList.Contributors.Count; i++)
+        {
+            if (i == 0)
+            {
+                creditsText = creditsText + _creditsList.Contributors[i];
+            }
+            else
+            {
+                creditsText = creditsText + "\n" + _creditsList.Contributors[i];
+            }
+        }
+
+        _creditsText.text = creditsText;
+    }
+
+    private void EndRolling()
+    {
+        if (_creditsRollEndEvent != null)
+        {
+            _creditsRollEndEvent.RaiseEvent();
+        }
+    }
 }

@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5101c9a3238597444a9e55e96fab2907, type: 3}
   m_Name: IsPickingUp
   m_EditorClassIdentifier: 
-  cacheResult: 1

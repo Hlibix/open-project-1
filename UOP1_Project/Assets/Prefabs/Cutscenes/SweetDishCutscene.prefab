@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 397638053}
   m_RootOrder: 0
@@ -107,6 +108,7 @@ Transform:
   m_LocalRotation: {x: 0.051554393, y: -0.41762137, z: 0.01366944, w: 0.9070544}
   m_LocalPosition: {x: 3.48, y: 36.75, z: -16.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 509689109}
   m_Father: {fileID: 3336172139464101627}
@@ -141,7 +143,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -152,7 +154,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 509689109}
 --- !u!95 &353069730
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -165,10 +167,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &397638052
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +200,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.99902546, z: 0, w: -0.04413842}
   m_LocalPosition: {x: -9.112, y: 30.79, z: 3.626}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 256556412}
   m_Father: {fileID: 3336172139464101627}
@@ -231,7 +235,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -242,7 +246,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 256556412}
 --- !u!95 &397638054
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -255,10 +259,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &500062025
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +292,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3336172139464101627}
   m_RootOrder: 15
@@ -428,6 +434,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 353069729}
   m_RootOrder: 0
@@ -472,6 +479,7 @@ Transform:
   m_LocalRotation: {x: 0.039349202, y: 0.26011154, z: -0.010498717, w: 0.96471936}
   m_LocalPosition: {x: -13.95, y: 31.34, z: -7.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1075498339}
   m_Father: {fileID: 3336172139464101627}
@@ -506,7 +514,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -517,7 +525,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 1075498339}
 --- !u!95 &549575628
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -530,10 +538,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &553364669
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +571,7 @@ Transform:
   m_LocalRotation: {x: 0.064738914, y: 0.12990157, z: -0.017917223, w: 0.989249}
   m_LocalPosition: {x: -10.41, y: 31.07, z: -1.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1402028292}
   m_Father: {fileID: 3336172139464101627}
@@ -596,7 +606,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -607,7 +617,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 1402028292}
 --- !u!95 &553364671
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -620,10 +630,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &985889318
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +663,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.9567062, z: -0, w: -0.29105532}
   m_LocalPosition: {x: -10.35, y: 31.2, z: -3.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1002395119}
   m_Father: {fileID: 3336172139464101627}
@@ -686,7 +698,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -697,7 +709,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 1002395119}
 --- !u!95 &985889320
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -710,10 +722,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1002395118
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +754,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 985889319}
   m_RootOrder: 0
@@ -784,6 +798,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 549575627}
   m_RootOrder: 0
@@ -827,6 +842,7 @@ Transform:
   m_LocalRotation: {x: -0.019216808, y: -0.27412567, z: 0.06723837, w: 0.959148}
   m_LocalPosition: {x: -12.02, y: 30.044, z: -4.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3336172139464101627}
   m_RootOrder: 18
@@ -889,6 +905,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 553364670}
   m_RootOrder: 0
@@ -932,6 +949,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1931689091}
   m_RootOrder: 0
@@ -976,6 +994,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.9949692, z: -0, w: -0.10018135}
   m_LocalPosition: {x: -11.18, y: 31.2, z: -4.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1440282478}
   m_Father: {fileID: 3336172139464101627}
@@ -1010,7 +1029,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1021,7 +1040,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 1440282478}
 --- !u!95 &1931689092
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1034,10 +1053,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2021596532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1086,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3336172139464101627}
   m_RootOrder: 16
@@ -1114,66 +1135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneToLoad: {fileID: 11400000, guid: 7f8ed3292b055484c81ecef146e54693, type: 2}
   _sceneLoadChannel: {fileID: 11400000, guid: 33cec85652903d245b99985f9cec9841, type: 2}
---- !u!114 &1753820939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72650353116180368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182144251753164312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1202229953018614154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1161,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6946125178769591659}
   - {fileID: 7878635858893412370}
@@ -1223,36 +1185,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1753820926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208146685013926985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1272561616169224485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1212,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6564060249494287538}
   m_RootOrder: 0
@@ -1296,36 +1229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1753820941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633670331770141846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1727060880813832950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1257,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.20062062, z: -0, w: -0.97966903}
   m_LocalPosition: {x: -12.96, y: 31.07, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1227986386602073149}
   m_Father: {fileID: 3336172139464101627}
@@ -1388,7 +1292,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1399,7 +1303,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 1227986386602073149}
 --- !u!95 &4128072216175701534
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1412,40 +1316,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1753820924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866729951324361871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2069925367222484278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1348,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4248075149534612251}
   m_RootOrder: 0
@@ -1489,23 +1365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1888034838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2369764753667882177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Path: {fileID: 1136373828}
-  m_UpdateMethod: 0
-  m_PositionUnits: 1
-  m_Speed: 0
-  m_Position: 0.24
 --- !u!1 &2448071353677876995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,6 +1393,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -11.671, y: 31.2, z: -2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6199609746582980286}
   m_Father: {fileID: 3336172139464101627}
@@ -1568,7 +1428,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1579,7 +1439,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 6199609746582980286}
 --- !u!95 &2029744122
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1592,10 +1452,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2805913792791907109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1483,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4328100015557752596}
   - {fileID: 6501450916465463089}
@@ -1668,6 +1530,7 @@ Transform:
   m_LocalRotation: {x: 0.018931895, y: -0.22048694, z: -0.00063796673, w: 0.975206}
   m_LocalPosition: {x: -12.09, y: 31.04, z: -1.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4802468771362001957}
   m_Father: {fileID: 3336172139464101627}
@@ -1702,7 +1565,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1713,7 +1576,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 4802468771362001957}
 --- !u!95 &2873481923684421951
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1726,70 +1589,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1753820923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3624287878422853306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3749181102580417858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &3757901698180650289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1622,7 @@ Transform:
   m_LocalRotation: {x: 0.051554393, y: -0.41762137, z: 0.01366944, w: 0.9070544}
   m_LocalPosition: {x: 3.48, y: 36.75, z: -16.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2106966497320045866}
   m_Father: {fileID: 3336172139464101627}
@@ -1852,7 +1657,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1863,7 +1668,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 2106966497320045866}
 --- !u!95 &4656282254816405327
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1876,250 +1681,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1753820937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3988870564316900782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4689374778490617720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4867378973228030728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5026513668596572269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5054559148390496550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5104208083496591191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243516876631673298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701444662308571539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5705068602791785318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +1713,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 818544064386636954}
   m_RootOrder: 0
@@ -2190,6 +1757,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 639769176106447169}
   m_RootOrder: 0
@@ -2206,36 +1774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1753820936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5868783522633717131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &5876813485834903313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,6 +1801,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7878635858893412370}
   m_RootOrder: 0
@@ -2305,6 +1844,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1345491811538636341}
   - {fileID: 5579597578140672924}
@@ -2318,85 +1858,6 @@ Transform:
   m_Father: {fileID: 4619131792578817909}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1753820927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759975531649743769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!95 &161000514
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6948464399034690026}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1753820929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7043005231247512290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &7600460670572946506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,132 +1884,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -9.03, y: 30.052, z: 0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2582018185892445139}
   - {fileID: 8412674210279836399}
   m_Father: {fileID: 3336172139464101627}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1753820934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7745835492030981234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123137010099345699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197822758388973362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1753820931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8359626628160838967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &8839966655453608650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,6 +1919,7 @@ Transform:
   m_LocalRotation: {x: 0.13964723, y: -0.13179334, z: 0.018756976, w: 0.9812122}
   m_LocalPosition: {x: -9.42, y: 32.36, z: -8.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 593433582163984206}
   m_Father: {fileID: 3336172139464101627}
@@ -2611,7 +1954,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2425432, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2622,7 +1965,7 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 593433582163984206}
 --- !u!95 &8173244446836808608
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2635,40 +1978,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1753820930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9202454319148829153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5404992357446801881}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: SwitchToWalkState
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &20807002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2870,7 +2184,7 @@ PrefabInstance:
     - target: {fileID: 8511031590073880065, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc, type: 3}
@@ -2892,6 +2206,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 121156085}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866729951324361871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &5404992357446801881 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5404992357330970668, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
@@ -2993,7 +2337,7 @@ PrefabInstance:
     - target: {fileID: 1132113797398714843, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4799525130884635568, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
@@ -3108,6 +2452,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661c491ac76af4b429f8a8c0e6e8c762, type: 3}
+--- !u!1 &5054559148390496550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5054559148327267577, guid: 661c491ac76af4b429f8a8c0e6e8c762,
+    type: 3}
+  m_PrefabInstance: {fileID: 205215199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054559148390496550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &5579597578140672924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5579597578339563075, guid: 661c491ac76af4b429f8a8c0e6e8c762,
@@ -3117,12 +2497,6 @@ Transform:
 --- !u!95 &7234658245809029277 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7234658245610509634, guid: 661c491ac76af4b429f8a8c0e6e8c762,
-    type: 3}
-  m_PrefabInstance: {fileID: 205215199}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5054559148390496550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5054559148327267577, guid: 661c491ac76af4b429f8a8c0e6e8c762,
     type: 3}
   m_PrefabInstance: {fileID: 205215199}
   m_PrefabAsset: {fileID: 0}
@@ -4203,15 +3577,15 @@ PrefabInstance:
     - {fileID: 5557640735889932260, guid: 062b3805bf6784e4d9c599ee60eaa002, type: 3}
     - {fileID: 8300318066946783926, guid: 062b3805bf6784e4d9c599ee60eaa002, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 062b3805bf6784e4d9c599ee60eaa002, type: 3}
---- !u!1 &648091143431893785 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 648091144661104905, guid: 062b3805bf6784e4d9c599ee60eaa002,
-    type: 3}
-  m_PrefabInstance: {fileID: 1238125072}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &309633227168275177 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 309633228405838073, guid: 062b3805bf6784e4d9c599ee60eaa002,
+    type: 3}
+  m_PrefabInstance: {fileID: 1238125072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &648091143431893785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 648091144661104905, guid: 062b3805bf6784e4d9c599ee60eaa002,
     type: 3}
   m_PrefabInstance: {fileID: 1238125072}
   m_PrefabAsset: {fileID: 0}
@@ -5023,6 +4397,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1902363573}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &161000514
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6948464399034690026}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1924997898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5112,7 +4506,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: 65c86d69f88e51447afc335693dfe455,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5068035733108380664, guid: 65c86d69f88e51447afc335693dfe455,
         type: 3}
@@ -5232,12 +4626,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c86d69f88e51447afc335693dfe455, type: 3}
---- !u!4 &8831370792652727688 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: 65c86d69f88e51447afc335693dfe455,
-    type: 3}
-  m_PrefabInstance: {fileID: 147606202228496576}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &6018860556548261513 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5875841568448061001, guid: 65c86d69f88e51447afc335693dfe455,
@@ -5247,6 +4635,42 @@ Animator:
 --- !u!1 &8197822758388973362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8343168253028886514, guid: 65c86d69f88e51447afc335693dfe455,
+    type: 3}
+  m_PrefabInstance: {fileID: 147606202228496576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197822758388973362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &8831370792652727688 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: 65c86d69f88e51447afc335693dfe455,
     type: 3}
   m_PrefabInstance: {fileID: 147606202228496576}
   m_PrefabAsset: {fileID: 0}
@@ -5260,7 +4684,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: de38e4bbfe5a86541bd140156b6a6d75,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8683841676502515016, guid: de38e4bbfe5a86541bd140156b6a6d75,
         type: 3}
@@ -5335,15 +4759,45 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 248768083422265041}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8930918153450193817 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: de38e4bbfe5a86541bd140156b6a6d75,
-    type: 3}
-  m_PrefabInstance: {fileID: 248768083422265041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8123137010099345699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8343168253028886514, guid: de38e4bbfe5a86541bd140156b6a6d75,
+    type: 3}
+  m_PrefabInstance: {fileID: 248768083422265041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123137010099345699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &8930918153450193817 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: de38e4bbfe5a86541bd140156b6a6d75,
     type: 3}
   m_PrefabInstance: {fileID: 248768083422265041}
   m_PrefabAsset: {fileID: 0}
@@ -5357,7 +4811,7 @@ PrefabInstance:
     - target: {fileID: 1507867350208997694, guid: 33a99cea28c08d741a304a021c3c33e0,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2950482
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5901927367508590655, guid: 33a99cea28c08d741a304a021c3c33e0,
         type: 3}
@@ -5451,15 +4905,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33a99cea28c08d741a304a021c3c33e0, type: 3}
---- !u!4 &8430316147300127579 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: 33a99cea28c08d741a304a021c3c33e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 333861262880099236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &6923191632699436796 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7256991247967642968, guid: 33a99cea28c08d741a304a021c3c33e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 333861262880099236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8430316147300127579 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: 33a99cea28c08d741a304a021c3c33e0,
     type: 3}
   m_PrefabInstance: {fileID: 333861262880099236}
   m_PrefabAsset: {fileID: 0}
@@ -5469,6 +4923,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 333861262880099236}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9202454319148829153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1086755499257831282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5479,7 +4963,7 @@ PrefabInstance:
     - target: {fileID: 1507867350208997694, guid: 33a99cea28c08d741a304a021c3c33e0,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2950482
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5901927367508590655, guid: 33a99cea28c08d741a304a021c3c33e0,
         type: 3}
@@ -5573,9 +5057,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33a99cea28c08d741a304a021c3c33e0, type: 3}
---- !u!4 &9171735174346180493 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: 33a99cea28c08d741a304a021c3c33e0,
+--- !u!95 &7756022406674512426 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7256991247967642968, guid: 33a99cea28c08d741a304a021c3c33e0,
     type: 3}
   m_PrefabInstance: {fileID: 1086755499257831282}
   m_PrefabAsset: {fileID: 0}
@@ -5585,9 +5069,39 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1086755499257831282}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7756022406674512426 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7256991247967642968, guid: 33a99cea28c08d741a304a021c3c33e0,
+--- !u!114 &1753820931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359626628160838967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &9171735174346180493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: 33a99cea28c08d741a304a021c3c33e0,
     type: 3}
   m_PrefabInstance: {fileID: 1086755499257831282}
   m_PrefabAsset: {fileID: 0}
@@ -5601,7 +5115,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: 37ef640d78bc36a4ab908da4c1a877e5,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2950482
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8343168253028886514, guid: 37ef640d78bc36a4ab908da4c1a877e5,
         type: 3}
@@ -5695,21 +5209,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ef640d78bc36a4ab908da4c1a877e5, type: 3}
+--- !u!95 &4899364874262522713 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5875841568448061001, guid: 37ef640d78bc36a4ab908da4c1a877e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1330009548674807056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7043005231247512290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8343168253028886514, guid: 37ef640d78bc36a4ab908da4c1a877e5,
     type: 3}
   m_PrefabInstance: {fileID: 1330009548674807056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043005231247512290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &7707373503259445336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: 37ef640d78bc36a4ab908da4c1a877e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1330009548674807056}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4899364874262522713 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5875841568448061001, guid: 37ef640d78bc36a4ab908da4c1a877e5,
     type: 3}
   m_PrefabInstance: {fileID: 1330009548674807056}
   m_PrefabAsset: {fileID: 0}
@@ -5782,18 +5326,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae17cd1e4c4789e4bbd1e8febe20788d, type: 3}
---- !u!1 &6759975531649743769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5013363762816073305, guid: ae17cd1e4c4789e4bbd1e8febe20788d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1748322623963989440}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6240741423535153443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5681532184126022883, guid: ae17cd1e4c4789e4bbd1e8febe20788d,
     type: 3}
   m_PrefabInstance: {fileID: 1748322623963989440}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6759975531649743769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5013363762816073305, guid: ae17cd1e4c4789e4bbd1e8febe20788d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1748322623963989440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759975531649743769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!95 &9192845720184996386 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7480697044349208546, guid: ae17cd1e4c4789e4bbd1e8febe20788d,
@@ -5810,7 +5384,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: e985e01604b92c748b406abe21d04bb1,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2950482
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8343168253028886514, guid: e985e01604b92c748b406abe21d04bb1,
         type: 3}
@@ -5904,15 +5478,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e985e01604b92c748b406abe21d04bb1, type: 3}
---- !u!4 &6932567029479046856 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: e985e01604b92c748b406abe21d04bb1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1780715178959356800}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &5277499421416152521 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5875841568448061001, guid: e985e01604b92c748b406abe21d04bb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1780715178959356800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6932567029479046856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: e985e01604b92c748b406abe21d04bb1,
     type: 3}
   m_PrefabInstance: {fileID: 1780715178959356800}
   m_PrefabAsset: {fileID: 0}
@@ -5922,6 +5496,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1780715178959356800}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7745835492030981234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &3320829645365365162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5997,15 +5601,45 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 3320829645365365162}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4109497496153467904 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1662438237312083370, guid: 2eba6422ae2a2aa48af0447d2f30ce9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3320829645365365162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3624287878422853306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2042939231893143312, guid: 2eba6422ae2a2aa48af0447d2f30ce9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3320829645365365162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624287878422853306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &4109497496153467904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1662438237312083370, guid: 2eba6422ae2a2aa48af0447d2f30ce9c,
     type: 3}
   m_PrefabInstance: {fileID: 3320829645365365162}
   m_PrefabAsset: {fileID: 0}
@@ -6019,7 +5653,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: 28f6b966ed477684ebddd2a659833d94,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5068035733108380664, guid: 28f6b966ed477684ebddd2a659833d94,
         type: 3}
@@ -6145,6 +5779,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3665053607495047306}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689374778490617720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &5359232053876073922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: 28f6b966ed477684ebddd2a659833d94,
@@ -6167,7 +5831,7 @@ PrefabInstance:
     - target: {fileID: 1507867350208997694, guid: 7907e221028f7dd4fae8aa5619103660,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2950482
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5901927367508590655, guid: 7907e221028f7dd4fae8aa5619103660,
         type: 3}
@@ -6252,6 +5916,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4079088211650746701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867378973228030728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &5244362393546785202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: 7907e221028f7dd4fae8aa5619103660,
@@ -6274,7 +5968,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: daac470300224a54cbcf7956b2840867,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2950482
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8343168253028886514, guid: daac470300224a54cbcf7956b2840867,
         type: 3}
@@ -6380,6 +6074,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4254869769397726752}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243516876631673298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!95 &7676239628066484329 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5875841568448061001, guid: daac470300224a54cbcf7956b2840867,
@@ -6396,7 +6120,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: df52cbd16fdc8d1449314a74253da629,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5068035733108380664, guid: df52cbd16fdc8d1449314a74253da629,
         type: 3}
@@ -6528,6 +6252,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4384107882147835489}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701444662308571539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!95 &7880265954871701544 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5875841568448061001, guid: df52cbd16fdc8d1449314a74253da629,
@@ -6544,7 +6298,7 @@ PrefabInstance:
     - target: {fileID: 1507867350208997694, guid: cf7ef849ef0651046adb756161dddde0,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524588396928668401, guid: cf7ef849ef0651046adb756161dddde0,
         type: 3}
@@ -6664,6 +6418,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7ef849ef0651046adb756161dddde0, type: 3}
+--- !u!1 &5104208083496591191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8869754249267593797, guid: cf7ef849ef0651046adb756161dddde0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4450251647543057682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104208083496591191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &5592937035813717485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: cf7ef849ef0651046adb756161dddde0,
@@ -6673,12 +6463,6 @@ Transform:
 --- !u!95 &6445912605060790346 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7256991247967642968, guid: cf7ef849ef0651046adb756161dddde0,
-    type: 3}
-  m_PrefabInstance: {fileID: 4450251647543057682}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5104208083496591191 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8869754249267593797, guid: cf7ef849ef0651046adb756161dddde0,
     type: 3}
   m_PrefabInstance: {fileID: 4450251647543057682}
   m_PrefabAsset: {fileID: 0}
@@ -6766,21 +6550,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52c033c430890f944ba94b26f85b071c, type: 3}
+--- !u!95 &1376568400145140224 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3261384800072219313, guid: 52c033c430890f944ba94b26f85b071c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4492421548027965617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2369764753667882177 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2214453683357813872, guid: 52c033c430890f944ba94b26f85b071c,
     type: 3}
   m_PrefabInstance: {fileID: 4492421548027965617}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888034838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369764753667882177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Path: {fileID: 1136373828}
+  m_UpdateMethod: 0
+  m_PositionUnits: 1
+  m_Speed: 0
+  m_Position: 0.24
 --- !u!4 &3145985137497155195 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1580905619381638858, guid: 52c033c430890f944ba94b26f85b071c,
-    type: 3}
-  m_PrefabInstance: {fileID: 4492421548027965617}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1376568400145140224 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3261384800072219313, guid: 52c033c430890f944ba94b26f85b071c,
     type: 3}
   m_PrefabInstance: {fileID: 4492421548027965617}
   m_PrefabAsset: {fileID: 0}
@@ -6853,6 +6654,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14637e42c9f6e5a47a90f54664572a28, type: 3}
+--- !u!1 &5026513668596572269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 37591256409795200, guid: 14637e42c9f6e5a47a90f54664572a28,
+    type: 3}
+  m_PrefabInstance: {fileID: 4991200601509415661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026513668596572269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &5659356911278521047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 850720325527613498, guid: 14637e42c9f6e5a47a90f54664572a28,
@@ -6862,12 +6699,6 @@ Transform:
 --- !u!95 &7458539432871746006 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2505761266274865979, guid: 14637e42c9f6e5a47a90f54664572a28,
-    type: 3}
-  m_PrefabInstance: {fileID: 4991200601509415661}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5026513668596572269 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 37591256409795200, guid: 14637e42c9f6e5a47a90f54664572a28,
     type: 3}
   m_PrefabInstance: {fileID: 4991200601509415661}
   m_PrefabAsset: {fileID: 0}
@@ -6881,7 +6712,7 @@ PrefabInstance:
     - target: {fileID: 4205119679798301392, guid: de38e4bbfe5a86541bd140156b6a6d75,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5068035733108380664, guid: de38e4bbfe5a86541bd140156b6a6d75,
         type: 3}
@@ -7007,15 +6838,45 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 5174397426126267056}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4561043568664879096 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: de38e4bbfe5a86541bd140156b6a6d75,
-    type: 3}
-  m_PrefabInstance: {fileID: 5174397426126267056}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3749181102580417858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8343168253028886514, guid: de38e4bbfe5a86541bd140156b6a6d75,
+    type: 3}
+  m_PrefabInstance: {fileID: 5174397426126267056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749181102580417858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &4561043568664879096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8683841676502515016, guid: de38e4bbfe5a86541bd140156b6a6d75,
     type: 3}
   m_PrefabInstance: {fileID: 5174397426126267056}
   m_PrefabAsset: {fileID: 0}
@@ -7099,7 +6960,7 @@ PrefabInstance:
     - target: {fileID: 8511031590073880065, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc, type: 3}
@@ -7109,15 +6970,45 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 5230348797615436017}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6501450916465463089 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1345491811586392000, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 5230348797615436017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5868783522633717131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1866729951445509498, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5230348797615436017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868783522633717131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &6501450916465463089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1345491811586392000, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
     type: 3}
   m_PrefabInstance: {fileID: 5230348797615436017}
   m_PrefabAsset: {fileID: 0}
@@ -7156,7 +7047,7 @@ PrefabInstance:
     - target: {fileID: 244216481246938342, guid: 254bf66f87892c94985b0720d6497bd3,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.7390106
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 303239861944462450, guid: 254bf66f87892c94985b0720d6497bd3,
         type: 3}
@@ -7994,18 +7885,6 @@ PrefabInstance:
       objectReference: {fileID: 553364672}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 254bf66f87892c94985b0720d6497bd3, type: 3}
---- !u!114 &7436404615014278655 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 244216481246938342, guid: 254bf66f87892c94985b0720d6497bd3,
-    type: 3}
-  m_PrefabInstance: {fileID: 7228500604820480281}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6946125178769591659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 303239861944462450, guid: 254bf66f87892c94985b0720d6497bd3,
@@ -8018,6 +7897,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7228500604820480281}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7436404615014278655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 244216481246938342, guid: 254bf66f87892c94985b0720d6497bd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7228500604820480281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7741797237891476573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8028,7 +7919,7 @@ PrefabInstance:
     - target: {fileID: 1507867350208997694, guid: 7de901f9ebf649b4ab38959350c87dc9,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2950482
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5901927367508590655, guid: 7de901f9ebf649b4ab38959350c87dc9,
         type: 3}
@@ -8122,21 +8013,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7de901f9ebf649b4ab38959350c87dc9, type: 3}
+--- !u!95 &1136702087529613573 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7256991247967642968, guid: 7de901f9ebf649b4ab38959350c87dc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7741797237891476573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182144251753164312 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8869754249267593797, guid: 7de901f9ebf649b4ab38959350c87dc9,
     type: 3}
   m_PrefabInstance: {fileID: 7741797237891476573}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182144251753164312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1957941327919592610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: 7de901f9ebf649b4ab38959350c87dc9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7741797237891476573}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1136702087529613573 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7256991247967642968, guid: 7de901f9ebf649b4ab38959350c87dc9,
     type: 3}
   m_PrefabInstance: {fileID: 7741797237891476573}
   m_PrefabAsset: {fileID: 0}
@@ -8209,21 +8130,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac06fd017d394974d87e1c21e1f62fca, type: 3}
+--- !u!95 &1109436283139359572 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7176815435082876165, guid: ac06fd017d394974d87e1c21e1f62fca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7853338727606928977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1208146685013926985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8951074634494009880, guid: ac06fd017d394974d87e1c21e1f62fca,
     type: 3}
   m_PrefabInstance: {fileID: 7853338727606928977}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208146685013926985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1986056300754271987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8607305054949882018, guid: ac06fd017d394974d87e1c21e1f62fca,
-    type: 3}
-  m_PrefabInstance: {fileID: 7853338727606928977}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1109436283139359572 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7176815435082876165, guid: ac06fd017d394974d87e1c21e1f62fca,
     type: 3}
   m_PrefabInstance: {fileID: 7853338727606928977}
   m_PrefabAsset: {fileID: 0}
@@ -8237,7 +8188,7 @@ PrefabInstance:
     - target: {fileID: 1507867350208997694, guid: b88e9f862f7dd5f4ab74a86145f4adda,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524588396928668401, guid: b88e9f862f7dd5f4ab74a86145f4adda,
         type: 3}
@@ -8363,15 +8314,45 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 7907270895781789395}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2152762602100401708 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: b88e9f862f7dd5f4ab74a86145f4adda,
-    type: 3}
-  m_PrefabInstance: {fileID: 7907270895781789395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1633670331770141846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8869754249267593797, guid: b88e9f862f7dd5f4ab74a86145f4adda,
+    type: 3}
+  m_PrefabInstance: {fileID: 7907270895781789395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633670331770141846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &2152762602100401708 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: b88e9f862f7dd5f4ab74a86145f4adda,
     type: 3}
   m_PrefabInstance: {fileID: 7907270895781789395}
   m_PrefabAsset: {fileID: 0}
@@ -8385,7 +8366,7 @@ PrefabInstance:
     - target: {fileID: 1132113797398714843, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5385405162533204186, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
@@ -8455,15 +8436,45 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 8178033789715448151}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4328100015557752596 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5579597578339563075, guid: 661c491ac76af4b429f8a8c0e6e8c762,
-    type: 3}
-  m_PrefabInstance: {fileID: 8178033789715448151}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3988870564316900782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5054559148327267577, guid: 661c491ac76af4b429f8a8c0e6e8c762,
+    type: 3}
+  m_PrefabInstance: {fileID: 8178033789715448151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988870564316900782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &4328100015557752596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5579597578339563075, guid: 661c491ac76af4b429f8a8c0e6e8c762,
     type: 3}
   m_PrefabInstance: {fileID: 8178033789715448151}
   m_PrefabAsset: {fileID: 0}
@@ -8477,7 +8488,7 @@ PrefabInstance:
     - target: {fileID: 1507867350208997694, guid: 49742b79daeb15e4984aced2143ad1d9,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.4439578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524588396928668401, guid: 49742b79daeb15e4984aced2143ad1d9,
         type: 3}
@@ -8603,6 +8614,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8797123687973170645}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753820939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72650353116180368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8a19e54cd05154087a6817c3a4c1e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5404992357446801881}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: SwitchToWalkState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &741347574228432170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8096454886103390463, guid: 49742b79daeb15e4984aced2143ad1d9,

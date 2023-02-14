@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ada6e798cd16c124fa6028e96a780aa1,
         type: 3}
       propertyPath: m_Name
-      value: orangeVerticalSlice
+      value: Orange_VerticalSlice
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada6e798cd16c124fa6028e96a780aa1, type: 3}

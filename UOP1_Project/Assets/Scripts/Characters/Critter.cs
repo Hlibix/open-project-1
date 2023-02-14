@@ -2,38 +2,42 @@
 
 public class Critter : MonoBehaviour
 {
-	[HideInInspector] public bool isPlayerInAlertZone;
-	[HideInInspector] public bool isPlayerInAttackZone;
-	
-	[ReadOnly] public Damageable currentTarget; //The StateMachine evaluates its health when needed
+    [HideInInspector]
+    public bool isPlayerInAlertZone;
 
-	public void OnAlertTriggerChange(bool entered, GameObject who)
-	{
-		isPlayerInAlertZone = entered;
+    [HideInInspector]
+    public bool isPlayerInAttackZone;
 
-		if (entered && who.TryGetComponent(out Damageable d))
-		{
-			currentTarget = d;
-			currentTarget.OnDie += OnTargetDead;
-		}
-		else
-		{
-			currentTarget = null;
-		}
-	}
+    [ReadOnly]
+    public Damageable currentTarget; //The StateMachine evaluates its health when needed
 
-	public void OnAttackTriggerChange(bool entered, GameObject who)
-	{
-		isPlayerInAttackZone = entered;
+    public void OnAlertTriggerChange(bool entered, GameObject who)
+    {
+        isPlayerInAlertZone = entered;
 
-		//No need to set the target. If we did, we would get currentTarget to null even if
-		//a target exited the Attack zone (inner) but stayed in the Alert zone (outer).
-	}
+        if (entered && who.TryGetComponent(out Damageable d))
+        {
+            currentTarget       =  d;
+            currentTarget.OnDie += OnTargetDead;
+        }
+        else
+        {
+            currentTarget = null;
+        }
+    }
 
-	private void OnTargetDead()
-	{
-		currentTarget = null;
-		isPlayerInAlertZone = false;
-		isPlayerInAttackZone = false;
-	}
+    public void OnAttackTriggerChange(bool entered, GameObject who)
+    {
+        isPlayerInAttackZone = entered;
+
+        //No need to set the target. If we did, we would get currentTarget to null even if
+        //a target exited the Attack zone (inner) but stayed in the Alert zone (outer).
+    }
+
+    private void OnTargetDead()
+    {
+        currentTarget        = null;
+        isPlayerInAlertZone  = false;
+        isPlayerInAttackZone = false;
+    }
 }

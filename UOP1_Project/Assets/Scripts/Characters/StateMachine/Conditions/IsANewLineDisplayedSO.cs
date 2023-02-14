@@ -4,49 +4,53 @@ using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
 [CreateAssetMenu(fileName = "IsANewLineDisplayed", menuName = "State Machines/Conditions/Is A New Line Displayed")]
-public class IsANewLineDisplayedSO : StateConditionSO {
+public class IsANewLineDisplayedSO : StateConditionSO
+{
+    [SerializeField]
+    private DialogueLineChannelSO _onLineDisplayed;
 
-	[SerializeField] private DialogueLineChannelSO _onLineDisplayed = default;
-
-	protected override Condition CreateCondition() => new IsANewLineDisplayedCondition(_onLineDisplayed);
-
+    protected override Condition CreateCondition()
+    {
+        return new IsANewLineDisplayedCondition(_onLineDisplayed);
+    }
 }
 
 public class IsANewLineDisplayedCondition : Condition
 {
-	private DialogueLineChannelSO _sayLineEvent;
-	private bool _isAnewLineDisplayed = false;
+    private DialogueLineChannelSO _sayLineEvent;
+    private bool                  _isAnewLineDisplayed;
 
 
-	public IsANewLineDisplayedCondition(DialogueLineChannelSO sayLineEvent)
-	{
-		_sayLineEvent = sayLineEvent;
-	}
-	protected override bool Statement()
-	{
+    public IsANewLineDisplayedCondition(DialogueLineChannelSO sayLineEvent)
+    {
+        _sayLineEvent = sayLineEvent;
+    }
 
-		return _isAnewLineDisplayed;
-	}
+    protected override bool Statement()
+    {
+        return _isAnewLineDisplayed;
+    }
 
-	public override void OnStateEnter()
-	{
-		if (_sayLineEvent != null)
-		{
-			_sayLineEvent.OnEventRaised += OnLineDisplayed;
-		}
-	}
+    public override void OnStateEnter()
+    {
+        if (_sayLineEvent != null)
+        {
+            _sayLineEvent.OnEventRaised += OnLineDisplayed;
+        }
+    }
 
-	public override void OnStateExit()
-	{
-		if (_sayLineEvent != null)
-		{
-			_sayLineEvent.OnEventRaised -= OnLineDisplayed;
-		}
-		_isAnewLineDisplayed = false;
-	}
+    public override void OnStateExit()
+    {
+        if (_sayLineEvent != null)
+        {
+            _sayLineEvent.OnEventRaised -= OnLineDisplayed;
+        }
 
-	private void OnLineDisplayed(LocalizedString line, ActorSO actor)
-	{
-		_isAnewLineDisplayed = true;
-	}
+        _isAnewLineDisplayed = false;
+    }
+
+    private void OnLineDisplayed(LocalizedString line, ActorSO actor)
+    {
+        _isAnewLineDisplayed = true;
+    }
 }

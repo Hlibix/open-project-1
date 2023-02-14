@@ -1,31 +1,34 @@
-﻿using UnityEngine;
-using DG.Tweening;
+﻿using DG.Tweening;
+using UnityEngine;
 
 public class CollectableItem : MonoBehaviour
 {
-	[SerializeField] private ItemSO _currentItem = default;
-	[SerializeField] private GameObject _itemGO = default;
+    [SerializeField]
+    private ItemSO _currentItem;
 
-	private void Start()
-	{
-		AnimateItem();
-	}
+    [SerializeField]
+    private GameObject _itemGO;
 
-	public ItemSO GetItem()
-	{
-		return _currentItem;
-	}
+    private void Start()
+    {
+        AnimateItem();
+    }
 
-	public void SetItem(ItemSO item)
-	{
-		_currentItem = item;
-	}
+    public ItemSO GetItem()
+    {
+        return _currentItem;
+    }
 
-	public void AnimateItem()
-	{
-		if (_itemGO != null)
-		{
-			_itemGO.transform.DORotate(Vector3.one * 180, 5, RotateMode.Fast).SetLoops(-1, LoopType.Incremental);
-		}
-	}
+    public void SetItem(ItemSO item)
+    {
+        _currentItem = item;
+    }
+
+    public void AnimateItem()
+    {
+        if (_itemGO != null)
+        {
+            _itemGO.transform.DORotate(Vector3.one * 180, 5).SetLoops(-1, LoopType.Incremental);
+        }
+    }
 }

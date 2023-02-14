@@ -30,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1580685287287751540}
   m_Father: {fileID: 0}
@@ -135,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playOnStart: 0
   _playOnce: 0
+  _questManager: {fileID: 0}
   _playSpeceficCutscene: {fileID: 0}
   _playCutsceneEvent: {fileID: 11400000, guid: 9397b637ea93a3a4fb144834511eb199, type: 2}
 --- !u!114 &91085008
@@ -185,6 +187,7 @@ Transform:
   m_LocalRotation: {x: 0.24586248, y: 0.54080886, z: -0.16907193, w: 0.78644276}
   m_LocalPosition: {x: -7.1684875, y: 2.1681106, z: 1.9920349}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 932098300890111231}
   m_Father: {fileID: 303239861944462450}
@@ -219,7 +222,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.61708, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -250,6 +253,9 @@ MonoBehaviour:
   m_SyncScale: 1
   m_MuteCamera: 1
   m_SplitView: 0
+  m_RenderMode: 0
+  m_SortingOrder: 0
+  m_PlaneDistance: 100
 --- !u!1 &7044871555809768368
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +283,7 @@ Transform:
   m_LocalRotation: {x: -0.24586248, y: -0.54080886, z: 0.16907193, w: 0.78644276}
   m_LocalPosition: {x: -254.61235, y: 143.77238, z: 207.484}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1580685287287751540}
   m_RootOrder: 0

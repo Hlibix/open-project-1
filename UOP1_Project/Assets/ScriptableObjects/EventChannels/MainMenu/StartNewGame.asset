@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: StartNewGame
   m_EditorClassIdentifier: 
+  _guid: 2d8265bc91f6244e49560195fe2ca5e9
   description: 

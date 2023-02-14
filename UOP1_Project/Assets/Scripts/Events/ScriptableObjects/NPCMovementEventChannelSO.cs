@@ -1,5 +1,5 @@
-﻿using UnityEngine.Events;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// This class is used for Events that have one NPCMovementConfigSO argument.
@@ -7,11 +7,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Events/NPC Movement Event Channel")]
 public class NPCMovementEventChannelSO : DescriptionBaseSO
 {
-	public UnityAction<NPCMovementConfigSO> OnEventRaised;
+    public UnityAction<NPCMovementConfigSO> OnEventRaised;
 
-	public void RaiseEvent(NPCMovementConfigSO value)
-	{
-		if (OnEventRaised != null)
-			OnEventRaised.Invoke(value);
-	}
+    public void RaiseEvent(NPCMovementConfigSO value)
+    {
+        if (OnEventRaised != null)
+        {
+            OnEventRaised.Invoke(value);
+        }
+    }
 }

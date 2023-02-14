@@ -21,7 +21,11 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D1-Default-Cerise
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
   _dialogueType: 3
   _endOfDialogueEvent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

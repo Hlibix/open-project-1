@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458685ec13446b04e887efdeca5ec20f, type: 3}
   m_Name: EndDialogueEvent
   m_EditorClassIdentifier: 
+  _guid: b8f14d59bc3b10e4f9bdf1e65c3c6280
+  description: 

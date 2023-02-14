@@ -3,28 +3,32 @@ using UnityEngine.Localization.Components;
 
 public class UIDialogueChoiceFiller : MonoBehaviour
 {
-	[SerializeField] private LocalizeStringEvent _choiceText = default;
-	[SerializeField] private MultiInputButton _actionButton = default;
+    [SerializeField]
+    private LocalizeStringEvent _choiceText;
 
-	[Header("Broadcasting on")]
-	[SerializeField] private DialogueChoiceChannelSO _onChoiceMade = default;
+    [SerializeField]
+    private MultiInputButton _actionButton;
 
-	private Choice _currentChoice;
+    [Header("Broadcasting on")]
+    [SerializeField]
+    private DialogueChoiceChannelSO _onChoiceMade;
 
-	public void FillChoice(Choice choiceToFill, bool isSelected)
-	{
-		_currentChoice = choiceToFill;
-		_choiceText.StringReference = choiceToFill.Response;
-		_actionButton.interactable = true;
+    private Choice _currentChoice;
 
-		if (isSelected)
-		{
-			_actionButton.UpdateSelected();
-		}
-	}
+    public void FillChoice(Choice choiceToFill, bool isSelected)
+    {
+        _currentChoice              = choiceToFill;
+        _choiceText.StringReference = choiceToFill.Response;
+        _actionButton.interactable  = true;
 
-	public void ButtonClicked()
-	{
-		_onChoiceMade.RaiseEvent(_currentChoice);
-	}
+        if (isSelected)
+        {
+            _actionButton.UpdateSelected();
+        }
+    }
+
+    public void ButtonClicked()
+    {
+        _onChoiceMade.RaiseEvent(_currentChoice);
+    }
 }

@@ -3,115 +3,147 @@ using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
-	[Header("Health")]
-	[SerializeField] private HealthConfigSO _healthConfigSO;
-	[SerializeField] private HealthSO _currentHealthSO;
+    [Header("Health")]
+    [SerializeField]
+    private HealthConfigSO _healthConfigSO;
 
-	[Header("Combat")]
-	[SerializeField] private GetHitEffectConfigSO _getHitEffectSO;
-	[SerializeField] private Renderer _mainMeshRenderer;
-	[SerializeField] private DroppableRewardConfigSO _droppableRewardSO;
+    [SerializeField]
+    private HealthSO _currentHealthSO;
 
-	[Header("Broadcasting On")]
-	[SerializeField] private VoidEventChannelSO _updateHealthUI = default;
-	[SerializeField] private VoidEventChannelSO _deathEvent = default;
+    [Header("Combat")]
+    [SerializeField]
+    private GetHitEffectConfigSO _getHitEffectSO;
 
-	[Header("Listening To")]
-	[SerializeField] private IntEventChannelSO _restoreHealth = default; //Getting cured when eating food
+    [SerializeField]
+    private Renderer _mainMeshRenderer;
 
-	public DroppableRewardConfigSO DroppableRewardConfig => _droppableRewardSO;
+    [SerializeField]
+    private DroppableRewardConfigSO _droppableRewardSO;
 
-	//Flags that the StateMachine uses for Conditions to move between states
-	public bool GetHit { get; set; }
-	public bool IsDead { get; set; }
+    [Header("Broadcasting On")]
+    [SerializeField]
+    private VoidEventChannelSO _updateHealthUI;
 
-	public GetHitEffectConfigSO GetHitEffectConfig => _getHitEffectSO;
-	public Renderer MainMeshRenderer => _mainMeshRenderer; //used to apply the hit flash effect
+    [SerializeField]
+    private VoidEventChannelSO _deathEvent;
 
-	public event UnityAction OnDie;
+    [Header("Listening To")]
+    [SerializeField]
+    private IntEventChannelSO _restoreHealth; //Getting cured when eating food
 
-	private void Awake()
-	{
-		//If the HealthSO hasn't been provided in the Inspector (as it's the case for the player),
-		//we create a new SO unique to this instance of the component. This is typical for enemies.
-		if (_currentHealthSO == null)
-		{
-			_currentHealthSO = ScriptableObject.CreateInstance<HealthSO>();
-			_currentHealthSO.SetMaxHealth(_healthConfigSO.InitialHealth);
-			_currentHealthSO.SetCurrentHealth(_healthConfigSO.InitialHealth);
-		}
+    public DroppableRewardConfigSO DroppableRewardConfig => _droppableRewardSO;
 
-		if (_updateHealthUI != null)
-			_updateHealthUI.RaiseEvent();
-	}
+    //Flags that the StateMachine uses for Conditions to move between states
+    public bool GetHit { get; set; }
+    public bool IsDead { get; set; }
 
-	private void OnEnable()
-	{
-		if(_restoreHealth != null)
-			_restoreHealth.OnEventRaised += Cure;
-	}
+    public GetHitEffectConfigSO GetHitEffectConfig => _getHitEffectSO;
+    public Renderer             MainMeshRenderer   => _mainMeshRenderer; //used to apply the hit flash effect
 
-	private void OnDisable()
-	{
-		if(_restoreHealth != null)
-			_restoreHealth.OnEventRaised -= Cure;
-	}
+    public event UnityAction OnDie;
 
-	public void ReceiveAnAttack(int damage)
-	{
-		if (IsDead)
-			return;
+    private void Awake()
+    {
+        //If the HealthSO hasn't been provided in the Inspector (as it's the case for the player),
+        //we create a new SO unique to this instance of the component. This is typical for enemies.
+        if (_currentHealthSO == null)
+        {
+            _currentHealthSO = ScriptableObject.CreateInstance<HealthSO>();
+            _currentHealthSO.SetMaxHealth(_healthConfigSO.InitialHealth);
+            _currentHealthSO.SetCurrentHealth(_healthConfigSO.InitialHealth);
+        }
 
-		_currentHealthSO.InflictDamage(damage);
+        if (_updateHealthUI != null)
+        {
+            _updateHealthUI.RaiseEvent();
+        }
+    }
 
-		if (_updateHealthUI != null)
-			_updateHealthUI.RaiseEvent();
+    private void OnEnable()
+    {
+        if (_restoreHealth != null)
+        {
+            _restoreHealth.OnEventRaised += Cure;
+        }
+    }
 
-		GetHit = true;
+    private void OnDisable()
+    {
+        if (_restoreHealth != null)
+        {
+            _restoreHealth.OnEventRaised -= Cure;
+        }
+    }
 
-		if (_currentHealthSO.CurrentHealth <= 0)
-		{
-			IsDead = true;
+    public void ReceiveAnAttack(int damage)
+    {
+        if (IsDead)
+        {
+            return;
+        }
 
-			if (OnDie != null)
-				OnDie.Invoke();
+        _currentHealthSO.InflictDamage(damage);
 
-			if (_deathEvent != null)
-				_deathEvent.RaiseEvent();
+        if (_updateHealthUI != null)
+        {
+            _updateHealthUI.RaiseEvent();
+        }
 
-			_currentHealthSO.SetCurrentHealth(_healthConfigSO.InitialHealth);
-		}
-	}
+        GetHit = true;
 
-	public void Kill()
-	{
-		ReceiveAnAttack(_currentHealthSO.CurrentHealth);
-	}
+        if (_currentHealthSO.CurrentHealth <= 0)
+        {
+            IsDead = true;
 
-	/// <summary>
-	/// Called by the StateMachine action ResetHealthSO. Used to revive the Rock critters.
-	/// </summary>
-	public void Revive()
-	{
-		_currentHealthSO.SetCurrentHealth(_healthConfigSO.InitialHealth);
-		
-		if (_updateHealthUI != null)
-			_updateHealthUI.RaiseEvent();
-			
-		IsDead = false;
-	}
+            if (OnDie != null)
+            {
+                OnDie.Invoke();
+            }
 
-	/// <summary>
-	/// Used for cure events, like eating food. Triggered by an IntEventChannelSO.
-	/// </summary>
-	private void Cure(int healthToAdd)
-	{
-		if (IsDead)
-			return;
-			
-		_currentHealthSO.RestoreHealth(healthToAdd);
+            if (_deathEvent != null)
+            {
+                _deathEvent.RaiseEvent();
+            }
 
-		if (_updateHealthUI != null)
-			_updateHealthUI.RaiseEvent();
-	}
+            _currentHealthSO.SetCurrentHealth(_healthConfigSO.InitialHealth);
+        }
+    }
+
+    public void Kill()
+    {
+        ReceiveAnAttack(_currentHealthSO.CurrentHealth);
+    }
+
+    /// <summary>
+    /// Called by the StateMachine action ResetHealthSO. Used to revive the Rock critters.
+    /// </summary>
+    public void Revive()
+    {
+        _currentHealthSO.SetCurrentHealth(_healthConfigSO.InitialHealth);
+
+        if (_updateHealthUI != null)
+        {
+            _updateHealthUI.RaiseEvent();
+        }
+
+        IsDead = false;
+    }
+
+    /// <summary>
+    /// Used for cure events, like eating food. Triggered by an IntEventChannelSO.
+    /// </summary>
+    private void Cure(int healthToAdd)
+    {
+        if (IsDead)
+        {
+            return;
+        }
+
+        _currentHealthSO.RestoreHealth(healthToAdd);
+
+        if (_updateHealthUI != null)
+        {
+            _updateHealthUI.RaiseEvent();
+        }
+    }
 }

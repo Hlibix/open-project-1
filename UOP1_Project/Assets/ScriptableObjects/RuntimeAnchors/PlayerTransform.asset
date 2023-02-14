@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b753e3c82159746919d114a5f44202, type: 3}
   m_Name: PlayerTransform
   m_EditorClassIdentifier: 
+  _guid: 35fc4039342b6ba458d0d4429e89ee74
   description: Transform of the player, if currently instantiated. Provided by the
     SpawnSystem every time it instantiates the player.
   isSet: 0
+  _value: {fileID: 0}

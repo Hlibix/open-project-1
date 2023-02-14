@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f617c039e70a8284ebc4d338a41bde2d,
         type: 3}
       propertyPath: m_Name
-      value: orangeLeaf
+      value: OrangeLeaf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f617c039e70a8284ebc4d338a41bde2d, type: 3}

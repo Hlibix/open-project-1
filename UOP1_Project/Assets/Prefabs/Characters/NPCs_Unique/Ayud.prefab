@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 1132113797398714843, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7794458
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2803440263876833388, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
@@ -147,15 +147,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 267521092364063392}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6398726413802480487 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6591786344275767751, guid: 661c491ac76af4b429f8a8c0e6e8c762,
-    type: 3}
-  m_PrefabInstance: {fileID: 267521092364063392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3498401952861897673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3691472912802713961, guid: 661c491ac76af4b429f8a8c0e6e8c762,
+    type: 3}
+  m_PrefabInstance: {fileID: 267521092364063392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6398726413802480487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6591786344275767751, guid: 661c491ac76af4b429f8a8c0e6e8c762,
     type: 3}
   m_PrefabInstance: {fileID: 267521092364063392}
   m_PrefabAsset: {fileID: 0}

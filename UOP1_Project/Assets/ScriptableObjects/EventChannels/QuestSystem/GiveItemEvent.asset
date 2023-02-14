@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ee1f4193e7cac488aad6442034451d, type: 3}
   m_Name: GiveItemEvent
   m_EditorClassIdentifier: 
+  _guid: c54b320c4205f1c49b296b878daf2097
+  description: 

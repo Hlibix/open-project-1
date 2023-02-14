@@ -3,257 +3,286 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-	[Header("SoundEmitters pool")]
-	[SerializeField] private SoundEmitterPoolSO _pool = default;
-	[SerializeField] private int _initialSize = 10;
+    [Header("SoundEmitters pool")]
+    [SerializeField]
+    private SoundEmitterPoolSO _pool;
 
-	[Header("Listening on channels")]
-	[Tooltip("The SoundManager listens to this event, fired by objects in any scene, to play SFXs")]
-	[SerializeField] private AudioCueEventChannelSO _SFXEventChannel = default;
-	[Tooltip("The SoundManager listens to this event, fired by objects in any scene, to play Music")]
-	[SerializeField] private AudioCueEventChannelSO _musicEventChannel = default;
-	[Tooltip("The SoundManager listens to this event, fired by objects in any scene, to change SFXs volume")]
-	[SerializeField] private FloatEventChannelSO _SFXVolumeEventChannel = default;
-	[Tooltip("The SoundManager listens to this event, fired by objects in any scene, to change Music volume")]
-	[SerializeField] private FloatEventChannelSO _musicVolumeEventChannel = default;
-	[Tooltip("The SoundManager listens to this event, fired by objects in any scene, to change Master volume")]
-	[SerializeField] private FloatEventChannelSO _masterVolumeEventChannel = default;
+    [SerializeField]
+    private int _initialSize = 10;
+
+    [Header("Listening on channels")]
+    [Tooltip("The SoundManager listens to this event, fired by objects in any scene, to play SFXs")]
+    [SerializeField]
+    private AudioCueEventChannelSO _SFXEventChannel;
+
+    [Tooltip("The SoundManager listens to this event, fired by objects in any scene, to play Music")]
+    [SerializeField]
+    private AudioCueEventChannelSO _musicEventChannel;
+
+    [Tooltip("The SoundManager listens to this event, fired by objects in any scene, to change SFXs volume")]
+    [SerializeField]
+    private FloatEventChannelSO _SFXVolumeEventChannel;
+
+    [Tooltip("The SoundManager listens to this event, fired by objects in any scene, to change Music volume")]
+    [SerializeField]
+    private FloatEventChannelSO _musicVolumeEventChannel;
+
+    [Tooltip("The SoundManager listens to this event, fired by objects in any scene, to change Master volume")]
+    [SerializeField]
+    private FloatEventChannelSO _masterVolumeEventChannel;
 
 
-	[Header("Audio control")]
-	[SerializeField] private AudioMixer audioMixer = default;
-	[Range(0f, 1f)]
-	[SerializeField] private float _masterVolume = 1f;
-	[Range(0f, 1f)]
-	[SerializeField] private float _musicVolume = 1f;
-	[Range(0f, 1f)]
-	[SerializeField] private float _sfxVolume = 1f;
+    [Header("Audio control")]
+    [SerializeField]
+    private AudioMixer audioMixer;
 
-	private SoundEmitterVault _soundEmitterVault;
-	private SoundEmitter _musicSoundEmitter;
+    [Range(0f, 1f)]
+    [SerializeField]
+    private float _masterVolume = 1f;
 
-	private void Awake()
-	{
-		//TODO: Get the initial volume levels from the settings
-		_soundEmitterVault = new SoundEmitterVault();
+    [Range(0f, 1f)]
+    [SerializeField]
+    private float _musicVolume = 1f;
 
-		_pool.Prewarm(_initialSize);
-		_pool.SetParent(this.transform);
-	}
+    [Range(0f, 1f)]
+    [SerializeField]
+    private float _sfxVolume = 1f;
 
-	private void OnEnable()
-	{
-		_SFXEventChannel.OnAudioCuePlayRequested += PlayAudioCue;
-		_SFXEventChannel.OnAudioCueStopRequested += StopAudioCue;
-		_SFXEventChannel.OnAudioCueFinishRequested += FinishAudioCue;
+    private SoundEmitterVault _soundEmitterVault;
+    private SoundEmitter      _musicSoundEmitter;
 
-		_musicEventChannel.OnAudioCuePlayRequested += PlayMusicTrack;
-		_musicEventChannel.OnAudioCueStopRequested += StopMusic;
+    private void Awake()
+    {
+        //TODO: Get the initial volume levels from the settings
+        _soundEmitterVault = new SoundEmitterVault();
 
-		_masterVolumeEventChannel.OnEventRaised += ChangeMasterVolume;
-		_musicVolumeEventChannel.OnEventRaised += ChangeMusicVolume;
-		_SFXVolumeEventChannel.OnEventRaised += ChangeSFXVolume;
+        _pool.Prewarm(_initialSize);
+        _pool.SetParent(transform);
+    }
 
-	}
+    private void OnEnable()
+    {
+        _SFXEventChannel.OnAudioCuePlayRequested   += PlayAudioCue;
+        _SFXEventChannel.OnAudioCueStopRequested   += StopAudioCue;
+        _SFXEventChannel.OnAudioCueFinishRequested += FinishAudioCue;
 
-	private void OnDestroy()
-	{
-		_SFXEventChannel.OnAudioCuePlayRequested -= PlayAudioCue;
-		_SFXEventChannel.OnAudioCueStopRequested -= StopAudioCue;
+        _musicEventChannel.OnAudioCuePlayRequested += PlayMusicTrack;
+        _musicEventChannel.OnAudioCueStopRequested += StopMusic;
 
-		_SFXEventChannel.OnAudioCueFinishRequested -= FinishAudioCue;
-		_musicEventChannel.OnAudioCuePlayRequested -= PlayMusicTrack;
+        _masterVolumeEventChannel.OnEventRaised += ChangeMasterVolume;
+        _musicVolumeEventChannel.OnEventRaised  += ChangeMusicVolume;
+        _SFXVolumeEventChannel.OnEventRaised    += ChangeSFXVolume;
+    }
 
-		_musicVolumeEventChannel.OnEventRaised -= ChangeMusicVolume;
-		_SFXVolumeEventChannel.OnEventRaised -= ChangeSFXVolume;
-		_masterVolumeEventChannel.OnEventRaised -= ChangeMasterVolume;
-	}
+    private void OnDestroy()
+    {
+        _SFXEventChannel.OnAudioCuePlayRequested -= PlayAudioCue;
+        _SFXEventChannel.OnAudioCueStopRequested -= StopAudioCue;
 
-	/// <summary>
-	/// This is only used in the Editor, to debug volumes.
-	/// It is called when any of the variables is changed, and will directly change the value of the volumes on the AudioMixer.
-	/// </summary>
-	void OnValidate()
-	{
-		if (Application.isPlaying)
-		{
-			SetGroupVolume("MasterVolume", _masterVolume);
-			SetGroupVolume("MusicVolume", _musicVolume);
-			SetGroupVolume("SFXVolume", _sfxVolume);
-		}
-	}
-	void ChangeMasterVolume(float newVolume)
-	{
-		_masterVolume = newVolume;
-		SetGroupVolume("MasterVolume", _masterVolume);
-	}
-	void ChangeMusicVolume(float newVolume)
-	{
-		_musicVolume = newVolume;
-		SetGroupVolume("MusicVolume", _musicVolume);
-	}
-	void ChangeSFXVolume(float newVolume)
-	{
-		_sfxVolume = newVolume;
-		SetGroupVolume("SFXVolume", _sfxVolume);
-	}
-	public void SetGroupVolume(string parameterName, float normalizedVolume)
-	{
-		bool volumeSet = audioMixer.SetFloat(parameterName, NormalizedToMixerValue(normalizedVolume));
-		if (!volumeSet)
-			Debug.LogError("The AudioMixer parameter was not found");
-	}
+        _SFXEventChannel.OnAudioCueFinishRequested -= FinishAudioCue;
+        _musicEventChannel.OnAudioCuePlayRequested -= PlayMusicTrack;
 
-	public float GetGroupVolume(string parameterName)
-	{
-		if (audioMixer.GetFloat(parameterName, out float rawVolume))
-		{
-			return MixerValueToNormalized(rawVolume);
-		}
-		else
-		{
-			Debug.LogError("The AudioMixer parameter was not found");
-			return 0f;
-		}
-	}
+        _musicVolumeEventChannel.OnEventRaised  -= ChangeMusicVolume;
+        _SFXVolumeEventChannel.OnEventRaised    -= ChangeSFXVolume;
+        _masterVolumeEventChannel.OnEventRaised -= ChangeMasterVolume;
+    }
 
-	// Both MixerValueNormalized and NormalizedToMixerValue functions are used for easier transformations
-	/// when using UI sliders normalized format
-	private float MixerValueToNormalized(float mixerValue)
-	{
-		// We're assuming the range [-80dB to 0dB] becomes [0 to 1]
-		return 1f + (mixerValue / 80f);
-	}
-	private float NormalizedToMixerValue(float normalizedValue)
-	{
-		// We're assuming the range [0 to 1] becomes [-80dB to 0dB]
-		// This doesn't allow values over 0dB
-		return (normalizedValue - 1f) * 80f;
-	}
+    /// <summary>
+    /// This is only used in the Editor, to debug volumes.
+    /// It is called when any of the variables is changed, and will directly change the value of the volumes on the AudioMixer.
+    /// </summary>
+    private void OnValidate()
+    {
+        if (Application.isPlaying)
+        {
+            SetGroupVolume("MasterVolume", _masterVolume);
+            SetGroupVolume("MusicVolume",  _musicVolume);
+            SetGroupVolume("SFXVolume",    _sfxVolume);
+        }
+    }
 
-	private AudioCueKey PlayMusicTrack(AudioCueSO audioCue, AudioConfigurationSO audioConfiguration, Vector3 positionInSpace)
-	{
-		float fadeDuration = 2f;
-		float startTime = 0f;
+    private void ChangeMasterVolume(float newVolume)
+    {
+        _masterVolume = newVolume;
+        SetGroupVolume("MasterVolume", _masterVolume);
+    }
 
-		if (_musicSoundEmitter != null && _musicSoundEmitter.IsPlaying())
-		{
-			AudioClip songToPlay = audioCue.GetClips()[0];
-			if (_musicSoundEmitter.GetClip() == songToPlay)
-				return AudioCueKey.Invalid;
+    private void ChangeMusicVolume(float newVolume)
+    {
+        _musicVolume = newVolume;
+        SetGroupVolume("MusicVolume", _musicVolume);
+    }
 
-			//Music is already playing, need to fade it out
-			startTime = _musicSoundEmitter.FadeMusicOut(fadeDuration);
-		}
+    private void ChangeSFXVolume(float newVolume)
+    {
+        _sfxVolume = newVolume;
+        SetGroupVolume("SFXVolume", _sfxVolume);
+    }
 
-		_musicSoundEmitter = _pool.Request();
-		_musicSoundEmitter.FadeMusicIn(audioCue.GetClips()[0], audioConfiguration, 1f, startTime);
-		_musicSoundEmitter.OnSoundFinishedPlaying += StopMusicEmitter;
+    public void SetGroupVolume(string parameterName, float normalizedVolume)
+    {
+        var volumeSet = audioMixer.SetFloat(parameterName, NormalizedToMixerValue(normalizedVolume));
+        if (!volumeSet)
+        {
+            Debug.LogError("The AudioMixer parameter was not found");
+        }
+    }
 
-		return AudioCueKey.Invalid; //No need to return a valid key for music
-	}
+    public float GetGroupVolume(string parameterName)
+    {
+        if (audioMixer.GetFloat(parameterName, out var rawVolume))
+        {
+            return MixerValueToNormalized(rawVolume);
+        }
 
-	private bool StopMusic(AudioCueKey key)
-	{
-		if (_musicSoundEmitter != null && _musicSoundEmitter.IsPlaying())
-		{
-			_musicSoundEmitter.Stop();
-			return true;
-		}
-		else
-			return false;
-	}
+        Debug.LogError("The AudioMixer parameter was not found");
+        return 0f;
+    }
 
-	/// <summary>
-	/// Only used by the timeline to stop the gameplay music during cutscenes.
-	/// Called by the SignalReceiver present on this same GameObject.
-	/// </summary>
-	public void TimelineInterruptsMusic()
-	{
-		StopMusic(AudioCueKey.Invalid);
-	}
+    // Both MixerValueNormalized and NormalizedToMixerValue functions are used for easier transformations
+    /// when using UI sliders normalized format
+    private float MixerValueToNormalized(float mixerValue)
+    {
+        // We're assuming the range [-80dB to 0dB] becomes [0 to 1]
+        return 1f + mixerValue / 80f;
+    }
 
-	/// <summary>
-	/// Plays an AudioCue by requesting the appropriate number of SoundEmitters from the pool.
-	/// </summary>
-	public AudioCueKey PlayAudioCue(AudioCueSO audioCue, AudioConfigurationSO settings, Vector3 position = default)
-	{
-		AudioClip[] clipsToPlay = audioCue.GetClips();
-		SoundEmitter[] soundEmitterArray = new SoundEmitter[clipsToPlay.Length];
+    private float NormalizedToMixerValue(float normalizedValue)
+    {
+        // We're assuming the range [0 to 1] becomes [-80dB to 0dB]
+        // This doesn't allow values over 0dB
+        return (normalizedValue - 1f) * 80f;
+    }
 
-		int nOfClips = clipsToPlay.Length;
-		for (int i = 0; i < nOfClips; i++)
-		{
-			soundEmitterArray[i] = _pool.Request();
-			if (soundEmitterArray[i] != null)
-			{
-				soundEmitterArray[i].PlayAudioClip(clipsToPlay[i], settings, audioCue.looping, position);
-				if (!audioCue.looping)
-					soundEmitterArray[i].OnSoundFinishedPlaying += OnSoundEmitterFinishedPlaying;
-			}
-		}
+    private AudioCueKey PlayMusicTrack(AudioCueSO audioCue, AudioConfigurationSO audioConfiguration, Vector3 positionInSpace)
+    {
+        var fadeDuration = 2f;
+        var startTime    = 0f;
 
-		return _soundEmitterVault.Add(audioCue, soundEmitterArray);
-	}
+        if (_musicSoundEmitter != null && _musicSoundEmitter.IsPlaying())
+        {
+            var songToPlay = audioCue.GetClips()[0];
+            if (_musicSoundEmitter.GetClip() == songToPlay)
+            {
+                return AudioCueKey.Invalid;
+            }
 
-	public bool FinishAudioCue(AudioCueKey audioCueKey)
-	{
-		bool isFound = _soundEmitterVault.Get(audioCueKey, out SoundEmitter[] soundEmitters);
+            //Music is already playing, need to fade it out
+            startTime = _musicSoundEmitter.FadeMusicOut(fadeDuration);
+        }
 
-		if (isFound)
-		{
-			for (int i = 0; i < soundEmitters.Length; i++)
-			{
-				soundEmitters[i].Finish();
-				soundEmitters[i].OnSoundFinishedPlaying += OnSoundEmitterFinishedPlaying;
-			}
-		}
-		else
-		{
-			Debug.LogWarning("Finishing an AudioCue was requested, but the AudioCue was not found.");
-		}
+        _musicSoundEmitter = _pool.Request();
+        _musicSoundEmitter.FadeMusicIn(audioCue.GetClips()[0], audioConfiguration, 1f, startTime);
+        _musicSoundEmitter.OnSoundFinishedPlaying += StopMusicEmitter;
 
-		return isFound;
-	}
+        return AudioCueKey.Invalid; //No need to return a valid key for music
+    }
 
-	public bool StopAudioCue(AudioCueKey audioCueKey)
-	{
-		bool isFound = _soundEmitterVault.Get(audioCueKey, out SoundEmitter[] soundEmitters);
+    private bool StopMusic(AudioCueKey key)
+    {
+        if (_musicSoundEmitter != null && _musicSoundEmitter.IsPlaying())
+        {
+            _musicSoundEmitter.Stop();
+            return true;
+        }
 
-		if (isFound)
-		{
-			for (int i = 0; i < soundEmitters.Length; i++)
-			{
-				StopAndCleanEmitter(soundEmitters[i]);
-			}
+        return false;
+    }
 
-			_soundEmitterVault.Remove(audioCueKey);
-		}
+    /// <summary>
+    /// Only used by the timeline to stop the gameplay music during cutscenes.
+    /// Called by the SignalReceiver present on this same GameObject.
+    /// </summary>
+    public void TimelineInterruptsMusic()
+    {
+        StopMusic(AudioCueKey.Invalid);
+    }
 
-		return isFound;
-	}
+    /// <summary>
+    /// Plays an AudioCue by requesting the appropriate number of SoundEmitters from the pool.
+    /// </summary>
+    public AudioCueKey PlayAudioCue(AudioCueSO audioCue, AudioConfigurationSO settings, Vector3 position = default)
+    {
+        var clipsToPlay       = audioCue.GetClips();
+        var soundEmitterArray = new SoundEmitter[clipsToPlay.Length];
 
-	private void OnSoundEmitterFinishedPlaying(SoundEmitter soundEmitter)
-	{
-		StopAndCleanEmitter(soundEmitter);
-	}
+        var nOfClips = clipsToPlay.Length;
+        for (var i = 0; i < nOfClips; i++)
+        {
+            soundEmitterArray[i] = _pool.Request();
+            if (soundEmitterArray[i] != null)
+            {
+                soundEmitterArray[i].PlayAudioClip(clipsToPlay[i], settings, audioCue.looping, position);
+                if (!audioCue.looping)
+                {
+                    soundEmitterArray[i].OnSoundFinishedPlaying += OnSoundEmitterFinishedPlaying;
+                }
+            }
+        }
 
-	private void StopAndCleanEmitter(SoundEmitter soundEmitter)
-	{
-		if (!soundEmitter.IsLooping())
-			soundEmitter.OnSoundFinishedPlaying -= OnSoundEmitterFinishedPlaying;
+        return _soundEmitterVault.Add(audioCue, soundEmitterArray);
+    }
 
-		soundEmitter.Stop();
-		_pool.Return(soundEmitter);
+    public bool FinishAudioCue(AudioCueKey audioCueKey)
+    {
+        var isFound = _soundEmitterVault.Get(audioCueKey, out var soundEmitters);
 
-		//TODO: is the above enough?
-		//_soundEmitterVault.Remove(audioCueKey); is never called if StopAndClean is called after a Finish event
-		//How is the key removed from the vault?
-	}
+        if (isFound)
+        {
+            for (var i = 0; i < soundEmitters.Length; i++)
+            {
+                soundEmitters[i].Finish();
+                soundEmitters[i].OnSoundFinishedPlaying += OnSoundEmitterFinishedPlaying;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Finishing an AudioCue was requested, but the AudioCue was not found.");
+        }
 
-	private void StopMusicEmitter(SoundEmitter soundEmitter)
-	{
-		soundEmitter.OnSoundFinishedPlaying -= StopMusicEmitter;
-		_pool.Return(soundEmitter);
-	}
+        return isFound;
+    }
+
+    public bool StopAudioCue(AudioCueKey audioCueKey)
+    {
+        var isFound = _soundEmitterVault.Get(audioCueKey, out var soundEmitters);
+
+        if (isFound)
+        {
+            for (var i = 0; i < soundEmitters.Length; i++)
+            {
+                StopAndCleanEmitter(soundEmitters[i]);
+            }
+
+            _soundEmitterVault.Remove(audioCueKey);
+        }
+
+        return isFound;
+    }
+
+    private void OnSoundEmitterFinishedPlaying(SoundEmitter soundEmitter)
+    {
+        StopAndCleanEmitter(soundEmitter);
+    }
+
+    private void StopAndCleanEmitter(SoundEmitter soundEmitter)
+    {
+        if (!soundEmitter.IsLooping())
+        {
+            soundEmitter.OnSoundFinishedPlaying -= OnSoundEmitterFinishedPlaying;
+        }
+
+        soundEmitter.Stop();
+        _pool.Return(soundEmitter);
+
+        //TODO: is the above enough?
+        //_soundEmitterVault.Remove(audioCueKey); is never called if StopAndClean is called after a Finish event
+        //How is the key removed from the vault?
+    }
+
+    private void StopMusicEmitter(SoundEmitter soundEmitter)
+    {
+        soundEmitter.OnSoundFinishedPlaying -= StopMusicEmitter;
+        _pool.Return(soundEmitter);
+    }
 }

@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 09676b83fe3f8a6479792722ac8598c5,
         type: 3}
       propertyPath: m_Name
-      value: cucumberSlice
+      value: CucumberSlice
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09676b83fe3f8a6479792722ac8598c5, type: 3}

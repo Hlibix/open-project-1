@@ -4,25 +4,35 @@ using UnityEngine.UI;
 
 public class UIButtonPrompt : MonoBehaviour
 {
+    [SerializeField]
+    private Image _interactionKeyBG;
 
-	[SerializeField] private Image _interactionKeyBG = default;
-	[SerializeField] private TextMeshProUGUI _interactionKeyText = default;
-	[SerializeField] private Sprite _controllerSprite = default;
-	[SerializeField] private Sprite _keyboardSprite = default;
-	[SerializeField] private string _interactionKeyboardCode = default;
-	[SerializeField] private string _interactionJoystickKeyCode = default;
+    [SerializeField]
+    private TextMeshProUGUI _interactionKeyText;
 
-	public void SetButtonPrompt(bool isKeyboard)
-	{
-		if (!isKeyboard)
-		{
-			_interactionKeyBG.sprite = _controllerSprite;
-			_interactionKeyText.text = _interactionJoystickKeyCode;
-		}
-		else
-		{
-			_interactionKeyBG.sprite = _keyboardSprite;
-			_interactionKeyText.text = _interactionKeyboardCode;
-		}
-	}
+    [SerializeField]
+    private Sprite _controllerSprite;
+
+    [SerializeField]
+    private Sprite _keyboardSprite;
+
+    [SerializeField]
+    private string _interactionKeyboardCode;
+
+    [SerializeField]
+    private string _interactionJoystickKeyCode;
+
+    public void SetButtonPrompt(bool isKeyboard)
+    {
+        if (!isKeyboard)
+        {
+            _interactionKeyBG.sprite = _controllerSprite;
+            _interactionKeyText.text = _interactionJoystickKeyCode;
+        }
+        else
+        {
+            _interactionKeyBG.sprite = _keyboardSprite;
+            _interactionKeyText.text = _interactionKeyboardCode;
+        }
+    }
 }

@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 1184882233780393287, guid: 56fd7edafcb8c4b4993baee13019cd52,
         type: 3}
       propertyPath: m_Name
-      value: artichoke
+      value: Artichoke
       objectReference: {fileID: 0}
     - target: {fileID: 1961982506166554621, guid: 56fd7edafcb8c4b4993baee13019cd52,
         type: 3}

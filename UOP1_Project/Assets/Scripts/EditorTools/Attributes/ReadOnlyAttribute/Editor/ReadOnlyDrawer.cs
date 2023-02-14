@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 /// <summary>
 /// Custom drawer for the ReadOnly attribute
@@ -9,7 +9,7 @@ public class ReadOnlyDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        bool previousGUIState = GUI.enabled;
+        var previousGUIState = GUI.enabled;
 
         GUI.enabled = false;
         EditorGUI.PropertyField(position, property, label);

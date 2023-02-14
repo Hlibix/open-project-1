@@ -30,6 +30,5 @@ MonoBehaviour:
       m_AssetObject: {fileID: 0}
       m_Prefab: {fileID: 0}
     m_Enabled: 1
-  m_RestoreDefaultAssetsOnTutorialReload: 0
-  m_StartupTutorial: {fileID: 0}
   m_TutorialStyle: {fileID: 11400000, guid: bcaf24dcefa7047b19a2b51c946e64bf, type: 2}
+  m_RestoreAssetsBackupOnTutorialReload: 0

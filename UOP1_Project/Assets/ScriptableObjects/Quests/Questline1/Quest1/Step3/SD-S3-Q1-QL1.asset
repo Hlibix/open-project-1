@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SD-S3-Q1-QL1
   m_EditorClassIdentifier: 
   _lines:
-  - _actor: {fileID: 0}
+  - _actorID: 0
     _textList:
     - m_TableReference:
         m_TableCollectionName: Questline Dialogue
@@ -21,7 +21,33 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D1-SD-S3-Q1-QL1
       m_FallbackState: 0
-      m_WaitForCompletion: 1
-    _choices: []
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices:
+    - _response:
+        m_TableReference:
+          m_TableCollectionName: Questline Dialogue
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: C1-D1-SD-S3-Q1-QL1
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      _nextDialogue: {fileID: 0}
+      _actionType: 1
+    - _response:
+        m_TableReference:
+          m_TableCollectionName: Questline Dialogue
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: C2-D1-SD-S3-Q1-QL1
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      _nextDialogue: {fileID: 0}
+      _actionType: 4
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

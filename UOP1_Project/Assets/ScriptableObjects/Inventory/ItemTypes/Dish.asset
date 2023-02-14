@@ -20,15 +20,11 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
-  _typeName:
-    m_TableReference:
-      m_TableCollectionName: GUID:457af5455987a4876acc4332c3a761e5
-    m_TableEntryReference:
-      m_KeyId: 8664375296
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 1
+    m_LocalVariables: []
   _typeColor: {r: 0.67609215, g: 0.7410676, b: 0.8679245, a: 1}
   _type: 4
   _actionType: 1
   _tabType: {fileID: 11400000, guid: 89de7bb70f5b243fa80be0d8338dc39c, type: 2}
+  references:
+    version: 2
+    RefIds: []

@@ -21,6 +21,7 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
+    m_LocalVariables: []
   _previewImage: {fileID: 21300000, guid: 01a2868a9e210f543b084ea1083e324a, type: 3}
   _description:
     m_TableReference:
@@ -30,6 +31,7 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
+    m_LocalVariables: []
   _healthResorationValue: 0
   _itemType: {fileID: 11400000, guid: 12fdb5a1a1072421381df4e7fd60f989, type: 2}
   _prefab: {fileID: 0}
@@ -41,3 +43,6 @@ MonoBehaviour:
   - _item: {fileID: 11400000, guid: a1dd9032c3fc6584e9cb301e6e2a6f83, type: 2}
     Amount: 1
   _resultingDish: {fileID: 11400000, guid: 9e0d1325ada2c594ab8085343cd41f3e, type: 2}
+  references:
+    version: 2
+    RefIds: []

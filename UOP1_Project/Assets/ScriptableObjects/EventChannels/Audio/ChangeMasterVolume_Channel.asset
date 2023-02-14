@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b763d3df319430442a72566d481de948, type: 3}
   m_Name: ChangeMasterVolume_Channel
   m_EditorClassIdentifier: 
+  _guid: ac033eaf5f8c5154e8df7c10fe3755ad
   description: 

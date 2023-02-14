@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Watermill : MonoBehaviour
 {
-	public AnimationCurve rotationRhythm;
-	public Transform wheel;
-	public float speed;
-    
-    void Update()
+    public AnimationCurve rotationRhythm;
+    public Transform      wheel;
+    public float          speed;
+
+    private void Update()
     {
-		wheel.Rotate(0f, 0f, rotationRhythm.Evaluate(Time.time) * speed * Time.deltaTime);
+        wheel.Rotate(0f, 0f, rotationRhythm.Evaluate(Time.time) * speed * Time.deltaTime);
     }
 }

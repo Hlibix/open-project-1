@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class FallCatcher : MonoBehaviour
 {
-	[SerializeField] private PathSO _leadsToPath = default;
-	[SerializeField] private PathStorageSO _pathStorage = default;
+    [SerializeField]
+    private PathSO _leadsToPath;
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Player"))
-		{
-			_pathStorage.lastPathTaken = _leadsToPath;
+    [SerializeField]
+    private PathStorageSO _pathStorage;
 
-			other.GetComponent<Damageable>().Kill();
-		}
-	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _pathStorage.lastPathTaken = _leadsToPath;
+
+            other.GetComponent<Damageable>().Kill();
+        }
+    }
 }

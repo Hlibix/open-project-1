@@ -1,21 +1,24 @@
 ﻿using UnityEngine;
-using UnityEngine.Localization;
+
 // Created with collaboration from:
 // https://forum.unity.com/threads/inventory-system.980646/
 
 public enum InventoryTabType
 {
-	Customization,
-	CookingItem,
-	Recipe
+    Customization,
+    CookingItem,
+    Recipe
 }
 
 [CreateAssetMenu(fileName = "InventoryTabType", menuName = "Inventory/Inventory Tab Type")]
 public class InventoryTabSO : ScriptableObject
 {
-	[SerializeField] private Sprite _tabIcon = default;
-	[SerializeField] private InventoryTabType _tabType = default;
+    [SerializeField]
+    private Sprite _tabIcon;
 
-	public Sprite TabIcon => _tabIcon;
-	public InventoryTabType TabType => _tabType;
+    [SerializeField]
+    private InventoryTabType _tabType;
+
+    public Sprite           TabIcon => _tabIcon;
+    public InventoryTabType TabType => _tabType;
 }

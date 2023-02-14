@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eabf0d1b44567046bb98dff8a1cd7ac, type: 3}
   m_Name: PersistentManagers
   m_EditorClassIdentifier: 
+  _guid: c2119785ce96367428081d6eee0d932b
   description: The scene that contains all the persistent managers in the game like
     scene loader and Audio manager etc...
   sceneType: 3
@@ -19,3 +20,5 @@ MonoBehaviour:
     m_AssetGUID: 969b7f174e8c76843aa3fcdbade0487b
     m_SubObjectName: 
     m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  musicTrack: {fileID: 0}

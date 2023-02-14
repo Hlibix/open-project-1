@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f2f05e723b863f45be736017456d805,
         type: 3}
       propertyPath: m_Name
-      value: orangeStemHalf
+      value: OrangeStem_Half
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2f05e723b863f45be736017456d805, type: 3}

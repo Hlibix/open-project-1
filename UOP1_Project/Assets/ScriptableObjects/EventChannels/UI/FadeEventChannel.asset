@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3f18ccb43e7594cb1a18cfbc24190e, type: 3}
   m_Name: FadeEventChannel
   m_EditorClassIdentifier: 
+  _guid: b40bb60f3ca40164e9d7acc6992bae10
+  description: 

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b753e3c82159746919d114a5f44202, type: 3}
   m_Name: GameplayCameraTransform
   m_EditorClassIdentifier: 
+  _guid: bc205269957643647a8b5f98f028f9fb
   description: Transform of the GameplayCamera. The CameraSystem provides this in
     its OnEnable.
   isSet: 0
+  _value: {fileID: 0}

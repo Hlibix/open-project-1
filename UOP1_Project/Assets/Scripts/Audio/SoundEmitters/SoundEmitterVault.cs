@@ -2,67 +2,67 @@
 
 public class SoundEmitterVault
 {
-	private int _nextUniqueKey = 0;
-	private List<AudioCueKey> _emittersKey;
-	private List<SoundEmitter[]> _emittersList;
+    private int                  _nextUniqueKey;
+    private List<AudioCueKey>    _emittersKey;
+    private List<SoundEmitter[]> _emittersList;
 
-	public SoundEmitterVault()
-	{
-		_emittersKey = new List<AudioCueKey>();
-		_emittersList = new List<SoundEmitter[]>();
-	}
+    public SoundEmitterVault()
+    {
+        _emittersKey  = new List<AudioCueKey>();
+        _emittersList = new List<SoundEmitter[]>();
+    }
 
-	public AudioCueKey GetKey(AudioCueSO cue)
-	{
-		return new AudioCueKey(_nextUniqueKey++, cue);
-	}
+    public AudioCueKey GetKey(AudioCueSO cue)
+    {
+        return new AudioCueKey(_nextUniqueKey++, cue);
+    }
 
-	public void Add(AudioCueKey key, SoundEmitter[] emitter)
-	{
-		_emittersKey.Add(key);
-		_emittersList.Add(emitter);
-	}
+    public void Add(AudioCueKey key, SoundEmitter[] emitter)
+    {
+        _emittersKey.Add(key);
+        _emittersList.Add(emitter);
+    }
 
-	public AudioCueKey Add(AudioCueSO cue, SoundEmitter[] emitter)
-	{
-		AudioCueKey emitterKey = GetKey(cue);
+    public AudioCueKey Add(AudioCueSO cue, SoundEmitter[] emitter)
+    {
+        var emitterKey = GetKey(cue);
 
-		_emittersKey.Add(emitterKey);
-		_emittersList.Add(emitter);
+        _emittersKey.Add(emitterKey);
+        _emittersList.Add(emitter);
 
-		return emitterKey;
-	}
+        return emitterKey;
+    }
 
-	public bool Get(AudioCueKey key, out SoundEmitter[] emitter)
-	{
-		int index = _emittersKey.FindIndex(x => x == key);
+    public bool Get(AudioCueKey key, out SoundEmitter[] emitter)
+    {
+        var index = _emittersKey.FindIndex(x => x == key);
 
-		if (index < 0)
-		{
-			emitter = null;
-			return false;
-		}
+        if (index < 0)
+        {
+            emitter = null;
+            return false;
+        }
 
-		emitter = _emittersList[index];
-		return true;
-	}
+        emitter = _emittersList[index];
+        return true;
+    }
 
-	public bool Remove(AudioCueKey key)
-	{
-		int index = _emittersKey.FindIndex(x => x == key);
-		return RemoveAt(index);
-	}
+    public bool Remove(AudioCueKey key)
+    {
+        var index = _emittersKey.FindIndex(x => x == key);
+        return RemoveAt(index);
+    }
 
-	private bool RemoveAt(int index)
-	{
-		if (index < 0)
-		{
-			return false;
-		}
+    private bool RemoveAt(int index)
+    {
+        if (index < 0)
+        {
+            return false;
+        }
 
-		_emittersKey.RemoveAt(index);
-		_emittersList.RemoveAt(index);
+        _emittersKey.RemoveAt(index);
+        _emittersList.RemoveAt(index);
 
-		return true;
-	}
+        return true;
+    }
 }

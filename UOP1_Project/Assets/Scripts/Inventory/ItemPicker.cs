@@ -2,12 +2,15 @@
 
 public class ItemPicker : MonoBehaviour
 {
-	[Header("Broadcasting on")]
-	[SerializeField] ItemEventChannelSO _addItemEvent = default;
+    [Header("Broadcasting on")]
+    [SerializeField]
+    private ItemEventChannelSO _addItemEvent;
 
-	public void PickItem(ItemSO item)
-	{
-		if (_addItemEvent != null)
-			_addItemEvent.RaiseEvent(item);
-	}
+    public void PickItem(ItemSO item)
+    {
+        if (_addItemEvent != null)
+        {
+            _addItemEvent.RaiseEvent(item);
+        }
+    }
 }

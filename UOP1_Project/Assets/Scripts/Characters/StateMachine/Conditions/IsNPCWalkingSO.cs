@@ -3,29 +3,27 @@ using UOP1.StateMachine;
 using UOP1.StateMachine.ScriptableObjects;
 
 [CreateAssetMenu(menuName = "State Machines/Conditions/Is NPC Walking")]
-public class IsNPCWalkingSO : StateConditionSO<IsNPCWalkingCondition> { }
+public class IsNPCWalkingSO : StateConditionSO<IsNPCWalkingCondition>
+{
+}
 
 public class IsNPCWalkingCondition : Condition
 {
-	//Component references
-	private NPC _npcScript;
+    //Component references
+    private NPC _npcScript;
 
-	public override void Awake(StateMachine stateMachine)
-	{
-		_npcScript = stateMachine.GetComponent<NPC>();
-	}
-	
-	protected override bool Statement()
-	{
+    public override void Awake(StateMachine stateMachine)
+    {
+        _npcScript = stateMachine.GetComponent<NPC>();
+    }
 
-		if (_npcScript.npcState == NPCState.Walk)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-	
+    protected override bool Statement()
+    {
+        if (_npcScript.npcState == NPCState.Walk)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

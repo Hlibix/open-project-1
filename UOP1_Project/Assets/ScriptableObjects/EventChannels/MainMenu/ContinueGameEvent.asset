@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: ContinueGameEvent
   m_EditorClassIdentifier: 
+  _guid: c6438460769bc46b7a96bd3c7233a68a
   description: 

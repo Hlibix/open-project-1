@@ -5,63 +5,68 @@ using UOP1.StateMachine.ScriptableObjects;
 [CreateAssetMenu(fileName = "IsDialogueActiveCondition", menuName = "State Machines/Conditions/Is Dialogue Active Condition")]
 public class IsDialogueActiveConditionSO : StateConditionSO
 {
-	[SerializeField] private DialogueDataChannelSO _startDialogueEvent = default;
-	[SerializeField] private IntEventChannelSO _endDialogueEvent = default;
+    [SerializeField]
+    private DialogueDataChannelSO _startDialogueEvent;
 
-	protected override Condition CreateCondition() => new IsDialogueActiveCondition(_startDialogueEvent, _endDialogueEvent);
+    [SerializeField]
+    private IntEventChannelSO _endDialogueEvent;
 
+    protected override Condition CreateCondition()
+    {
+        return new IsDialogueActiveCondition(_startDialogueEvent, _endDialogueEvent);
+    }
 }
 
 public class IsDialogueActiveCondition : Condition
 {
-	private DialogueDataChannelSO _startDialogueEvent;
-	private IntEventChannelSO _endDialogueEvent;
-	private bool _isDialogueActive = false;
+    private DialogueDataChannelSO _startDialogueEvent;
+    private IntEventChannelSO     _endDialogueEvent;
+    private bool                  _isDialogueActive;
 
-	public IsDialogueActiveCondition(DialogueDataChannelSO startDialogueEvent, IntEventChannelSO endDialogueEvent)
-	{
-		_startDialogueEvent = startDialogueEvent;
-		_endDialogueEvent = endDialogueEvent;
-	}
+    public IsDialogueActiveCondition(DialogueDataChannelSO startDialogueEvent, IntEventChannelSO endDialogueEvent)
+    {
+        _startDialogueEvent = startDialogueEvent;
+        _endDialogueEvent   = endDialogueEvent;
+    }
 
-	protected override bool Statement()
-	{
-		return _isDialogueActive;
-	}
+    protected override bool Statement()
+    {
+        return _isDialogueActive;
+    }
 
-	public override void OnStateEnter()
-	{
-		if (_startDialogueEvent != null)
-		{
-			_startDialogueEvent.OnEventRaised += OnDialogueStart;
-		}
+    public override void OnStateEnter()
+    {
+        if (_startDialogueEvent != null)
+        {
+            _startDialogueEvent.OnEventRaised += OnDialogueStart;
+        }
 
-		if (_endDialogueEvent != null)
-		{
-			_endDialogueEvent.OnEventRaised += OnDialogueEnd;
-		}
-	}
+        if (_endDialogueEvent != null)
+        {
+            _endDialogueEvent.OnEventRaised += OnDialogueEnd;
+        }
+    }
 
-	public override void OnStateExit()
-	{
-		if (_startDialogueEvent != null)
-		{
-			_startDialogueEvent.OnEventRaised -= OnDialogueStart;
-		}
+    public override void OnStateExit()
+    {
+        if (_startDialogueEvent != null)
+        {
+            _startDialogueEvent.OnEventRaised -= OnDialogueStart;
+        }
 
-		if (_endDialogueEvent != null)
-		{
-			_endDialogueEvent.OnEventRaised -= OnDialogueEnd;
-		}
-	}
+        if (_endDialogueEvent != null)
+        {
+            _endDialogueEvent.OnEventRaised -= OnDialogueEnd;
+        }
+    }
 
-	private void OnDialogueStart(DialogueDataSO dialogue)
-	{
-		_isDialogueActive = true;
-	}
+    private void OnDialogueStart(DialogueDataSO dialogue)
+    {
+        _isDialogueActive = true;
+    }
 
-	private void OnDialogueEnd(int dialogueType)
-	{
-		_isDialogueActive = false;
-	}
+    private void OnDialogueEnd(int dialogueType)
+    {
+        _isDialogueActive = false;
+    }
 }

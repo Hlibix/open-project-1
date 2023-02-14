@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6946125178769591659}
   - {fileID: 7878635858893412370}
@@ -59,6 +60,7 @@ Transform:
   m_LocalRotation: {x: 0.22387466, y: -0.2532678, z: 0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 55.006607, y: 9.340118, z: -143.71512}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6199609746582980286}
   m_Father: {fileID: 3336172139464101627}
@@ -93,7 +95,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.051332, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -129,6 +131,7 @@ Transform:
   m_LocalRotation: {x: -0.22387466, y: 0.2532678, z: -0.06036535, w: 0.9391973}
   m_LocalPosition: {x: 24.70612, y: 60.180565, z: 139.76733}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7878635858893412370}
   m_RootOrder: 0
@@ -164,7 +167,7 @@ PrefabInstance:
     - target: {fileID: 244216481246938342, guid: 254bf66f87892c94985b0720d6497bd3,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.051332
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 303239861944462450, guid: 254bf66f87892c94985b0720d6497bd3,
         type: 3}

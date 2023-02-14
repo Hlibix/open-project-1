@@ -155,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 3416423284413987952, guid: b4583a7f005d6724798206eee4608f75,
         type: 3}
       propertyPath: m_Name
-      value: RockCritter
+      value: Klipper_TerraRequest
       objectReference: {fileID: 0}
     - target: {fileID: 3416423284413987952, guid: b4583a7f005d6724798206eee4608f75,
         type: 3}

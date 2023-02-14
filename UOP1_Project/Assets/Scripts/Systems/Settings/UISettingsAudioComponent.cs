@@ -3,167 +3,184 @@ using UnityEngine.Events;
 
 public class UISettingsAudioComponent : MonoBehaviour
 {
-	[SerializeField] UISettingItemFiller _masterVolumeField;
-	[SerializeField] UISettingItemFiller _musicVolumeField;
-	[SerializeField] UISettingItemFiller _sfxVolumeField;
+    [SerializeField]
+    private UISettingItemFiller _masterVolumeField;
 
-	[SerializeField] UIGenericButton _saveButton;
-	[SerializeField] UIGenericButton _resetButton;
+    [SerializeField]
+    private UISettingItemFiller _musicVolumeField;
 
-	[Header("Broadcasting")]
-	[SerializeField] private FloatEventChannelSO _masterVolumeEventChannel = default;
-	[SerializeField] private FloatEventChannelSO _sFXVolumeEventChannel = default;
-	[SerializeField] private FloatEventChannelSO _musicVolumeEventChannel = default;
-	private float _musicVolume { get; set; }
-	private float _sfxVolume { get; set; }
-	private float _masterVolume { get; set; }
-	private float _savedMusicVolume { get; set; }
-	private float _savedSfxVolume { get; set; }
-	private float _savedMasterVolume { get; set; }
+    [SerializeField]
+    private UISettingItemFiller _sfxVolumeField;
 
-	int _maxVolume = 10;
+    [SerializeField]
+    private UIGenericButton _saveButton;
 
-	public event UnityAction<float, float, float> _save = delegate { };
-	private void OnEnable()
-	{
-		_musicVolumeField.OnNextOption += IncreaseMusicVolume;
-		_musicVolumeField.OnPreviousOption += DecreaseMusicVolume;
-		_saveButton.Clicked += SaveVolumes;
-		_resetButton.Clicked += ResetVolumes;
-		_sfxVolumeField.OnNextOption += IncreaseSFXVolume;
-		_sfxVolumeField.OnPreviousOption += DecreaseSFXVolume;
-		_masterVolumeField.OnNextOption += IncreaseMasterVolume;
-		_masterVolumeField.OnPreviousOption += DecreaseMasterVolume;
+    [SerializeField]
+    private UIGenericButton _resetButton;
 
-	}
-	private void OnDisable()
-	{
-		ResetVolumes(); // reset volumes on disable. If not saved, it will reset to initial volumes. 
-		_musicVolumeField.OnNextOption -= IncreaseMusicVolume;
-		_musicVolumeField.OnPreviousOption -= DecreaseMusicVolume;
-		_saveButton.Clicked -= SaveVolumes;
-		_resetButton.Clicked -= ResetVolumes;
-		_sfxVolumeField.OnNextOption -= IncreaseSFXVolume;
-		_sfxVolumeField.OnPreviousOption -= DecreaseSFXVolume;
-		_masterVolumeField.OnNextOption -= IncreaseMasterVolume;
-		_masterVolumeField.OnPreviousOption -= DecreaseMasterVolume;
+    [Header("Broadcasting")]
+    [SerializeField]
+    private FloatEventChannelSO _masterVolumeEventChannel;
 
-	}
-	public void Setup(float musicVolume, float sfxVolume, float masterVolume)
-	{
-		_masterVolume = masterVolume;
-		_musicVolume = sfxVolume;
-		_sfxVolume = musicVolume;
+    [SerializeField]
+    private FloatEventChannelSO _sFXVolumeEventChannel;
 
-		_savedMasterVolume = _masterVolume;
-		_savedMusicVolume = _musicVolume;
-		_savedSfxVolume = _sfxVolume;
+    [SerializeField]
+    private FloatEventChannelSO _musicVolumeEventChannel;
 
-		SetMusicVolumeField();
-		SetSfxVolumeField();
-		SetMasterVolumeField();
-	}
-	private void SetMusicVolumeField()
-	{
-		int paginationCount = _maxVolume + 1; // adding a page in the pagination since the count starts from 0
-		int selectedPaginationIndex = Mathf.RoundToInt(_maxVolume * _musicVolume);
-		string selectedOption = Mathf.RoundToInt(_maxVolume * _musicVolume).ToString();
+    private float _musicVolume       { get; set; }
+    private float _sfxVolume         { get; set; }
+    private float _masterVolume      { get; set; }
+    private float _savedMusicVolume  { get; set; }
+    private float _savedSfxVolume    { get; set; }
+    private float _savedMasterVolume { get; set; }
 
-		SetMusicVolume();
+    private int _maxVolume = 10;
 
-		_musicVolumeField.FillSettingField(paginationCount, selectedPaginationIndex, selectedOption);
+    public event UnityAction<float, float, float> _save = delegate { };
 
+    private void OnEnable()
+    {
+        _musicVolumeField.OnNextOption      += IncreaseMusicVolume;
+        _musicVolumeField.OnPreviousOption  += DecreaseMusicVolume;
+        _saveButton.Clicked                 += SaveVolumes;
+        _resetButton.Clicked                += ResetVolumes;
+        _sfxVolumeField.OnNextOption        += IncreaseSFXVolume;
+        _sfxVolumeField.OnPreviousOption    += DecreaseSFXVolume;
+        _masterVolumeField.OnNextOption     += IncreaseMasterVolume;
+        _masterVolumeField.OnPreviousOption += DecreaseMasterVolume;
+    }
 
-	}
-	private void SetSfxVolumeField()
-	{
-		int paginationCount = _maxVolume + 1;// adding a page in the pagination since the count starts from 0
-		int selectedPaginationIndex = Mathf.RoundToInt(_maxVolume * _sfxVolume);
-		string selectedOption = Mathf.RoundToInt(_maxVolume * _sfxVolume).ToString();
+    private void OnDisable()
+    {
+        ResetVolumes(); // reset volumes on disable. If not saved, it will reset to initial volumes.
+        _musicVolumeField.OnNextOption      -= IncreaseMusicVolume;
+        _musicVolumeField.OnPreviousOption  -= DecreaseMusicVolume;
+        _saveButton.Clicked                 -= SaveVolumes;
+        _resetButton.Clicked                -= ResetVolumes;
+        _sfxVolumeField.OnNextOption        -= IncreaseSFXVolume;
+        _sfxVolumeField.OnPreviousOption    -= DecreaseSFXVolume;
+        _masterVolumeField.OnNextOption     -= IncreaseMasterVolume;
+        _masterVolumeField.OnPreviousOption -= DecreaseMasterVolume;
+    }
 
-		SetSfxVolume();
+    public void Setup(float musicVolume, float sfxVolume, float masterVolume)
+    {
+        _masterVolume = masterVolume;
+        _musicVolume  = sfxVolume;
+        _sfxVolume    = musicVolume;
 
-		_sfxVolumeField.FillSettingField(paginationCount, selectedPaginationIndex, selectedOption);
+        _savedMasterVolume = _masterVolume;
+        _savedMusicVolume  = _musicVolume;
+        _savedSfxVolume    = _sfxVolume;
 
-	}
-	private void SetMasterVolumeField()
-	{
-		int paginationCount = _maxVolume + 1;// adding a page in the pagination since the count starts from 0
-		int selectedPaginationIndex = Mathf.RoundToInt(_maxVolume * _masterVolume);
-		string selectedOption = Mathf.RoundToInt(_maxVolume * _masterVolume).ToString();
+        SetMusicVolumeField();
+        SetSfxVolumeField();
+        SetMasterVolumeField();
+    }
 
-		SetMasterVolume();
+    private void SetMusicVolumeField()
+    {
+        var paginationCount         = _maxVolume + 1; // adding a page in the pagination since the count starts from 0
+        var selectedPaginationIndex = Mathf.RoundToInt(_maxVolume * _musicVolume);
+        var selectedOption          = Mathf.RoundToInt(_maxVolume * _musicVolume).ToString();
 
-		_masterVolumeField.FillSettingField(paginationCount, selectedPaginationIndex, selectedOption);
+        SetMusicVolume();
 
-	}
-	private void SetMusicVolume()
-	{
-		_musicVolumeEventChannel.RaiseEvent(_musicVolume);//raise event for volume change
-	}
-	private void SetSfxVolume()
-	{
-		_sFXVolumeEventChannel.RaiseEvent(_sfxVolume); //raise event for volume change
+        _musicVolumeField.FillSettingField(paginationCount, selectedPaginationIndex, selectedOption);
+    }
 
-	}
-	private void SetMasterVolume()
-	{
-		_masterVolumeEventChannel.RaiseEvent(_masterVolume); //raise event for volume change
+    private void SetSfxVolumeField()
+    {
+        var paginationCount         = _maxVolume + 1; // adding a page in the pagination since the count starts from 0
+        var selectedPaginationIndex = Mathf.RoundToInt(_maxVolume * _sfxVolume);
+        var selectedOption          = Mathf.RoundToInt(_maxVolume * _sfxVolume).ToString();
 
-	}
+        SetSfxVolume();
 
-	private void IncreaseMasterVolume()
-	{
-		_masterVolume += 1 / (float)_maxVolume;
-		_masterVolume = Mathf.Clamp(_masterVolume, 0, 1);
-		SetMasterVolumeField();
-	}
-	private void DecreaseMasterVolume()
-	{
-		_masterVolume -= 1 / (float)_maxVolume;
-		_masterVolume = Mathf.Clamp(_masterVolume, 0, 1);
-		SetMasterVolumeField();
-	}
-	private void IncreaseMusicVolume()
-	{
-		_musicVolume += 1 / (float)_maxVolume;
-		_musicVolume = Mathf.Clamp(_musicVolume, 0, 1);
-		SetMusicVolumeField();
-	}
-	private void DecreaseMusicVolume()
-	{
+        _sfxVolumeField.FillSettingField(paginationCount, selectedPaginationIndex, selectedOption);
+    }
 
-		_musicVolume -= 1 / (float)_maxVolume;
-		_musicVolume = Mathf.Clamp(_musicVolume, 0, 1);
-		SetMusicVolumeField();
-	}
-	private void IncreaseSFXVolume()
-	{
-		_sfxVolume += 1 / (float)_maxVolume;
-		_sfxVolume = Mathf.Clamp(_sfxVolume, 0, 1);
+    private void SetMasterVolumeField()
+    {
+        var paginationCount         = _maxVolume + 1; // adding a page in the pagination since the count starts from 0
+        var selectedPaginationIndex = Mathf.RoundToInt(_maxVolume * _masterVolume);
+        var selectedOption          = Mathf.RoundToInt(_maxVolume * _masterVolume).ToString();
 
-		SetSfxVolumeField();
-	}
-	private void DecreaseSFXVolume()
-	{
+        SetMasterVolume();
 
-		_sfxVolume -= 1 / (float)_maxVolume;
-		_sfxVolume = Mathf.Clamp(_sfxVolume, 0, 1);
-		SetSfxVolumeField();
-	}
+        _masterVolumeField.FillSettingField(paginationCount, selectedPaginationIndex, selectedOption);
+    }
 
-	private void ResetVolumes()
-	{
-		Setup(_savedMusicVolume, _savedSfxVolume, _savedMasterVolume);
-	}
-	private void SaveVolumes()
-	{
-		_savedMasterVolume = _masterVolume;
-		_savedMusicVolume = _musicVolume;
-		_savedSfxVolume = _sfxVolume;
-		//save Audio
-		_save.Invoke(_musicVolume, _sfxVolume, _masterVolume);
-	}
+    private void SetMusicVolume()
+    {
+        _musicVolumeEventChannel.RaiseEvent(_musicVolume); //raise event for volume change
+    }
 
+    private void SetSfxVolume()
+    {
+        _sFXVolumeEventChannel.RaiseEvent(_sfxVolume); //raise event for volume change
+    }
 
+    private void SetMasterVolume()
+    {
+        _masterVolumeEventChannel.RaiseEvent(_masterVolume); //raise event for volume change
+    }
+
+    private void IncreaseMasterVolume()
+    {
+        _masterVolume += 1 / (float)_maxVolume;
+        _masterVolume =  Mathf.Clamp(_masterVolume, 0, 1);
+        SetMasterVolumeField();
+    }
+
+    private void DecreaseMasterVolume()
+    {
+        _masterVolume -= 1 / (float)_maxVolume;
+        _masterVolume =  Mathf.Clamp(_masterVolume, 0, 1);
+        SetMasterVolumeField();
+    }
+
+    private void IncreaseMusicVolume()
+    {
+        _musicVolume += 1 / (float)_maxVolume;
+        _musicVolume =  Mathf.Clamp(_musicVolume, 0, 1);
+        SetMusicVolumeField();
+    }
+
+    private void DecreaseMusicVolume()
+    {
+        _musicVolume -= 1 / (float)_maxVolume;
+        _musicVolume =  Mathf.Clamp(_musicVolume, 0, 1);
+        SetMusicVolumeField();
+    }
+
+    private void IncreaseSFXVolume()
+    {
+        _sfxVolume += 1 / (float)_maxVolume;
+        _sfxVolume =  Mathf.Clamp(_sfxVolume, 0, 1);
+
+        SetSfxVolumeField();
+    }
+
+    private void DecreaseSFXVolume()
+    {
+        _sfxVolume -= 1 / (float)_maxVolume;
+        _sfxVolume =  Mathf.Clamp(_sfxVolume, 0, 1);
+        SetSfxVolumeField();
+    }
+
+    private void ResetVolumes()
+    {
+        Setup(_savedMusicVolume, _savedSfxVolume, _savedMasterVolume);
+    }
+
+    private void SaveVolumes()
+    {
+        _savedMasterVolume = _masterVolume;
+        _savedMusicVolume  = _musicVolume;
+        _savedSfxVolume    = _sfxVolume;
+        //save Audio
+        _save.Invoke(_musicVolume, _sfxVolume, _masterVolume);
+    }
 }

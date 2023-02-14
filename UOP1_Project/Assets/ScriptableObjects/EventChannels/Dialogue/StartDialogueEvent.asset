@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458685ec13446b04e887efdeca5ec20f, type: 3}
   m_Name: StartDialogueEvent
   m_EditorClassIdentifier: 
+  _guid: 5cfe626f5482b914a9e46ebbe35ea1a8
+  description: 

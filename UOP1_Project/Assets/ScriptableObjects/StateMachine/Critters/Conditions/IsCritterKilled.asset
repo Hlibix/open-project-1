@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e847bca5e64154c9c78ff8acbbe27e, type: 3}
   m_Name: IsCritterKilled
   m_EditorClassIdentifier: 
-  cacheResult: 1

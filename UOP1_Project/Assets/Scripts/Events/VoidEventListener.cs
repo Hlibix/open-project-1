@@ -6,25 +6,32 @@ using UnityEngine.Events;
 /// </summary>
 public class VoidEventListener : MonoBehaviour
 {
-	[SerializeField] private VoidEventChannelSO _channel = default;
+    [SerializeField]
+    private VoidEventChannelSO _channel;
 
-	public UnityEvent OnEventRaised;
+    public UnityEvent OnEventRaised;
 
-	private void OnEnable()
-	{
-		if (_channel != null)
-			_channel.OnEventRaised += Respond;
-	}
+    private void OnEnable()
+    {
+        if (_channel != null)
+        {
+            _channel.OnEventRaised += Respond;
+        }
+    }
 
-	private void OnDisable()
-	{
-		if (_channel != null)
-			_channel.OnEventRaised -= Respond;
-	}
+    private void OnDisable()
+    {
+        if (_channel != null)
+        {
+            _channel.OnEventRaised -= Respond;
+        }
+    }
 
-	private void Respond()
-	{
-		if (OnEventRaised != null)
-			OnEventRaised.Invoke();
-	}
+    private void Respond()
+    {
+        if (OnEventRaised != null)
+        {
+            OnEventRaised.Invoke();
+        }
+    }
 }

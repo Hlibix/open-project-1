@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 523e481f8b4b93d439871661c4fb944f,
         type: 3}
       propertyPath: m_Name
-      value: artichokeWithStem
+      value: Artichoke_WithStem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 523e481f8b4b93d439871661c4fb944f, type: 3}

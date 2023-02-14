@@ -2,21 +2,24 @@ using UnityEngine;
 
 public class CutsceneAudioConfigSetter : MonoBehaviour
 {
-	[SerializeField] private AudioConfigurationSO _audioConfig = default;
-	[SerializeField] private VoidEventChannelSO onCutsceneStart = default;
+    [SerializeField]
+    private AudioConfigurationSO _audioConfig;
 
-	private void OnEnable()
-	{
-		onCutsceneStart.OnEventRaised += SetVolume;
-	}
+    [SerializeField]
+    private VoidEventChannelSO onCutsceneStart;
 
-	private void OnDestroy()
-	{
-		onCutsceneStart.OnEventRaised -= SetVolume;
-	}
+    private void OnEnable()
+    {
+        onCutsceneStart.OnEventRaised += SetVolume;
+    }
 
-	private void SetVolume()
-	{
-		GetComponent<AudioSource>().volume = _audioConfig.Volume;
-	}
+    private void OnDestroy()
+    {
+        onCutsceneStart.OnEventRaised -= SetVolume;
+    }
+
+    private void SetVolume()
+    {
+        GetComponent<AudioSource>().volume = _audioConfig.Volume;
+    }
 }

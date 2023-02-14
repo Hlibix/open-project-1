@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696142ab7e0adf0478f66a5c9e06a168, type: 3}
   m_Name: InflictDamageEvent
   m_EditorClassIdentifier: 
+  _guid: be921b398c68d450e9e3c55dde697149
   description: 

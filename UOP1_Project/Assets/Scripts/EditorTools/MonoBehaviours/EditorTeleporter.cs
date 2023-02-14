@@ -1,39 +1,52 @@
-using System;
 using UnityEngine;
 
 public class EditorTeleporter : MonoBehaviour
 {
-    [SerializeField] private InputReader _inputReader;
-	[SerializeField] private GameObject _cheatMenu;
-	[SerializeField] private PathStorageSO _path;
+    [SerializeField]
+    private InputReader _inputReader;
 
-	[Header("Broadcast on")]
-	[SerializeField] private LoadEventChannelSO _loadLocationRequest;
+    [SerializeField]
+    private GameObject _cheatMenu;
 
-	private LocationSO _lastLocationTeleportedTo = default;
+    [SerializeField]
+    private PathStorageSO _path;
 
-	private void OnEnable() => _inputReader.CheatMenuEvent += ToggleCheatMenu;
+    [Header("Broadcast on")]
+    [SerializeField]
+    private LoadEventChannelSO _loadLocationRequest;
 
-	private void OnDisable() => _inputReader.CheatMenuEvent -= ToggleCheatMenu;
+    private LocationSO _lastLocationTeleportedTo;
 
-	private void Start()
-	{
-		_cheatMenu.SetActive(false);
-	}
+    private void OnEnable()
+    {
+        _inputReader.CheatMenuEvent += ToggleCheatMenu;
+    }
 
-	private void ToggleCheatMenu()
-	{
-		_cheatMenu.SetActive(!_cheatMenu.activeInHierarchy);
-	}
+    private void OnDisable()
+    {
+        _inputReader.CheatMenuEvent -= ToggleCheatMenu;
+    }
 
-	public void Teleport(LocationSO where, PathSO whichEntrance)
-	{
-		//Avoid reloading the same Location, which would result in an error
-		if(where == _lastLocationTeleportedTo)
-			return;
+    private void Start()
+    {
+        _cheatMenu.SetActive(false);
+    }
 
-		_path.lastPathTaken = whichEntrance;
-		_lastLocationTeleportedTo = where;
-		_loadLocationRequest.RaiseEvent(where);
-	}
+    private void ToggleCheatMenu()
+    {
+        _cheatMenu.SetActive(!_cheatMenu.activeInHierarchy);
+    }
+
+    public void Teleport(LocationSO where, PathSO whichEntrance)
+    {
+        //Avoid reloading the same Location, which would result in an error
+        if (where == _lastLocationTeleportedTo)
+        {
+            return;
+        }
+
+        _path.lastPathTaken       = whichEntrance;
+        _lastLocationTeleportedTo = where;
+        _loadLocationRequest.RaiseEvent(where);
+    }
 }

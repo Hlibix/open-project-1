@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 50eb0cca3db371b48ae9ec78c38decf7,
         type: 3}
       propertyPath: m_Name
-      value: cornCobDetailed
+      value: CornCob
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50eb0cca3db371b48ae9ec78c38decf7, type: 3}

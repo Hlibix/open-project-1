@@ -21,7 +21,8 @@ MonoBehaviour:
         m_KeyId: 0
         m_Key: L1-D1-SD-S2-Q1-QL1
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices:
     - _response:
         m_TableReference:
@@ -30,9 +31,10 @@ MonoBehaviour:
           m_KeyId: 0
           m_Key: C1-D1-SD-S2-Q1-QL1
         m_FallbackState: 0
-        m_WaitForCompletion: 1
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       _nextDialogue: {fileID: 0}
-      _actionType: 0
+      _actionType: 1
     - _response:
         m_TableReference:
           m_TableCollectionName: Questline Dialogue
@@ -40,8 +42,12 @@ MonoBehaviour:
           m_KeyId: 0
           m_Key: C2-D1-SD-S2-Q1-QL1
         m_FallbackState: 0
-        m_WaitForCompletion: 1
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       _nextDialogue: {fileID: 0}
-      _actionType: 0
+      _actionType: 4
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

@@ -7,63 +7,73 @@ using UnityEngine;
 /// </summary>
 public class AudioCue : MonoBehaviour
 {
-	[Header("Sound definition")]
-	[SerializeField] private AudioCueSO _audioCue = default;
-	[SerializeField] private bool _playOnStart = false;
+    [Header("Sound definition")]
+    [SerializeField]
+    private AudioCueSO _audioCue;
 
-	[Header("Configuration")]
-	[SerializeField] private AudioCueEventChannelSO _audioCueEventChannel = default;
-	[SerializeField] private AudioConfigurationSO _audioConfiguration = default;
+    [SerializeField]
+    private bool _playOnStart;
 
-	private AudioCueKey controlKey = AudioCueKey.Invalid;
+    [Header("Configuration")]
+    [SerializeField]
+    private AudioCueEventChannelSO _audioCueEventChannel;
 
-	private void Start()
-	{
-		if (_playOnStart)
-			StartCoroutine(PlayDelayed());
-	}
+    [SerializeField]
+    private AudioConfigurationSO _audioConfiguration;
 
-	private void OnDisable()
-	{
-		_playOnStart = false;
-		StopAudioCue();
-	}
+    private AudioCueKey controlKey = AudioCueKey.Invalid;
 
-	private IEnumerator PlayDelayed()
-	{
-		//The wait allows the AudioManager to be ready for play requests
-		yield return new WaitForSeconds(1f);
+    private void Start()
+    {
+        if (_playOnStart)
+        {
+            StartCoroutine(PlayDelayed());
+        }
+    }
 
-		//This additional check prevents the AudioCue from playing if the object is disabled or the scene unloaded
-		//This prevents playing a looping AudioCue which then would be never stopped
-		if (_playOnStart)
-			PlayAudioCue();
-	}
+    private void OnDisable()
+    {
+        _playOnStart = false;
+        StopAudioCue();
+    }
 
-	public void PlayAudioCue()
-	{
-		controlKey = _audioCueEventChannel.RaisePlayEvent(_audioCue, _audioConfiguration, transform.position);
-	}
+    private IEnumerator PlayDelayed()
+    {
+        //The wait allows the AudioManager to be ready for play requests
+        yield return new WaitForSeconds(1f);
 
-	public void StopAudioCue()
-	{
-		if (controlKey != AudioCueKey.Invalid)
-		{
-			if (!_audioCueEventChannel.RaiseStopEvent(controlKey))
-			{
-				controlKey = AudioCueKey.Invalid;
-			}
-		}
-	}
+        //This additional check prevents the AudioCue from playing if the object is disabled or the scene unloaded
+        //This prevents playing a looping AudioCue which then would be never stopped
+        if (_playOnStart)
+        {
+            PlayAudioCue();
+        }
+    }
 
-	public void FinishAudioCue()
-	{
-		if (controlKey != AudioCueKey.Invalid)
-		{
-			if (!_audioCueEventChannel.RaiseFinishEvent(controlKey))
-			{
-				controlKey = AudioCueKey.Invalid;
-			}
-		}
-	}
+    public void PlayAudioCue()
+    {
+        controlKey = _audioCueEventChannel.RaisePlayEvent(_audioCue, _audioConfiguration, transform.position);
+    }
+
+    public void StopAudioCue()
+    {
+        if (controlKey != AudioCueKey.Invalid)
+        {
+            if (!_audioCueEventChannel.RaiseStopEvent(controlKey))
+            {
+                controlKey = AudioCueKey.Invalid;
+            }
+        }
+    }
+
+    public void FinishAudioCue()
+    {
+        if (controlKey != AudioCueKey.Invalid)
+        {
+            if (!_audioCueEventChannel.RaiseFinishEvent(controlKey))
+            {
+                controlKey = AudioCueKey.Invalid;
+            }
+        }
+    }
 }

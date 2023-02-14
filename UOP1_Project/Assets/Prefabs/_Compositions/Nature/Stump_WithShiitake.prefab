@@ -365,7 +365,7 @@ PrefabInstance:
     - target: {fileID: 4738025685352980637, guid: 50c6e6d7c72e3d64e8aab45c5d4f7706,
         type: 3}
       propertyPath: m_Name
-      value: StumpWithShiitake
+      value: Stump_WithShiitake
       objectReference: {fileID: 0}
     - target: {fileID: 5371397895735245351, guid: 50c6e6d7c72e3d64e8aab45c5d4f7706,
         type: 3}

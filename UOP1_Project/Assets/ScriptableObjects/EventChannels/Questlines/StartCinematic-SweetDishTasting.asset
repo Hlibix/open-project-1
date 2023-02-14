@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: StartCinematic-SweetDishTasting
   m_EditorClassIdentifier: 
+  _guid: 4d7d2082d811bcb44bbbbd181f56c418
   description: Start the cinematic for sweet dish tasting by the Legendary Chef

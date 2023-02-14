@@ -1,308 +1,340 @@
 ﻿using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
-[System.Serializable]
+[Serializable]
 public class ShadowDistanceTier
 {
-	public float Distance;
-	public string TierDescription;
+    public float  Distance;
+    public string TierDescription;
 }
 
 public class UISettingsGraphicsComponent : MonoBehaviour
 {
-	[FormerlySerializedAs("ShadowDistanceTierList")]
-	[SerializeField] private List<ShadowDistanceTier> _shadowDistanceTierList = new List<ShadowDistanceTier>(); // filled from inspector
-	[FormerlySerializedAs("URPAsset")]
-	[SerializeField] private UniversalRenderPipelineAsset _uRPAsset = default;
+    [FormerlySerializedAs("ShadowDistanceTierList")]
+    [SerializeField]
+    private List<ShadowDistanceTier> _shadowDistanceTierList = new(); // filled from inspector
 
-	private int _savedResolutionIndex = default;
-	private int _savedAntiAliasingIndex = default;
-	private int _savedShadowDistanceTier = default;
-	private bool _savedFullscreenState = default;
+    [FormerlySerializedAs("URPAsset")]
+    [SerializeField]
+    private UniversalRenderPipelineAsset _uRPAsset;
 
-	private int _currentResolutionIndex = default;
-	private List<Resolution> _resolutionsList = default;
-	[SerializeField] UISettingItemFiller _resolutionsField = default;
+    private int  _savedResolutionIndex;
+    private int  _savedAntiAliasingIndex;
+    private int  _savedShadowDistanceTier;
+    private bool _savedFullscreenState;
 
-	/*	private int _currentShadowQualityIndex = default;
-		private List<string> _shadowQualityList = default;
-		[SerializeField] private UISettingItemFiller _shadowQualityField = default;*/
+    private int              _currentResolutionIndex;
+    private List<Resolution> _resolutionsList;
 
-	private int _currentAntiAliasingIndex = default;
-	private List<string> _currentAntiAliasingList = default;
-	[SerializeField] private UISettingItemFiller _antiAliasingField = default;
+    [SerializeField]
+    private UISettingItemFiller _resolutionsField;
 
-	private int _currentShadowDistanceTier = default;
-	[SerializeField] private UISettingItemFiller _shadowDistanceField = default;
-	private bool _isFullscreen = default;
+    /*  private int _currentShadowQualityIndex = default;
+      private List<string> _shadowQualityList = default;
+     [SerializeField] private UISettingItemFiller _shadowQualityField = default;*/
 
-	[SerializeField] private UISettingItemFiller _fullscreenField = default;
+    private int          _currentAntiAliasingIndex;
+    private List<string> _currentAntiAliasingList;
 
-	public event UnityAction<int, int, float, bool> _save = delegate { };
+    [SerializeField]
+    private UISettingItemFiller _antiAliasingField;
 
-	private Resolution _currentResolution;
+    private int _currentShadowDistanceTier;
 
-	[SerializeField] private UIGenericButton _saveButton;
-	[SerializeField] private UIGenericButton _resetButton;
+    [SerializeField]
+    private UISettingItemFiller _shadowDistanceField;
 
-	void OnEnable()
-	{
-		_resolutionsField.OnNextOption += NextResolution;
-		_resolutionsField.OnPreviousOption += PreviousResolution;
+    private bool _isFullscreen;
 
-		_shadowDistanceField.OnNextOption += NextShadowDistanceTier;
-		_shadowDistanceField.OnPreviousOption += PreviousShadowDistanceTier;
+    [SerializeField]
+    private UISettingItemFiller _fullscreenField;
 
-		_fullscreenField.OnNextOption += NextFullscreenState;
-		_fullscreenField.OnPreviousOption += PreviousFullscreenState;
+    public event UnityAction<int, int, float, bool> _save = delegate { };
 
-		_antiAliasingField.OnNextOption += NextAntiAliasingTier;
-		_antiAliasingField.OnPreviousOption += PreviousAntiAliasingTier;
+    private Resolution _currentResolution;
 
-		_saveButton.Clicked += SaveSettings;
-		_resetButton.Clicked += ResetSettings;
+    [SerializeField]
+    private UIGenericButton _saveButton;
 
-	}
-	private void OnDisable()
-	{
-		ResetSettings();
-		
-		_resolutionsField.OnNextOption -= NextResolution;
-		_resolutionsField.OnPreviousOption -= PreviousResolution;
+    [SerializeField]
+    private UIGenericButton _resetButton;
 
-		_shadowDistanceField.OnNextOption -= NextShadowDistanceTier;
-		_shadowDistanceField.OnPreviousOption -= PreviousShadowDistanceTier;
+    private void OnEnable()
+    {
+        _resolutionsField.OnNextOption     += NextResolution;
+        _resolutionsField.OnPreviousOption += PreviousResolution;
 
-		_fullscreenField.OnNextOption -= NextFullscreenState;
-		_fullscreenField.OnPreviousOption -= PreviousFullscreenState;
+        _shadowDistanceField.OnNextOption     += NextShadowDistanceTier;
+        _shadowDistanceField.OnPreviousOption += PreviousShadowDistanceTier;
 
-		_antiAliasingField.OnNextOption -= NextAntiAliasingTier;
-		_antiAliasingField.OnPreviousOption -= PreviousAntiAliasingTier;
+        _fullscreenField.OnNextOption     += NextFullscreenState;
+        _fullscreenField.OnPreviousOption += PreviousFullscreenState;
 
-		_saveButton.Clicked -= SaveSettings;
-		_resetButton.Clicked -= ResetSettings;
-	}
+        _antiAliasingField.OnNextOption     += NextAntiAliasingTier;
+        _antiAliasingField.OnPreviousOption += PreviousAntiAliasingTier;
 
-	public void Init()
-	{
-		_resolutionsList = GetResolutionsList();
-		_currentShadowDistanceTier = GetCurrentShadowDistanceTier();
-		_currentAntiAliasingList = GetDropdownData(Enum.GetNames(typeof(MsaaQuality)));
+        _saveButton.Clicked  += SaveSettings;
+        _resetButton.Clicked += ResetSettings;
+    }
 
-		_currentResolution = Screen.currentResolution;
-		_currentResolutionIndex = GetCurrentResolutionIndex();
-		_isFullscreen = GetCurrentFullscreenState();
-		_currentAntiAliasingIndex = GetCurrentAntialiasing();
+    private void OnDisable()
+    {
+        ResetSettings();
 
-		_savedResolutionIndex = _currentResolutionIndex;
-		_savedAntiAliasingIndex = _currentAntiAliasingIndex;
-		_savedShadowDistanceTier = _currentShadowDistanceTier;
-		_savedFullscreenState = _isFullscreen;
-	}
-	
-	public void Setup()
-	{
-		Init();
-		SetResolutionField();
-		SetShadowDistance();
-		SetFullscreen();
-		SetAntiAliasingField();
-	}
+        _resolutionsField.OnNextOption     -= NextResolution;
+        _resolutionsField.OnPreviousOption -= PreviousResolution;
 
-	#region Resolution
-	void SetResolutionField()
-	{
-		string displayText = _resolutionsList[_currentResolutionIndex].ToString();
-		displayText = displayText.Substring(0, displayText.IndexOf("@"));
+        _shadowDistanceField.OnNextOption     -= NextShadowDistanceTier;
+        _shadowDistanceField.OnPreviousOption -= PreviousShadowDistanceTier;
 
-		_resolutionsField.FillSettingField(_resolutionsList.Count, _currentResolutionIndex, displayText);
+        _fullscreenField.OnNextOption     -= NextFullscreenState;
+        _fullscreenField.OnPreviousOption -= PreviousFullscreenState;
 
-	}
-	List<Resolution> GetResolutionsList()
-	{
-		List<Resolution> options = new List<Resolution>();
-		for (int i = 0; i < Screen.resolutions.Length; i++)
-		{
-			options.Add(Screen.resolutions[i]);
-		}
+        _antiAliasingField.OnNextOption     -= NextAntiAliasingTier;
+        _antiAliasingField.OnPreviousOption -= PreviousAntiAliasingTier;
 
-		return options;
-	}
-	int GetCurrentResolutionIndex()
-	{
-		if (_resolutionsList == null)
-		{ _resolutionsList = GetResolutionsList(); }
-		int index = _resolutionsList.FindIndex(o => o.width == _currentResolution.width && o.height == _currentResolution.height);
-		return index;
-	}
-	void NextResolution()
-	{
-		_currentResolutionIndex++;
-		_currentResolutionIndex = Mathf.Clamp(_currentResolutionIndex, 0, _resolutionsList.Count - 1);
-		OnResolutionChange();
-	}
-	void PreviousResolution()
-	{
-		_currentResolutionIndex--;
-		_currentResolutionIndex = Mathf.Clamp(_currentResolutionIndex, 0, _resolutionsList.Count - 1);
-		OnResolutionChange();
-	}
-	void OnResolutionChange()
-	{
-		_currentResolution = _resolutionsList[_currentResolutionIndex];
-		Screen.SetResolution(_currentResolution.width, _currentResolution.height, _isFullscreen);
-		SetResolutionField();
-	}
-	#endregion
+        _saveButton.Clicked  -= SaveSettings;
+        _resetButton.Clicked -= ResetSettings;
+    }
 
-	#region ShadowDistance
-	void SetShadowDistance()
-	{
-		_shadowDistanceField.FillSettingField_Localized(_shadowDistanceTierList.Count, _currentShadowDistanceTier, _shadowDistanceTierList[_currentShadowDistanceTier].TierDescription);
-	}
-	int GetCurrentShadowDistanceTier()
-	{
-		int tierIndex = -1;
-		if (_shadowDistanceTierList.Exists(o => o.Distance == _uRPAsset.shadowDistance))
-			tierIndex = _shadowDistanceTierList.FindIndex(o => o.Distance == _uRPAsset.shadowDistance);
-		else
-		{
-			Debug.LogError("Current shadow distance is not in the tier List " + _uRPAsset.shadowDistance);
-		}
-		return tierIndex;
+    public void Init()
+    {
+        _resolutionsList           = GetResolutionsList();
+        _currentShadowDistanceTier = GetCurrentShadowDistanceTier();
+        _currentAntiAliasingList   = GetDropdownData(Enum.GetNames(typeof(MsaaQuality)));
 
-	}
-	void NextShadowDistanceTier()
-	{
-		_currentShadowDistanceTier++;
-		_currentShadowDistanceTier = Mathf.Clamp(_currentShadowDistanceTier, 0, _shadowDistanceTierList.Count);
-		OnShadowDistanceChange();
-	}
-	void PreviousShadowDistanceTier()
-	{
-		_currentShadowDistanceTier--;
-		_currentShadowDistanceTier = Mathf.Clamp(_currentShadowDistanceTier, 0, _shadowDistanceTierList.Count);
-		OnShadowDistanceChange();
-	}
+        _currentResolution        = Screen.currentResolution;
+        _currentResolutionIndex   = GetCurrentResolutionIndex();
+        _isFullscreen             = GetCurrentFullscreenState();
+        _currentAntiAliasingIndex = GetCurrentAntialiasing();
 
-	void OnShadowDistanceChange()
-	{
-		_uRPAsset.shadowDistance = _shadowDistanceTierList[_currentShadowDistanceTier].Distance;
-		SetShadowDistance();
+        _savedResolutionIndex    = _currentResolutionIndex;
+        _savedAntiAliasingIndex  = _currentAntiAliasingIndex;
+        _savedShadowDistanceTier = _currentShadowDistanceTier;
+        _savedFullscreenState    = _isFullscreen;
+    }
 
-	}
-	#endregion
+    public void Setup()
+    {
+        Init();
+        SetResolutionField();
+        SetShadowDistance();
+        SetFullscreen();
+        SetAntiAliasingField();
+    }
 
-	#region fullscreen
-	void SetFullscreen()
-	{
-		if (_isFullscreen)
-		{
-			_fullscreenField.FillSettingField_Localized(2, 1, "On");
-		}
-		else
-		{
-			_fullscreenField.FillSettingField_Localized(2, 0, "Off");
-		}
+    #region Resolution
 
-	}
-	bool GetCurrentFullscreenState()
-	{
-		return Screen.fullScreen;
-	}
-	void NextFullscreenState()
-	{
-		_isFullscreen = true;
-		OnFullscreenChange();
-	}
-	void PreviousFullscreenState()
-	{
-		_isFullscreen = false;
-		OnFullscreenChange();
-	}
-	void OnFullscreenChange()
-	{
-		Screen.fullScreen = _isFullscreen;
-		SetFullscreen();
-	}
-	#endregion
+    private void SetResolutionField()
+    {
+        var displayText = _resolutionsList[_currentResolutionIndex].ToString();
+        displayText = displayText.Substring(0, displayText.IndexOf("@"));
 
-	#region Anti Aliasing
-	void SetAntiAliasingField()
-	{
-		string optionDisplay = _currentAntiAliasingList[_currentAntiAliasingIndex].Replace("_", "");
-		_antiAliasingField.FillSettingField(_currentAntiAliasingList.Count, _currentAntiAliasingIndex, optionDisplay);
+        _resolutionsField.FillSettingField(_resolutionsList.Count, _currentResolutionIndex, displayText);
+    }
 
-	}
-	int GetCurrentAntialiasing()
-	{
-		return _uRPAsset.msaaSampleCount;
+    private List<Resolution> GetResolutionsList()
+    {
+        var options = new List<Resolution>();
+        for (var i = 0; i < Screen.resolutions.Length; i++)
+        {
+            options.Add(Screen.resolutions[i]);
+        }
 
-	}
-	void NextAntiAliasingTier()
-	{
-		_currentAntiAliasingIndex++;
-		_currentAntiAliasingIndex = Mathf.Clamp(_currentAntiAliasingIndex, 0, _currentAntiAliasingList.Count - 1);
-		OnAntiAliasingChange();
-	}
-	void PreviousAntiAliasingTier()
-	{
-		_currentAntiAliasingIndex--;
-		_currentAntiAliasingIndex = Mathf.Clamp(_currentAntiAliasingIndex, 0, _currentAntiAliasingList.Count - 1);
-		OnAntiAliasingChange();
-	}
+        return options;
+    }
 
-	void OnAntiAliasingChange()
-	{
-		_uRPAsset.msaaSampleCount = _currentAntiAliasingIndex;
-		SetAntiAliasingField();
+    private int GetCurrentResolutionIndex()
+    {
+        if (_resolutionsList == null)
+        {
+            _resolutionsList = GetResolutionsList();
+        }
 
-	}
-	#endregion
+        var index = _resolutionsList.FindIndex(o => o.width == _currentResolution.width && o.height == _currentResolution.height);
+        return index;
+    }
 
-	private List<string> GetDropdownData(string[] optionNames, params string[] customOptions)
-	{
-		List<string> options = new List<string>();
-		foreach (string option in optionNames)
-		{
-			options.Add(option);
-		}
+    private void NextResolution()
+    {
+        _currentResolutionIndex++;
+        _currentResolutionIndex = Mathf.Clamp(_currentResolutionIndex, 0, _resolutionsList.Count - 1);
+        OnResolutionChange();
+    }
 
-		foreach (string option in customOptions)
-		{
-			options.Add(option);
-		}
-		return options;
-	}
+    private void PreviousResolution()
+    {
+        _currentResolutionIndex--;
+        _currentResolutionIndex = Mathf.Clamp(_currentResolutionIndex, 0, _resolutionsList.Count - 1);
+        OnResolutionChange();
+    }
 
-	public void SaveSettings()
-	{
+    private void OnResolutionChange()
+    {
+        _currentResolution = _resolutionsList[_currentResolutionIndex];
+        Screen.SetResolution(_currentResolution.width, _currentResolution.height, _isFullscreen);
+        SetResolutionField();
+    }
 
-		_savedResolutionIndex = _currentResolutionIndex;
-		_savedAntiAliasingIndex = _currentAntiAliasingIndex;
-		_savedShadowDistanceTier = _currentShadowDistanceTier;
-		_savedFullscreenState = _isFullscreen;
-		float shadowDistance = _shadowDistanceTierList[_currentShadowDistanceTier].Distance;
-		_save.Invoke(_currentResolutionIndex, _currentAntiAliasingIndex, shadowDistance, _isFullscreen);
-	}
-	
-	public void ResetSettings()
-	{
-		_currentResolutionIndex = _savedResolutionIndex;
-		OnResolutionChange();
-		_currentAntiAliasingIndex = _savedAntiAliasingIndex;
-		OnAntiAliasingChange();
-		_currentShadowDistanceTier = _savedShadowDistanceTier;
-		OnShadowDistanceChange();
-		_isFullscreen = _savedFullscreenState;
-		OnFullscreenChange();
-	}
+    #endregion
 
+    #region ShadowDistance
 
+    private void SetShadowDistance()
+    {
+        _shadowDistanceField.FillSettingField_Localized(_shadowDistanceTierList.Count, _currentShadowDistanceTier, _shadowDistanceTierList[_currentShadowDistanceTier].TierDescription);
+    }
 
+    private int GetCurrentShadowDistanceTier()
+    {
+        var tierIndex = -1;
+        if (_shadowDistanceTierList.Exists(o => o.Distance == _uRPAsset.shadowDistance))
+        {
+            tierIndex = _shadowDistanceTierList.FindIndex(o => o.Distance == _uRPAsset.shadowDistance);
+        }
+        else
+        {
+            Debug.LogError("Current shadow distance is not in the tier List " + _uRPAsset.shadowDistance);
+        }
+
+        return tierIndex;
+    }
+
+    private void NextShadowDistanceTier()
+    {
+        _currentShadowDistanceTier++;
+        _currentShadowDistanceTier = Mathf.Clamp(_currentShadowDistanceTier, 0, _shadowDistanceTierList.Count);
+        OnShadowDistanceChange();
+    }
+
+    private void PreviousShadowDistanceTier()
+    {
+        _currentShadowDistanceTier--;
+        _currentShadowDistanceTier = Mathf.Clamp(_currentShadowDistanceTier, 0, _shadowDistanceTierList.Count);
+        OnShadowDistanceChange();
+    }
+
+    private void OnShadowDistanceChange()
+    {
+        _uRPAsset.shadowDistance = _shadowDistanceTierList[_currentShadowDistanceTier].Distance;
+        SetShadowDistance();
+    }
+
+    #endregion
+
+    #region fullscreen
+
+    private void SetFullscreen()
+    {
+        if (_isFullscreen)
+        {
+            _fullscreenField.FillSettingField_Localized(2, 1, "On");
+        }
+        else
+        {
+            _fullscreenField.FillSettingField_Localized(2, 0, "Off");
+        }
+    }
+
+    private bool GetCurrentFullscreenState()
+    {
+        return Screen.fullScreen;
+    }
+
+    private void NextFullscreenState()
+    {
+        _isFullscreen = true;
+        OnFullscreenChange();
+    }
+
+    private void PreviousFullscreenState()
+    {
+        _isFullscreen = false;
+        OnFullscreenChange();
+    }
+
+    private void OnFullscreenChange()
+    {
+        Screen.fullScreen = _isFullscreen;
+        SetFullscreen();
+    }
+
+    #endregion
+
+    #region Anti Aliasing
+
+    private void SetAntiAliasingField()
+    {
+        var optionDisplay = _currentAntiAliasingList[_currentAntiAliasingIndex].Replace("_", "");
+        _antiAliasingField.FillSettingField(_currentAntiAliasingList.Count, _currentAntiAliasingIndex, optionDisplay);
+    }
+
+    private int GetCurrentAntialiasing()
+    {
+        return _uRPAsset.msaaSampleCount;
+    }
+
+    private void NextAntiAliasingTier()
+    {
+        _currentAntiAliasingIndex++;
+        _currentAntiAliasingIndex = Mathf.Clamp(_currentAntiAliasingIndex, 0, _currentAntiAliasingList.Count - 1);
+        OnAntiAliasingChange();
+    }
+
+    private void PreviousAntiAliasingTier()
+    {
+        _currentAntiAliasingIndex--;
+        _currentAntiAliasingIndex = Mathf.Clamp(_currentAntiAliasingIndex, 0, _currentAntiAliasingList.Count - 1);
+        OnAntiAliasingChange();
+    }
+
+    private void OnAntiAliasingChange()
+    {
+        _uRPAsset.msaaSampleCount = _currentAntiAliasingIndex;
+        SetAntiAliasingField();
+    }
+
+    #endregion
+
+    private List<string> GetDropdownData(string[] optionNames, params string[] customOptions)
+    {
+        var options = new List<string>();
+        foreach (var option in optionNames)
+        {
+            options.Add(option);
+        }
+
+        foreach (var option in customOptions)
+        {
+            options.Add(option);
+        }
+
+        return options;
+    }
+
+    public void SaveSettings()
+    {
+        _savedResolutionIndex    = _currentResolutionIndex;
+        _savedAntiAliasingIndex  = _currentAntiAliasingIndex;
+        _savedShadowDistanceTier = _currentShadowDistanceTier;
+        _savedFullscreenState    = _isFullscreen;
+        var shadowDistance = _shadowDistanceTierList[_currentShadowDistanceTier].Distance;
+        _save.Invoke(_currentResolutionIndex, _currentAntiAliasingIndex, shadowDistance, _isFullscreen);
+    }
+
+    public void ResetSettings()
+    {
+        _currentResolutionIndex = _savedResolutionIndex;
+        OnResolutionChange();
+        _currentAntiAliasingIndex = _savedAntiAliasingIndex;
+        OnAntiAliasingChange();
+        _currentShadowDistanceTier = _savedShadowDistanceTier;
+        OnShadowDistanceChange();
+        _isFullscreen = _savedFullscreenState;
+        OnFullscreenChange();
+    }
 }

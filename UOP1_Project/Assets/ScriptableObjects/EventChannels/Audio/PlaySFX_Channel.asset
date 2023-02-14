@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273f9313082320e41a484f6faf242dab, type: 3}
   m_Name: PlaySFX_Channel
   m_EditorClassIdentifier: 
+  _guid: c3c796b7c31ad3647a3fbae42e74764e
   description: SFX request travel on this channel. The AudioManager will pick them
     up and activate as many SoundEmitters from the pool as needed to play all the
     sounds that make the AudioCue requested in the event.

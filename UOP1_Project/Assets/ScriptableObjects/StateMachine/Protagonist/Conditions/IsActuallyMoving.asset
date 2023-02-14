@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac06717fdbf1afa42a253d91cabf8bf9, type: 3}
   m_Name: IsActuallyMoving
   m_EditorClassIdentifier: 
-  cacheResult: 1
   _treshold: 0.02

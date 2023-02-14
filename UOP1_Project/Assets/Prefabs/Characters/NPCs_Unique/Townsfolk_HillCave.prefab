@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 1132113797398714843, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7772529
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5054559148327267577, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}
       propertyPath: m_Name
-      value: Townsfolk_M
+      value: Townsfolk_HillCave
       objectReference: {fileID: 0}
     - target: {fileID: 5385405162533204186, guid: 661c491ac76af4b429f8a8c0e6e8c762,
         type: 3}

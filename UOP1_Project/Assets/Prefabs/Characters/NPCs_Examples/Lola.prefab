@@ -321,13 +321,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3681583659869480704, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9912751
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681583659869480704, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
+        type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.046576772
+      value: -0.13180931
       objectReference: {fileID: 0}
     - target: {fileID: 3681583659869480704, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029802322
+      value: -0.00000008433869
       objectReference: {fileID: 0}
     - target: {fileID: 3681583659869480704, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
         type: 3}
@@ -342,19 +347,19 @@ PrefabInstance:
     - target: {fileID: 8511031590073880065, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0060868
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc, type: 3}
---- !u!4 &2346374076282968469 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4791752713856532138, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 7129276820778035007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1746811769762013129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8848917350138018038, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 7129276820778035007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2346374076282968469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4791752713856532138, guid: 3e6369ee29ebc1444a0da9ff03d7a7dc,
     type: 3}
   m_PrefabInstance: {fileID: 7129276820778035007}
   m_PrefabAsset: {fileID: 0}

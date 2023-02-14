@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c96b3d50eb64e741a7219a67ca93bdf, type: 3}
   m_Name: TownsfolkEventChannel
   m_EditorClassIdentifier: 
+  _guid: ab763d3138762b2408988cb56b9697e9
   description: 

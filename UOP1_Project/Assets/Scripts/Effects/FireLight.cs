@@ -2,20 +2,20 @@
 
 public class FireLight : MonoBehaviour
 {
-	public AnimationCurve lightCurve;
-	public float fireSpeed = 1f;
+    public AnimationCurve lightCurve;
+    public float          fireSpeed = 1f;
 
-	private Light _lightComp;
-	private float _initialIntensity;
+    private Light _lightComp;
+    private float _initialIntensity;
 
-	private void Awake()
-	{
-		_lightComp = GetComponent<Light>();
-		_initialIntensity = _lightComp.intensity;
-	}
+    private void Awake()
+    {
+        _lightComp        = GetComponent<Light>();
+        _initialIntensity = _lightComp.intensity;
+    }
 
-	void Update()
-	{
-		_lightComp.intensity = _initialIntensity * lightCurve.Evaluate(Time.time * fireSpeed);
-	}
+    private void Update()
+    {
+        _lightComp.intensity = _initialIntensity * lightCurve.Evaluate(Time.time * fireSpeed);
+    }
 }

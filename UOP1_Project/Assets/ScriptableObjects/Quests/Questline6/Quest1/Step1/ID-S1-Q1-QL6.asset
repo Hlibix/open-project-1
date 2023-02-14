@@ -19,56 +19,13 @@ MonoBehaviour:
         m_TableCollectionName: Questline Dialogue
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: L1-D1-SD-S1-Q1-QL5
+        m_Key: L1-D1-ID-S1-Q1-QL6
       m_FallbackState: 0
-      m_WaitForCompletion: 1
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     _choices: []
-  - _actorID: 1
-    _textList:
-    - m_TableReference:
-        m_TableCollectionName: Questline Dialogue
-      m_TableEntryReference:
-        m_KeyId: 0
-        m_Key: L1-D2-SD-S1-Q1-QL5
-      m_FallbackState: 0
-      m_WaitForCompletion: 1
-    - m_TableReference:
-        m_TableCollectionName: Questline Dialogue
-      m_TableEntryReference:
-        m_KeyId: 0
-        m_Key: L2-D2-SD-S1-Q1-QL5
-      m_FallbackState: 0
-      m_WaitForCompletion: 1
-    _choices: []
-  - _actorID: 5
-    _textList:
-    - m_TableReference:
-        m_TableCollectionName: Questline Dialogue
-      m_TableEntryReference:
-        m_KeyId: 0
-        m_Key: L1-D3-SD-S1-Q1-QL5
-      m_FallbackState: 0
-      m_WaitForCompletion: 1
-    _choices:
-    - _response:
-        m_TableReference:
-          m_TableCollectionName: Questline Dialogue
-        m_TableEntryReference:
-          m_KeyId: 0
-          m_Key: C1-D3-SD-S1-Q1-QL5
-        m_FallbackState: 0
-        m_WaitForCompletion: 1
-      _nextDialogue: {fileID: 0}
-      _actionType: 2
-    - _response:
-        m_TableReference:
-          m_TableCollectionName: Questline Dialogue
-        m_TableEntryReference:
-          m_KeyId: 0
-          m_Key: C2-D3-SD-S1-Q1-QL5
-        m_FallbackState: 0
-        m_WaitForCompletion: 1
-      _nextDialogue: {fileID: 0}
-      _actionType: 3
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

@@ -22,5 +22,6 @@ MonoBehaviour:
   _item: {fileID: 0}
   _hasReward: 0
   _rewardItem: {fileID: 0}
+  _rewardItemCount: 1
   _isDone: 0
   _endStepEvent: {fileID: 0}

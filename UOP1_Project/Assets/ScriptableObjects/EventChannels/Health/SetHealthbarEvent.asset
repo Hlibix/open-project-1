@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696142ab7e0adf0478f66a5c9e06a168, type: 3}
   m_Name: SetHealthbarEvent
   m_EditorClassIdentifier: 
+  _guid: 22e3f27f002de44b4948988138dd9377
   description: 

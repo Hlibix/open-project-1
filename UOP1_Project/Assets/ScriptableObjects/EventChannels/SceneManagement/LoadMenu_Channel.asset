@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82df99cd4c7564d4ca44d50a1dce516b, type: 3}
   m_Name: LoadMenu_Channel
   m_EditorClassIdentifier: 
+  _guid: 33cec85652903d245b99985f9cec9841
   description: Raised to request the loading of a new Menu scene, when going back
     to Main Menu or when the game moves from initiatlization to Main Menu at the
     beginning

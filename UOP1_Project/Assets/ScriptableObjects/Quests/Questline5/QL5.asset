@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c700bba7d21604586cb89ec5afdee0, type: 3}
   m_Name: QL5
   m_EditorClassIdentifier: 
+  _guid: 4056d228b0cfae143948cd1185e918f8
   _idQuestLine: 5
   _quests:
   - {fileID: 11400000, guid: 5603b6a24e689044eb1e327cd30ddad2, type: 2}

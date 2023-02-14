@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: acce199aa3151b244b6e3b00e503af6a,
         type: 3}
       propertyPath: m_Name
-      value: lemonLeaf Variant
+      value: LemonLeaf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acce199aa3151b244b6e3b00e503af6a, type: 3}

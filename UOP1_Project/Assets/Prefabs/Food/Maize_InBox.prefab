@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4a271d1cbd21ac41b8e711af567d796,
         type: 3}
       propertyPath: m_Name
-      value: maizeInBox
+      value: Maize_InBox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4a271d1cbd21ac41b8e711af567d796, type: 3}

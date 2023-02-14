@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0.12806746, y: 0.093507916, z: -0.012161177, w: -0.9872726}
   m_LocalPosition: {x: 2.129344, y: 3.6942506, z: -11.94936}
   m_LocalScale: {x: 0.9999996, y: 1, z: 0.9999996}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5725277623085127369}
   m_Father: {fileID: 5540501665159811850}
@@ -61,7 +62,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8344828, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0
@@ -97,6 +98,7 @@ Transform:
   m_LocalRotation: {x: -0.3214424, y: -0.38290328, z: 0.1441246, w: 0.85398364}
   m_LocalPosition: {x: -237.65785, y: 188.8828, z: 226.1085}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 130192914263924118}
   m_RootOrder: 0
@@ -141,6 +143,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 130192914263924118}
   m_Father: {fileID: 0}

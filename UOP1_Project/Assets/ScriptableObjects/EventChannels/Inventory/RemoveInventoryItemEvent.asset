@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ee1f4193e7cac488aad6442034451d, type: 3}
   m_Name: RemoveInventoryItemEvent
   m_EditorClassIdentifier: 
+  _guid: 4ed6ade94b85c452094b0147619e8b49
+  description: 

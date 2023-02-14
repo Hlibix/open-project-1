@@ -7,9 +7,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ItemRecipe", menuName = "Inventory/Recipe")]
 public class ItemRecipeSO : ItemSO
 {
-	[SerializeField] private List<ItemStack> _ingredientsList = new List<ItemStack>();
-	[SerializeField] private ItemSO _resultingDish = default;
+    [SerializeField]
+    private List<ItemStack> _ingredientsList = new();
 
-	public override List<ItemStack> IngredientsList => _ingredientsList;
-	public override ItemSO ResultingDish => _resultingDish;
+    [SerializeField]
+    private ItemSO _resultingDish;
+
+    public override List<ItemStack> IngredientsList => _ingredientsList;
+    public override ItemSO          ResultingDish   => _resultingDish;
 }

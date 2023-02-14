@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 public class DropGroup
 {
-	[SerializeField] List<DropItem> _drops;
-	[SerializeField] float _dropRate;
+    [SerializeField]
+    private List<DropItem> _drops;
 
-	public List<DropItem> Drops => _drops;
-	public float DropRate => _dropRate;
+    [SerializeField]
+    private float _dropRate;
+
+    public List<DropItem> Drops    => _drops;
+    public float          DropRate => _dropRate;
 }

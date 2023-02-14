@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b763d3df319430442a72566d481de948, type: 3}
   m_Name: ChangeSFXVolume_Channel
   m_EditorClassIdentifier: 
+  _guid: 4f26356559fe2254fb6d1f23601bd896
   description: 

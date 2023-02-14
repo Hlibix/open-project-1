@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: CreditsFinishRollingEvent
   m_EditorClassIdentifier: 
+  _guid: f56548c67fade294485faf93a4ba6742
   description: This event is called when a rolling of an credits finished.

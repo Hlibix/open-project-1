@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d62472420234949aa61408039f315b, type: 3}
   m_Name: PlayerInstantiated
   m_EditorClassIdentifier: 
+  _guid: 2723b3f59f7ede3498fe7e385d2bb6ee
   description: Raised by the SpawnSystem each time the player is instantiated, including
     after changing location.

@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class PoolTester : MonoBehaviour
 {
-	[SerializeField]
-	private ParticlePoolSO _pool = default;
+    [SerializeField]
+    private ParticlePoolSO _pool;
 
-	private void Start()
-	{
-		List<ParticleSystem> particles = _pool.Request(10) as List<ParticleSystem>;
-		foreach (ParticleSystem particle in particles)
-		{
-			StartCoroutine(DoParticleBehaviour(particle));
-		}
-	}
+    private void Start()
+    {
+        var particles = _pool.Request(10) as List<ParticleSystem>;
+        foreach (var particle in particles)
+        {
+            StartCoroutine(DoParticleBehaviour(particle));
+        }
+    }
 
-	private IEnumerator DoParticleBehaviour(ParticleSystem particle)
-	{
-		particle.transform.position = Random.insideUnitSphere * 5f;
-		particle.Play();
-		yield return new WaitForSeconds(particle.main.duration);
-		particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-		yield return new WaitUntil(() => particle.particleCount == 0);
-		_pool.Return(particle);
-	}
+    private IEnumerator DoParticleBehaviour(ParticleSystem particle)
+    {
+        particle.transform.position = Random.insideUnitSphere * 5f;
+        particle.Play();
+        yield return new WaitForSeconds(particle.main.duration);
+        particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        yield return new WaitUntil(() => particle.particleCount == 0);
+        _pool.Return(particle);
+    }
 }

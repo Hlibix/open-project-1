@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!136 &1084532419954810000
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7491492121343056568}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.37
-  m_Height: 7.2205505
-  m_Direction: 1
-  m_Center: {x: 0, y: 2.2115517, z: 0}
 --- !u!1001 &7725443254388746217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2bc6d92a3b2bcd74496334e56db620c8,
         type: 3}
       propertyPath: m_Name
-      value: Statue_Prefab
+      value: Statue_ChefComb
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2bc6d92a3b2bcd74496334e56db620c8,
         type: 3}
@@ -104,3 +90,17 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7725443254388746217}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &1084532419954810000
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491492121343056568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.37
+  m_Height: 7.2205505
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.2115517, z: 0}

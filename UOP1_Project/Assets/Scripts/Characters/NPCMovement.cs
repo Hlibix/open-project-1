@@ -2,19 +2,24 @@
 
 public class NPCMovement : MonoBehaviour
 {
-	[SerializeField] NPCMovementConfigSO _npcMovementConfig;
-	[SerializeField] NPCMovementEventChannelSO _channel;
+    [SerializeField]
+    private NPCMovementConfigSO _npcMovementConfig;
 
-	public NPCMovementConfigSO NPCMovementConfig => _npcMovementConfig;
+    [SerializeField]
+    private NPCMovementEventChannelSO _channel;
 
-	private void OnEnable()
-	{
-		if (_channel != null)
-			_channel.OnEventRaised += Respond;
-	}
+    public NPCMovementConfigSO NPCMovementConfig => _npcMovementConfig;
 
-	private void Respond(NPCMovementConfigSO value)
-	{
-		_npcMovementConfig = value;
-	}
+    private void OnEnable()
+    {
+        if (_channel != null)
+        {
+            _channel.OnEventRaised += Respond;
+        }
+    }
+
+    private void Respond(NPCMovementConfigSO value)
+    {
+        _npcMovementConfig = value;
+    }
 }

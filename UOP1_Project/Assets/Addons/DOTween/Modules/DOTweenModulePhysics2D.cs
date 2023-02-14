@@ -12,7 +12,7 @@ using UnityEngine;
 #pragma warning disable 1591
 namespace DG.Tweening
 {
-	public static class DOTweenModulePhysics2D
+    public static class DOTweenModulePhysics2D
     {
         #region Shortcuts
 
@@ -163,6 +163,6 @@ namespace DG.Tweening
         #endregion
 
         #endregion
-	}
+    }
 }
 #endif

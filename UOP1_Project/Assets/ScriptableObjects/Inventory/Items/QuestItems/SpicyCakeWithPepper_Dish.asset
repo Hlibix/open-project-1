@@ -21,6 +21,7 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
+    m_LocalVariables: []
   _previewImage: {fileID: 21300000, guid: b2b1f7bca33f44549949edbeaf752de7, type: 3}
   _description:
     m_TableReference:
@@ -30,6 +31,10 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
+    m_LocalVariables: []
   _healthResorationValue: 100
   _itemType: {fileID: 11400000, guid: 5aa0722ca1325a242b6923d6cb0d5864, type: 2}
   _prefab: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

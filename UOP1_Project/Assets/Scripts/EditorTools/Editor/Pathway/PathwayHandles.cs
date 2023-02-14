@@ -1,31 +1,31 @@
-﻿using UnityEngine;
-using UnityEditor;
-
+﻿using UnityEditor;
+using UnityEngine;
 
 public class PathwayHandles
 {
-	private PathwayConfigSO _pathway;
-	private Vector3 _tmp;
+    private PathwayConfigSO _pathway;
+    private Vector3         _tmp;
 
-	public PathwayHandles(PathwayConfigSO pathway)
-	{
-		_pathway = pathway;
-	}
+    public PathwayHandles(PathwayConfigSO pathway)
+    {
+        _pathway = pathway;
+    }
 
-	public int DisplayHandles()
-	{
-		for (int i = 0; i < _pathway.Waypoints.Count; i++)
-		{
-			EditorGUI.BeginChangeCheck();
+    public int DisplayHandles()
+    {
+        for (var i = 0; i < _pathway.Waypoints.Count; i++)
+        {
+            EditorGUI.BeginChangeCheck();
 
-			_tmp = Handles.PositionHandle(_pathway.Waypoints[i].waypoint, Quaternion.identity);
+            _tmp = Handles.PositionHandle(_pathway.Waypoints[i].waypoint, Quaternion.identity);
 
-			if (EditorGUI.EndChangeCheck())
-			{
-				_pathway.Waypoints[i].waypoint = _tmp;
-				return i;
-			}
-		}
-		return -1;
-	}
+            if (EditorGUI.EndChangeCheck())
+            {
+                _pathway.Waypoints[i].waypoint = _tmp;
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

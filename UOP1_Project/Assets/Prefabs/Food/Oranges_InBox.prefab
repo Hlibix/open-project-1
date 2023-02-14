@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5cc68b94df5861142ba7079055a645a4,
         type: 3}
       propertyPath: m_Name
-      value: orangesInBox
+      value: Oranges_InBox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cc68b94df5861142ba7079055a645a4, type: 3}

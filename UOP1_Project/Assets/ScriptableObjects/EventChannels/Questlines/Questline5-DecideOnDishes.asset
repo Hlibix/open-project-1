@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
   m_Name: Questline5-DecideOnDishes
   m_EditorClassIdentifier: 
+  _guid: fb76ddbd39bb6c645a2927d483102f18
   description: 'When Hamlet meets the Bard Hare, he decides on preparing one of two
     dishes '

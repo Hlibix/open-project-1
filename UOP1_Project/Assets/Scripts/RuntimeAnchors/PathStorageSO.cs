@@ -6,6 +6,7 @@
 //[CreateAssetMenu(fileName = "PathStorage", menuName = "Gameplay/Path Storage")]
 public class PathStorageSO : DescriptionBaseSO
 {
-	[Space]
-	[ReadOnly] public PathSO lastPathTaken;
+    [Space]
+    [ReadOnly]
+    public PathSO lastPathTaken;
 }

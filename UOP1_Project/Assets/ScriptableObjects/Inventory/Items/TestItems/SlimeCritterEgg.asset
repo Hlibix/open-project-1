@@ -21,6 +21,7 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
+    m_LocalVariables: []
   _previewImage: {fileID: 21300000, guid: ba407e6b6db944808804e508c70beaa0, type: 3}
   _description:
     m_TableReference:
@@ -30,16 +31,10 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
+    m_LocalVariables: []
+  _healthResorationValue: 0
   _itemType: {fileID: 11400000, guid: 24ac82c7b4c359e46971d2d454d1f434, type: 2}
   _prefab: {fileID: 3585935693645818075, guid: e4f45f672901141448c55ad3a08054d3, type: 3}
-  _ingredientsList: []
-  _resultingDish: {fileID: 0}
-  _isLocalized: 0
-  _localizePreviewImage:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 1
+  references:
+    version: 2
+    RefIds: []

@@ -2,21 +2,26 @@
 
 public class UIInventoryInspector : MonoBehaviour
 {
-	[SerializeField] private UIInspectorDescription _inspectorDescription = default;
-	[SerializeField] private UIInspectorIngredients _recipeIngredients = default;
+    [SerializeField]
+    private UIInspectorDescription _inspectorDescription;
 
-	public void FillInspector(ItemSO itemToInspect, bool[] availabilityArray = null)
-	{
-		bool isForCooking = (itemToInspect.ItemType.ActionType == ItemInventoryActionType.Cook);
+    [SerializeField]
+    private UIInspectorIngredients _recipeIngredients;
 
-		_inspectorDescription.FillDescription(itemToInspect);
+    public void FillInspector(ItemSO itemToInspect, bool[] availabilityArray = null)
+    {
+        var isForCooking = itemToInspect.ItemType.ActionType == ItemInventoryActionType.Cook;
 
-		if (isForCooking && availabilityArray!= null)
-		{
-			_recipeIngredients.FillIngredients(itemToInspect.IngredientsList, availabilityArray);
-			_recipeIngredients.gameObject.SetActive(true);
-		}
-		else
-			_recipeIngredients.gameObject.SetActive(false);
-	}
+        _inspectorDescription.FillDescription(itemToInspect);
+
+        if (isForCooking && availabilityArray != null)
+        {
+            _recipeIngredients.FillIngredients(itemToInspect.IngredientsList, availabilityArray);
+            _recipeIngredients.gameObject.SetActive(true);
+        }
+        else
+        {
+            _recipeIngredients.gameObject.SetActive(false);
+        }
+    }
 }

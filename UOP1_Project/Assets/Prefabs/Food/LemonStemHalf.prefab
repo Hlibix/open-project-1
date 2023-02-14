@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4b66d6a5817d4764aa9015bf2c73c7c8,
         type: 3}
       propertyPath: m_Name
-      value: lemonStemHalf
+      value: LemonStemHalf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b66d6a5817d4764aa9015bf2c73c7c8, type: 3}
